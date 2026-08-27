@@ -394,6 +394,18 @@
     box-shadow: -6px 0 8px -6px rgba(0, 0, 0, 0.35);
   }
 
+  thead th.sortable {
+    cursor: pointer;
+    user-select: none;
+  }
+  thead th.sortable:hover { background: var(--accent-hover); }
+  thead th.sorted { color: var(--accent-ink); background: var(--accent); }
+  .sort-arrow {
+    font-size: 8px;
+    letter-spacing: 0;
+    margin-left: 2px;
+  }
+
   tbody tr {
     border-top: 1px solid var(--line);
   }
@@ -591,9 +603,9 @@
   const STORAGE_KEY = 'irgc-vessel-watchlist-v1';
 
   const COLUMNS = [
-    { key: 'NO', label: 'No.', mono: true, width: '3%' },
+    { key: 'NO', label: 'No.', mono: true, numeric: true, width: '3%' },
     { key: 'VESSEL NAME', label: 'Vessel Name', name: true, width: '9%' },
-    { key: 'IMO', label: 'IMO', mono: true, width: '6%' },
+    { key: 'IMO', label: 'IMO', mono: true, numeric: true, width: '6%' },
     { key: 'KINDS', label: 'Kind', width: '5%' },
     { key: 'Owner', label: 'Owner', wrap: true, width: '10%' },
     { key: 'Owner Location', label: 'Owner Location', width: '6%' },
@@ -613,6 +625,7 @@
     vessels: [],
     query: '',
     filters: { kind: '', flag: '', attack: '' },
+    sort: { key: null, dir: 'asc' },
     editingId: null,
     confirmDeleteId: null
   };
@@ -683,14 +696,51 @@
 
   function renderHeader() {
     const row = document.getElementById('headerRow');
-    row.innerHTML = COLUMNS.map(c => `<th style="width:${c.width}">${escapeHtml(c.label)}</th>`).join('')
-      + `<th style="width:${ACTIONS_WIDTH}; text-align:right;">Actions</th>`;
+    row.innerHTML = COLUMNS.map(c => {
+      const active = state.sort.key === c.key;
+      const arrow = active ? (state.sort.dir === 'asc' ? '▲' : '▼') : '';
+      return `<th style="width:${c.width}" class="sortable${active ? ' sorted' : ''}" data-sort-key="${escapeHtml(c.key)}">${escapeHtml(c.label)}${arrow ? ` <span class="sort-arrow">${arrow}</span>` : ''}</th>`;
+    }).join('') + `<th style="width:${ACTIONS_WIDTH}; text-align:right;">Actions</th>`;
+
+    row.querySelectorAll('th.sortable').forEach(th => {
+      th.addEventListener('click', () => {
+        const key = th.dataset.sortKey;
+        if (state.sort.key === key) {
+          state.sort.dir = state.sort.dir === 'asc' ? 'desc' : 'asc';
+        } else {
+          state.sort.key = key;
+          state.sort.dir = 'asc';
+        }
+        renderHeader();
+        renderTable();
+      });
+    });
+  }
+
+  function compareVessels(a, b, key, numeric) {
+    const av = a[key], bv = b[key];
+    const aEmpty = av === null || av === undefined || av === '';
+    const bEmpty = bv === null || bv === undefined || bv === '';
+    if (aEmpty && bEmpty) return 0;
+    if (aEmpty) return 1;
+    if (bEmpty) return -1;
+    if (numeric) return Number(av) - Number(bv);
+    return String(av).localeCompare(String(bv), undefined, { sensitivity: 'base' });
   }
 
   function renderTable() {
     const tbody = document.getElementById('tableBody');
     const q = state.query.trim().toLowerCase();
-    const filtered = state.vessels.filter(v => matchesQuery(v, q));
+    let filtered = state.vessels.filter(v => matchesQuery(v, q));
+
+    if (state.sort.key) {
+      const col = COLUMNS.find(c => c.key === state.sort.key);
+      const numeric = !!(col && col.numeric);
+      filtered = [...filtered].sort((a, b) => {
+        const cmp = compareVessels(a, b, state.sort.key, numeric);
+        return state.sort.dir === 'desc' ? -cmp : cmp;
+      });
+    }
 
     document.getElementById('totalCount').textContent = state.vessels.length;
     document.getElementById('attackCount').textContent =
