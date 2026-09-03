@@ -26,7 +26,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 18 | O | AL WATAN | 9615030 | BULK | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | NK | 2026-08-14 | 113-26 | Strait of Hormuz | Damaged. No pollution. |
 | 19 | O | NAVIG8 MESSI | 9482859 | LR1 | NAVIG8 GROUP (STOCK BY ADNOC 80%) | UK | NAVIG8 ASIA PTE LTD | SINGAPORE | KR | 2026-08-13 | 111-26 | Strait of Hormuz Outbound Transit | Damaged. No pollution. |
 | 20 | O | SINGAPORE PROSPERITY | 9419967 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |
-| 21 | O | DISHA | 9250713 | LNG | SCI / INDIA LNG CONSORTIUM | INDIA | SHIPPING CORP. OF INDIA | MALTA | IRS |  | 096-26 |  |  |
+| 21 | O | DISHA | 9250713 | LNG | SCI / INDIA LNG CONSORTIUM | INDIA | SHIPPING CORP. OF INDIA | MALTA | IRS |  |  |  |  |
 | 22 | O | GASLOG SHANGHAI | 9600528 | LNG | GASLOG GROUP | GREECE | GASLOG LNG SERVICES LTD. | BERMUDA | ABS | 2026-07-31 | 101-26 | 11NM northeast of Lima, Oman | Damaged. No pollution. |
 | 23 | O | LUBNA | 9489065 | MR | BAHRI GROUP | SAUDI ARABIA | SYNERGY MIDEAST SHIP MGMT DMCC | MARSHALL ISLAND | LR |  |  |  |  |
 | 24 | O | HAZI 1 | 7802598 | OFFSHORE SUPPLY | UNDISCLOSED |  |  | MALI |  |  |  |  |  |
