@@ -6,9 +6,9 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | Iran Attack | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | O | KIKU | 9329796 | VLCC | PRIMA ENERGY LTD | GREECE | APEX SHIPPING & ENERGY LTD | PANAMA | NK | 2026-06-27 |  | 8NM off Oman | Damaged. No Pollution. |
+| 1 | O | KIKU | 9329796 | VLCC | PRIMA ENERGY LTD | GREECE | APEX SHIPPING & ENERGY LTD | PANAMA | NK | 2026-06-27 | 076-26 | 8NM off Oman | Damaged. No Pollution. |
 | 2 | O | MUBARAZ | 9074626 | LNG | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |
-| 3 | O | MINOAN PIONEER | 9471630 | BULK | BOTTIGLIERI / ITALIAN-GREEK PRIVATE | GREECE | MODION MARTIME MANAGEMENT SA | LIBERIA | RINA | 2026-08-03 |  | 20NM northeast of  Al Khasab, Oman | Damaged. Pollution unconfirmed. One seafarer missing. |
+| 3 | O | MINOAN PIONEER | 9471630 | BULK | BOTTIGLIERI / ITALIAN-GREEK PRIVATE | GREECE | MODION MARTIME MANAGEMENT SA | LIBERIA | RINA | 2026-08-03 | 104-26 | 20NM northeast of  Al Khasab, Oman | Damaged. Pollution unconfirmed. One seafarer missing. |
 | 4 | O | VADIN (LILA VADINAR) | 9324100 | VLCC | RFK SHIPPING IFSC PVT LTD | INDIA | SYNERGY OCEANIC SERVICES INDIA | ANTIGUA AND BARBUDA | IRS |  |  |  |  |
 | 5 | O | HAFEET | 9928009 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |
 | 6 | O | AL REKAYYAT | 9397339 | LNG | NAKILAT SHIPPING QATAR | QATAR | NAKILAT SHIPPING QATAR LTD | MARSHALL ISLAND | DNV | 2026-07-06 | 080-26 | 8NM east of Limah, Oman | Damaged. No Pollution |
@@ -57,9 +57,9 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 49 | X | SENEGAL PROSPERITY | 9532757 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-08-31 | 124-26 | 17NM east of Khasab, Oman | Hit by three "rockets" on the port side engine room and ballast tank. All shipboard communications lost. Vessel reported DIW and listing to port. The vessel has dropped anchor in position 2619N 05633E. Crew have been evacuated by local authorities, there are no casualties. The vessel is not under command. |
 | 50 | X | METRO VENETIAN | 1013391 | AFRAMAX | DORIDA SHIPPING CO. / Metrostar Group | GREECE | V.Ships Management | LIBERIA | DNV | 2026-08-24 | 120-26 | 9NM northeast of Ash Shishah, Oman | Damaged. No pollution. |
 | 51 | X | RIYAN STAR | 9156761 | BULK | RIYAN STAR MARINE LTD | TURKEY | Lora Shipping Ltd | PANAMA | NK | 2026-08-15 | 116-26 | Strait of Hormuz | Damaged. No pollution. One seafarer fatality. |
-| 52 | X | IDI | 9307982 | MR | CARMELIA INTERNATIONAL INC. / Greek private | GREECE | Spring Marine Management S.A. | MARSHALL ISLAND | LR | 2026-07-16 |  | 19NM east of Khasab, Oman | Damaged. No pollution. |
-| 53 | X | EVER LOVELY | 9629110 | CONTAINER | Evergreen Group | TAIWAN | Evergreen Marine Corp. | SINGAPORE | ABS | 2026-06-25 |  | 7.5NM southeast of Dahit, Oman | Damaged. No pollution. No injuries. |
-| 54 | X | BOCHEM MARENGO | 9749025 | MR | SALTER / YAWATAHAMA | JAPAN | Anglo-Eastern Shipmanagement | HONG KONG | ABS | 2026-06-12 |  | 6NM east of Oman | Damaged. No pollution. No injuries. |
+| 52 | X | IDI | 9307982 | MR | CARMELIA INTERNATIONAL INC. / Greek private | GREECE | Spring Marine Management S.A. | MARSHALL ISLAND | LR | 2026-07-16 | 088-26 | 19NM east of Khasab, Oman | Damaged. No pollution. |
+| 53 | X | EVER LOVELY | 9629110 | CONTAINER | Evergreen Group | TAIWAN | Evergreen Marine Corp. | SINGAPORE | ABS | 2026-06-25 | 074-26 | 7.5NM southeast of Dahit, Oman | Damaged. No pollution. No injuries. |
+| 54 | X | BOCHEM MARENGO | 9749025 | MR | SALTER / YAWATAHAMA | JAPAN | Anglo-Eastern Shipmanagement | HONG KONG | ABS | 2026-06-12 | 041-26 | 6NM east of Oman | Damaged. No pollution. No injuries. |
 | 55 | X | BURGAN | 9656022 | VLCC | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | NK | 2026-08-30 | 122-26 | Transiting westbound through the Strait of Hormuz | Anchored. US NCAGS confirmed a vessel was hit on the starboard aft ballast tank by an unknown projectile. No crew casualties reported. Tug was dispatched to assist. |
 | 56 | X | SIDR | 9854715 | VLCC | BAHRI GROUP | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | ABS | 2026-08-31 | 126-26 | 17NM east of Khasab, Oman | Damaged. No pollution. Two casualties reported in this incident have now been confirmed as fatalities. |
 | 57 | X | FRANCE C | 9302159 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-08-08 | 108-26 | Strait of Hormuz, 18 NM E of Khasab | Struck by unknown projectile, localized fire extinguished; vessel and crew safe. |
