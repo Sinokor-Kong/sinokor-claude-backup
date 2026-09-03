@@ -11,22 +11,22 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 3 | O | MINOAN PIONEER | 9471630 | BULK | BOTTIGLIERI / ITALIAN-GREEK PRIVATE | GREECE | MODION MARTIME MANAGEMENT SA | LIBERIA | RINA | 2026-08-03 |  | 20NM northeast of  Al Khasab, Oman | Damaged. Pollution unconfirmed. One seafarer missing. |
 | 4 | O | VADIN (LILA VADINAR) | 9324100 | VLCC | RFK SHIPPING IFSC PVT LTD | INDIA | SYNERGY OCEANIC SERVICES INDIA | ANTIGUA AND BARBUDA | IRS |  |  |  |  |
 | 5 | O | HAFEET | 9928009 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |
-| 6 | O | AL REKAYYAT | 9397339 | LNG | NAKILAT SHIPPING QATAR | QATAR | NAKILAT SHIPPING QATAR LTD | MARSHALL ISLAND | DNV | 2026-07-06 |  | 8NM east of Limah, Oman | Damaged. No Pollution |
-| 7 | O | WEDYAN | 9524970 | VLCC | BAHRI GROUP | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | LR | 2026-07-06 |  | 16NM east of Khor Fakkan, UAE | Damaged. No pollution. No injuries. |
-| 8 | O | CYPRUS PROSPERITY | 9595216 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-07-07 |  | 6NM east of Musandam Peninsula, Oman | Damaged. No pollution. No injuries. |
+| 6 | O | AL REKAYYAT | 9397339 | LNG | NAKILAT SHIPPING QATAR | QATAR | NAKILAT SHIPPING QATAR LTD | MARSHALL ISLAND | DNV | 2026-07-06 | 080-26 | 8NM east of Limah, Oman | Damaged. No Pollution |
+| 7 | O | WEDYAN | 9524970 | VLCC | BAHRI GROUP | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | LR | 2026-07-06 | 081-26 | 16NM east of Khor Fakkan, UAE | Damaged. No pollution. No injuries. |
+| 8 | O | CYPRUS PROSPERITY | 9595216 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-07-07 | 082-26 | 6NM east of Musandam Peninsula, Oman | Damaged. No pollution. No injuries. |
 | 9 | O | AL RAWDAH | 9734513 | LPG | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |
 | 10 | O | RASHEEDA | 9443413 | LNG | NAKILAT SHIPPING QATAR | QATAR | STASCO / QATARGAS LIQUEFIED GAS CO LTD | OMAN | ABS |  |  |  |  |
 | 11 | O | LEBRETHAH | 9976927 | LNG | SK SHIPPING | KOREA | SK SHIPPING CO LTD-KRS | LIBERIA | KR/BV |  |  |  |  |
 | 12 | O |  | 9324100 | VLCC | RFK SHIPPING IFSC PVT LTD | INDIA | SYNERGY OCEANIC SERVICES INDIA | ANTIGUA AND BARBUDA | IRS |  |  |  |  |
 | 13 | O | MAHA ROOS | 9231004 | BULK | B.G. SHIRKE GROUP | INDIA | FIVE STARTS SHIPPING | INDIA | IRS |  |  |  |  |
-| 14 | O | GFS GALAXY | 9401271 | CONTAINER | GFS / UAE PRIVATE OWNERSHIP | UAE | GFS SHIP MANAGEMENT FZE | CYPRUS | DNV | 2026-07-11 |  | 9NM east of Oman | Damaged. No pollution. One seafarer fatality. |
-| 15 | O | AL BAHYAH | 9937799 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR | 2026-07-14 |  | 13 NM from the coast of Oman | Damaged. No pollution. One seafarer fatality. Three seafarers injured. |
-| 16 | O | MOMBASA B | 9739501 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-07-14 |  | 13 NM from the coast of Oman | Damaged. No pollution. Abandoned. Eleven seafarers injured. |
-| 17 | O | STOLT MAGNESIUM | 9739317 | CHEMICAL | STOLT-NIELSEN GROUP | NETHERLANDS | STOLT TANKERS BV | LIBERIA | LR | 2026-07-13 |  | 40 NM from the coast of Oman | Damaged.  No pollution. |
+| 14 | O | GFS GALAXY | 9401271 | CONTAINER | GFS / UAE PRIVATE OWNERSHIP | UAE | GFS SHIP MANAGEMENT FZE | CYPRUS | DNV | 2026-07-11 | 083-26 | 9NM east of Oman | Damaged. No pollution. One seafarer fatality. |
+| 15 | O | AL BAHYAH | 9937799 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR | 2026-07-14 | 087-26 | 13 NM from the coast of Oman | Damaged. No pollution. One seafarer fatality. Three seafarers injured. |
+| 16 | O | MOMBASA B | 9739501 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-07-14 | 086-26 | 13 NM from the coast of Oman | Damaged. No pollution. Abandoned. Eleven seafarers injured. |
+| 17 | O | STOLT MAGNESIUM | 9739317 | CHEMICAL | STOLT-NIELSEN GROUP | NETHERLANDS | STOLT TANKERS BV | LIBERIA | LR | 2026-07-13 | 085-26 | 40 NM from the coast of Oman | Damaged.  No pollution. |
 | 18 | O | AL WATAN | 9615030 | BULK | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | NK | 2026-08-14 | 113-26 | Strait of Hormuz | Damaged. No pollution. |
 | 19 | O | NAVIG8 MESSI | 9482859 | LR1 | NAVIG8 GROUP (STOCK BY ADNOC 80%) | UK | NAVIG8 ASIA PTE LTD | SINGAPORE | KR | 2026-08-13 | 111-26 | Strait of Hormuz Outbound Transit | Damaged. No pollution. |
 | 20 | O | SINGAPORE PROSPERITY | 9419967 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |
-| 21 | O | DISHA | 9250713 | LNG | SCI / INDIA LNG CONSORTIUM | INDIA | SHIPPING CORP. OF INDIA | MALTA | IRS |  |  |  |  |
+| 21 | O | DISHA | 9250713 | LNG | SCI / INDIA LNG CONSORTIUM | INDIA | SHIPPING CORP. OF INDIA | MALTA | IRS |  | 096-26 |  |  |
 | 22 | O | GASLOG SHANGHAI | 9600528 | LNG | GASLOG GROUP | GREECE | GASLOG LNG SERVICES LTD. | BERMUDA | ABS | 2026-07-31 | 101-26 | 11NM northeast of Lima, Oman | Damaged. No pollution. |
 | 23 | O | LUBNA | 9489065 | MR | BAHRI GROUP | SAUDI ARABIA | SYNERGY MIDEAST SHIP MGMT DMCC | MARSHALL ISLAND | LR |  |  |  |  |
 | 24 | O | HAZI 1 | 7802598 | OFFSHORE SUPPLY | UNDISCLOSED |  |  | MALI |  |  |  |  |  |
@@ -35,11 +35,11 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 27 | O | SUNBIRD ARROW | 9323821 | ASPHALT | NIPPON / GEARBULK | NORWAY | GEARBULK / SUNTECH | MARSHALL ISLAND | DNV |  |  |  |  |
 | 28 | O | MINOAN DIGNITY | 9294484 | BULK | GREEK PRIVATE OWNERSHIP | GREECE | ASANTE MANAGEMENT | LIBERIA | KR | 2026-08-17 | 115-26 | Strait of Hormuz | Damaged. No pollution. One seafarer fatality. |
 | 29 | O | MARIA | 9917828 | CHEMICAL | BAHRI GROUP | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | LR |  |  |  |  |
-| 30 | O | KAVOMALEAS | 1042823 | LR1 | DYNACOM GROUPO | GREECE | DYNACOM TANKER MANAGEMENT | MALTA |  | 2026-07-19 |  | 8NM northwest of Kumzar, Oman | Damaged. No pollution. Abandoned. |
+| 30 | O | KAVOMALEAS | 1042823 | LR1 | DYNACOM GROUPO | GREECE | DYNACOM TANKER MANAGEMENT | MALTA |  | 2026-07-19 | 092-26 | 8NM northwest of Kumzar, Oman | Damaged. No pollution. Abandoned. |
 | 31 | O | MARDAN | 9360453 | LR2 | PAKISTAN GOVERNMENT | PAKISTAN | PAKISTAN NATIONAL SHIPPING CORP. | PAKISTAN | ABS |  |  |  |  |
 | 32 | O | SWEDEN PROSPERITY | 9588392 | VLCC | SINOKOR | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |
 | 33 | O | JARNAIN | 9823546 | LR2 | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | DNV |  |  |  |  |
-| 34 | O | KAIFAN | 9656046 | MR | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | NK | 2026-07-20 |  | 8NM northeast of Limah, Oman | Damaged. Abandoned. Two seafarers injured. |
+| 34 | O | KAIFAN | 9656046 | MR | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | NK | 2026-07-20 | 094-26 | 8NM northeast of Limah, Oman | Damaged. Abandoned. Two seafarers injured. |
 | 35 | O | NISSOS KEA | 9920758 | VLCC | KYKLADES / GREEK PRIVATE OWNERSHIP | GREECE | KYKLADES MARITIME CORP | MARSHALL ISLAND |  |  |  |  |  |
 | 36 | O | ROTTERDAM ENERGY | 9508859 | VLCC | SINOKOR | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV |  |  |  |  |
 | 37 | O | AL HAMRA | 9074640 | LNG | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |
