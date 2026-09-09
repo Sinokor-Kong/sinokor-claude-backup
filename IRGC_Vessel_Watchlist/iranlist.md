@@ -2,7 +2,7 @@
 
 Sanctions compliance register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents.
 
-**59 vessels on record — 28 attacked**
+**60 vessels on record — 29 attacked**
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | Iran Attack | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -65,3 +65,4 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 57 | X | FRANCE C | 9302159 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-08-08 | 108-26 | Strait of Hormuz, 18 NM E of Khasab | Struck by unknown projectile, localized fire extinguished; vessel and crew safe. |
 | 58 | X | AL SALAM II | 9328168 | LR-I | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | DNV | 2026-08-25 | 121-26 | Strait of Hormuz, Khasab, Oman | Struck above waterline, hull pierced, fire extinguished. Anchored NW of Jazirat Tawakkul; crew safe. |
 | 59 | X | TARIF | 9828390 | LR-II | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES |  |  | 2026-08-13 | 112-26 | Strait of Hormuz outbound | Struck by UAV(s); minor structural damage, proceeded under own power; no casualties/pollution. |
+| 60 | X | CROATIA PROSPERITY | 9398072 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV | 2026-09-09 |  | Straight of Hormuz (CP-S) | Hull Damaged (No.1 WBT (S)), No pollutions, No injuries. |
