@@ -362,6 +362,8 @@
 
   .table-scroll {
     overflow-x: auto;
+    overflow-y: auto;
+    max-height: 72vh;
   }
 
   table {
@@ -433,6 +435,31 @@
   td.wrap-cell {
     white-space: normal;
     word-break: break-word;
+  }
+
+  td.desc-cell { cursor: pointer; }
+  td.desc-cell .desc-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  td.desc-cell.expanded .desc-text {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+  }
+  td.desc-cell .desc-toggle {
+    display: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+  td.desc-cell.expanded .desc-toggle,
+  td.desc-cell.clamped .desc-toggle {
+    display: inline-block;
   }
 
   .attack-pill {
@@ -614,7 +641,7 @@
     { key: 'INCIDENT TYPE', label: 'Incident Type', width: '7%' },
     { key: 'UKMTO', label: 'UKMTO', mono: true, width: '5%' },
     { key: 'Location', label: 'Location', wrap: true, width: '9%' },
-    { key: 'Description', label: 'Description', wrap: true, width: '10%' }
+    { key: 'Description', label: 'Description', wrap: true, desc: true, width: '10%' }
   ];
 
   const ACTIONS_WIDTH = '6%';
@@ -626,7 +653,8 @@
     filters: { kind: '', flag: '', attack: '' },
     sort: { key: null, dir: 'asc' },
     editingId: null,
-    confirmDeleteId: null
+    confirmDeleteId: null,
+    expandedDesc: new Set()
   };
 
   let vesselsCol = null;
@@ -750,6 +778,12 @@
     emptyEl.style.display = filtered.length ? 'none' : 'block';
 
     tbody.innerHTML = filtered.map(v => rowHtml(v)).join('');
+
+    tbody.querySelectorAll('td.desc-cell:not(.expanded) .desc-text').forEach(el => {
+      if (el.scrollHeight > el.clientHeight + 1) {
+        el.closest('td.desc-cell').classList.add('clamped');
+      }
+    });
   }
 
   function rowHtml(v) {
@@ -775,6 +809,13 @@
 
       if (c.attack) {
         return `<td>${empty ? '<span class="empty-val">—</span>' : `<span class="attack-pill">${iconWarn()}${escapeHtml(val)}</span>`}</td>`;
+      }
+
+      if (c.desc) {
+        const isExpanded = state.expandedDesc.has(v._id);
+        const cls = ['wrap-cell', 'desc-cell', isExpanded ? 'expanded' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
+        if (empty) return `<td class="${cls}">—</td>`;
+        return `<td class="${cls}" data-action="toggle-desc"><div class="desc-text">${escapeHtml(val)}</div><span class="desc-toggle">${isExpanded ? 'Show less' : 'Show more'}</span></td>`;
       }
 
       const cls = [c.mono ? 'mono' : '', c.name ? 'name-cell' : '', c.wrap ? 'wrap-cell' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
@@ -811,6 +852,15 @@
   }
 
   document.getElementById('tableBody').addEventListener('click', async (e) => {
+    const descCell = e.target.closest('td[data-action="toggle-desc"]');
+    if (descCell) {
+      const id = descCell.closest('tr').dataset.id;
+      if (state.expandedDesc.has(id)) state.expandedDesc.delete(id);
+      else state.expandedDesc.add(id);
+      renderTable();
+      return;
+    }
+
     const btn = e.target.closest('button[data-action]');
     if (!btn) return;
     const tr = btn.closest('tr');
