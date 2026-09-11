@@ -4,7 +4,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 
 **60 vessels on record — 29 attacked**
 
-| NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | Iran Attack | INCIDENT TYPE | UKMTO | Location | Description |
+| NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | ATTACKED DATE | INCIDENT TYPE | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | O | KIKU | 9329796 | VLCC | PRIMA ENERGY LTD | GREECE | APEX SHIPPING & ENERGY LTD | PANAMA | NK | 2026-06-27 | IRAN ATTACK | 076-26 | 8NM off Oman | Damaged. No Pollution. |
 | 2 | O | MUBARAZ | 9074626 | LNG | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |  |
