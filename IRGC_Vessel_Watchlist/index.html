@@ -581,6 +581,14 @@
 
   <div class="filter-bar">
     <div class="filter-field">
+      <label for="filterIrgc">IRGC 공식 LIST</label>
+      <select id="filterIrgc">
+        <option value="">All Vessels</option>
+        <option value="O">O</option>
+        <option value="X">X</option>
+      </select>
+    </div>
+    <div class="filter-field">
       <label for="filterKind">Kind</label>
       <select id="filterKind"><option value="">All Kinds</option></select>
     </div>
@@ -650,7 +658,7 @@
     vessels: [],
     ready: false,
     query: '',
-    filters: { kind: '', flag: '', attack: '' },
+    filters: { irgc: '', kind: '', flag: '', attack: '' },
     sort: { key: null, dir: 'asc' },
     editingId: null,
     confirmDeleteId: null,
@@ -677,6 +685,7 @@
 
   function matchesFilters(v) {
     const f = state.filters;
+    if (f.irgc && v['IRGC_LIST'] !== f.irgc) return false;
     if (f.kind && v['KINDS'] !== f.kind) return false;
     if (f.flag && v['Flag'] !== f.flag) return false;
     if (f.attack === 'attacked' && !v['Iran Attack']) return false;
@@ -915,6 +924,11 @@
     renderTable();
   });
 
+  document.getElementById('filterIrgc').addEventListener('change', (e) => {
+    state.filters.irgc = e.target.value;
+    renderTable();
+  });
+
   document.getElementById('filterKind').addEventListener('change', (e) => {
     state.filters.kind = e.target.value;
     renderTable();
@@ -931,7 +945,8 @@
   });
 
   document.getElementById('clearFiltersBtn').addEventListener('click', () => {
-    state.filters = { kind: '', flag: '', attack: '' };
+    state.filters = { irgc: '', kind: '', flag: '', attack: '' };
+    document.getElementById('filterIrgc').value = '';
     document.getElementById('filterKind').value = '';
     document.getElementById('filterFlag').value = '';
     document.getElementById('filterAttack').value = '';
@@ -977,8 +992,9 @@
     renderAddFields();
     addPanel.classList.remove('open');
     state.query = '';
-    state.filters = { kind: '', flag: '', attack: '' };
+    state.filters = { irgc: '', kind: '', flag: '', attack: '' };
     document.getElementById('searchInput').value = '';
+    document.getElementById('filterIrgc').value = '';
     document.getElementById('filterKind').value = '';
     document.getElementById('filterFlag').value = '';
     document.getElementById('filterAttack').value = '';

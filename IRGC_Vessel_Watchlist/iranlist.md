@@ -2,7 +2,7 @@
 
 Sanctions compliance register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents.
 
-**95 vessels on record — 41 attacked**
+**94 vessels on record — 41 attacked**
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | ATTACKED DATE | INCIDENT TYPE | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -17,7 +17,6 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 9 | O | AL RAWDAH | 9734513 | LPG | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |  |
 | 10 | O | RASHEEDA | 9443413 | LNG | NAKILAT SHIPPING QATAR | QATAR | STASCO / QATARGAS LIQUEFIED GAS CO LTD | OMAN | ABS |  |  |  |  |  |
 | 11 | O | LEBRETHAH | 9976927 | LNG | SK SHIPPING | KOREA | SK SHIPPING CO LTD-KRS | LIBERIA | KR/BV |  |  |  |  |  |
-| 12 | O |  | 9324100 | VLCC | RFK SHIPPING IFSC PVT LTD | INDIA | SYNERGY OCEANIC SERVICES INDIA | ANTIGUA AND BARBUDA | IRS |  |  |  |  |  |
 | 13 | O | MAHA ROOS | 9231004 | BULK | B.G. SHIRKE GROUP | INDIA | FIVE STARTS SHIPPING | INDIA | IRS |  |  |  |  |  |
 | 14 | O | GFS GALAXY | 9401271 | CONTAINER | GFS / UAE PRIVATE OWNERSHIP | UAE | GFS SHIP MANAGEMENT FZE | CYPRUS | DNV | 2026-07-11 | IRAN ATTACK | 083-26 | 9NM east of Oman | Damaged. No pollution. One seafarer fatality. |
 | 15 | O | AL BAHYAH | 9937799 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR | 2026-07-14 | IRAN ATTACK | 087-26 | 13 NM from the coast of Oman | Damaged. No pollution. One seafarer fatality. Three seafarers injured. |
