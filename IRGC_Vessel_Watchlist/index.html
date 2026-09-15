@@ -780,7 +780,7 @@
     document.getElementById('attackCount').textContent =
       state.vessels.filter(v => v['Iran Attack']).length;
     const f = state.filters;
-    const filtersActive = q || f.kind || f.flag || f.attack;
+    const filtersActive = q || f.irgc || f.kind || f.flag || f.attack;
     document.getElementById('resultCount').textContent =
       filtersActive ? `${filtered.length} of ${state.vessels.length} shown` : '';
     emptyEl.textContent = 'No vessels match your search.';
