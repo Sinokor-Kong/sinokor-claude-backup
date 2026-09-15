@@ -2,7 +2,7 @@
 
 Sanctions compliance register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents.
 
-**72 vessels on record — 41 attacked**
+**95 vessels on record — 41 attacked**
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | ATTACKED DATE | INCIDENT TYPE | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -78,3 +78,26 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 70 | X | NEW ANDROS | 9294252 | VLCC | Greek shipping interest | GREECE | New Shipping Ltd | PANAMA | NK | 2026-09-09 | IRAN ATTACK | 131-26 | 28NM south-east of Al-Faw, Iraq | At 090230 UTC: The master reported that the vessel was struck by an unknown projectile without prior warning via VHF Channel 16, impacting the forward ballast tank. No casualties were reported and all crew were reported as safe. The vessel subsequently anchored, with local authorities on scene. |
 | 71 | X | ROMANCE | 9468815 | MR TANKER | KOSO SHIPPING SA | UAE | AVANAH PETROLEUM DMCC | PANAMA | ABS | 2026-09-10 | IRAN ATTACK | 133-26 A | 4NM W of Khasab, Oman | The Master of the vessel reports seeing four unknown projectiles hit two unknown vessels causing a fire on one vessel and unsure of the status of the second vessel, 6NM north of his position. |
 | 72 | X | EL GAIA | 9325336 | MR TANKER | EL GAIA SHIPPING INC | UAE | ELSEY SHIP MANAGEMENT LLC | PANAMA | NK | 2026-09-12 | IRAN ATTACK | 134-26 | Straight of Hormuz | A vessel has been struck by an unknown projectile while transiting the Strait of Hormuz. Status of crew, damage assessment and environmental impact are unknown at present. Update 001: A fire has broken out onboard the vessel following the reported attack. Local authorities are on the scene and assisting in evacuating crew members. (One Crew missing) |
+| 73 | O | ABU DHABI-III | 9489027 | AFRAMAX | ADNOC Logistics & Services | UAE | ADNOC Logistics & Services | LIBERIA | ABS |  |  |  |  |  |
+| 74 | O | DELMA | 9719408 | LPG Tanker | DALMA INC | UAE | ADNOC Logistics & Services | LIBERIA | ABS |  |  |  |  |  |
+| 75 | O | ZIXUAN | 9317298 | LPG Tanker | GODDNESS SHIPPING CORP | UAE | DATUN SHIPPING LTD | VANUATU | ABS |  |  |  |  |  |
+| 76 | O | IXORA | 9940459 | AFRAMAX | AL ABRAR INTERNATIONAL TRADING | UAE | RED SEA MARINE SERVICES LLC | LIBERIA | ABS |  |  |  |  |  |
+| 77 | O | OLYMPIOS GAS | 1069637 | LPG Tanker | ENTERPRO ENTERPRISES INC | GREECE | BENELUX OVERSEAS INC | LIBERIA |  |  |  |  |  |  |
+| 78 | O | ASPHALT ALLIANCE | 9287883 | ASPHALT | GALANT SHIPPING INC. | UAE | AVINYA SHIP MANAGEMENT SERVICE | PANAMA | BV |  |  |  |  |  |
+| 79 | O | YAQUT | 9917878 | CHEMICAL | NATIONAL CHEMICAL CARRIERS CO | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | ABS |  |  |  |  |  |
+| 80 | O | ZAYNAH | 9854703 | VLCC | NATIONAL SHIPING CO. OF SAUDI ARABIA (BAHRI) | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | ABS |  |  |  |  |  |
+| 81 | O | AJWAD | 9830795 | VLCC | NATIONAL SHIPING CO. OF SAUDI ARABIA (BAHRI) | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | ABS |  |  |  |  |  |
+| 82 | O | GAS MARAKUA | 9240421 | LPG Tanker | MAKARUA SHIPPING LTD | CHINA | OCEAN FIONA SHIPPING CO LTD | SIERRA LEONE | LR |  |  |  |  |  |
+| 83 | O | ALFONSO | 9256298 | SR | AURIGA SHIPTRADE INC | UAE | ARGONEVIS MARINE SERVICES | BARBADOS | DNV |  |  |  |  |  |
+| 84 | O | GAS WARICH | 9364382 | LPG Tanker | MANAPOURI SHIPPING LTD | CHINA | AEGIS SHIP MANAGEMENT LTD | BARBADOS | LR |  |  |  |  |  |
+| 85 | O | SILVER SHINE | 9421415 | VLCC | NATIONAL SHIPPING CO. SAUDI ARABIA (Bahri) | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | ABS |  |  |  |  |  |
+| 86 | O | PSERIMOS | 1033810 | AFRAMAX | PSERIMOS SHIPS LTD | GREECE | PSERIMOS SHIPS LTD | MALTA | LR |  |  |  |  |  |
+| 87 | O | ON PRIDE | 9945318 | LR2 | VITOL INTERNATIONAL SHIPPING | SINGAPORE | ANGLO-EASTERN TANKER MGMT-HKG | LIBERIA | ABS |  |  |  |  |  |
+| 88 | O | ON PEACE | 9893204 | LR2 | VITOL INTERNATIONAL SHIPPING | SINGAPORE | ANGLO-EASTERN TANKER MGMT-HKG | PANAMA | ABS |  |  |  |  |  |
+| 89 | O | ON PHOENIX | 9893228 | LR2 | VITOL INTERNATIONAL SHIPPING | SINGAPORE | ANGLO-EASTERN TANKER MGMT-HKG | PANAMA | ABS |  |  |  |  |  |
+| 90 | O | SINBAD | 9413688 | AFRAMAX | SINBAD MARITIME SHIPPING SA | UAE | ANGLO-EASTERN TANKER MGMT-HKG | LIBERIA | ABS |  |  |  |  |  |
+| 91 | O | AL DAAYEN | 9325702 | LNG | AL DAAYEN LLC | UK | SEAPEAK MARITIME LTD | BAHAMAS | ABS |  |  |  |  |  |
+| 92 | O | OTTOMAN COURTESY | 9788708 | SUEZMAX | GUNGEN DENIZCILIK VE TICARET | TURKEY | GUNGEN DENIZCILIK VE TICARET | TURKEY | ABS |  |  |  |  |  |
+| 93 | O | XING SHENG | 9384904 | BULK | XINGSHENG 01 SHIPPING LTD | CHINA | HONG KONG SEAMEN HOME MARITIME | PANAMA | BV |  |  |  |  |  |
+| 94 | O | AL RIQQA | 9534808 | VLCC | KUWAIT OIL TANKER CO. SAK | KUWAIT | KUWAIT OIL TANKER CO. SAK | KUWAIT | NK |  |  |  |  |  |
+| 95 | O | AL KOUT | 9653434 | VLCC | KUWAIT OIL TANKER CO. SAK | KUWAIT | KUWAIT OIL TANKER CO. SAK | KUWAIT | NK |  |  |  |  |  |
