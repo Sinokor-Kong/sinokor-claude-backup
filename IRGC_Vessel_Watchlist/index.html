@@ -20,6 +20,10 @@
     --danger: #a8452e;
     --danger-soft: #f5ded6;
     --focus: #4a6a5a;
+    --good: #3f7a5c;
+    --good-soft: #dceae1;
+    --info: #3a5f8a;
+    --info-soft: #dee6ef;
     --shadow: 0 1px 2px rgba(20, 30, 24, 0.06), 0 8px 24px -12px rgba(20, 30, 24, 0.18);
   }
 
@@ -40,6 +44,10 @@
       --danger: #e2795d;
       --danger-soft: #3a2621;
       --focus: #8fb3a0;
+      --good: #7fcf9f;
+      --good-soft: #1d3327;
+      --info: #7fa8d9;
+      --info-soft: #1b2a3a;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
     }
   }
@@ -60,6 +68,10 @@
     --danger: #e2795d;
     --danger-soft: #3a2621;
     --focus: #8fb3a0;
+    --good: #7fcf9f;
+    --good-soft: #1d3327;
+    --info: #7fa8d9;
+    --info-soft: #1b2a3a;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
   }
 
@@ -416,9 +428,10 @@
   tbody tr.editing { background: var(--accent-soft); }
 
   td {
-    padding: 10px 14px;
-    vertical-align: middle;
+    padding: 11px 14px;
+    vertical-align: top;
     font-size: 13.5px;
+    line-height: 1.5;
   }
 
   td.mono, .cell-imo, .cell-no {
@@ -427,6 +440,8 @@
     font-size: 12.5px;
     color: var(--ink-dim);
   }
+
+  td.cell-right { text-align: right; }
 
   td.name-cell { font-weight: 600; }
 
@@ -475,6 +490,21 @@
     padding: 3px 8px;
     white-space: nowrap;
   }
+
+  .chip {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 3px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .chip-good { color: var(--good); background: var(--good-soft); }
+  .chip-neutral { color: var(--ink-dim); background: var(--surface-2); border: 1px solid var(--line); }
+  .chip-danger { color: var(--danger); background: var(--danger-soft); }
+  .chip-info { color: var(--info); background: var(--info-soft); }
 
   td.actions-cell {
     white-space: nowrap;
@@ -634,22 +664,28 @@
 </div>
 
 <script>
+  const IRGC_CHIPS = { O: { cls: 'chip-good', label: 'O' }, X: { cls: 'chip-neutral', label: 'X' } };
+  const INCIDENT_CHIPS = {
+    'IRAN ATTACK': { cls: 'chip-danger', label: 'IRAN ATTACK' },
+    'US DISABLING': { cls: 'chip-info', label: 'US DISABLING' }
+  };
+
   const COLUMNS = [
-    { key: 'NO', label: 'No.', mono: true, numeric: true, width: '3%' },
-    { key: 'IRGC_LIST', label: 'IRGC 공식 LIST', mono: true, width: '4%' },
+    { key: 'NO', label: 'No.', mono: true, numeric: true, right: true, width: '3%' },
+    { key: 'IRGC_LIST', label: 'IRGC 공식 LIST', chips: IRGC_CHIPS, width: '3%' },
     { key: 'VESSEL NAME', label: 'Vessel Name', name: true, width: '9%' },
-    { key: 'IMO', label: 'IMO', mono: true, numeric: true, width: '6%' },
+    { key: 'IMO', label: 'IMO', mono: true, numeric: true, right: true, width: '6%' },
     { key: 'KINDS', label: 'Kind', width: '5%' },
-    { key: 'Owner', label: 'Owner', wrap: true, width: '10%' },
+    { key: 'Owner', label: 'Owner', wrap: true, width: '11%' },
     { key: 'Owner Location', label: 'Owner Location', width: '6%' },
     { key: 'Manager', label: 'Manager', wrap: true, width: '10%' },
     { key: 'Flag', label: 'Flag', width: '6%' },
     { key: 'Class', label: 'Class', mono: true, width: '4%' },
     { key: 'Iran Attack', label: 'Attacked Date', attack: true, width: '8%' },
-    { key: 'INCIDENT TYPE', label: 'Incident Type', width: '7%' },
+    { key: 'INCIDENT TYPE', label: 'Incident Type', chips: INCIDENT_CHIPS, width: '6%' },
     { key: 'UKMTO', label: 'UKMTO', mono: true, width: '5%' },
     { key: 'Location', label: 'Location', wrap: true, width: '9%' },
-    { key: 'Description', label: 'Description', wrap: true, desc: true, width: '10%' }
+    { key: 'Description', label: 'Description', wrap: true, desc: true, width: '11%' }
   ];
 
   const ACTIONS_WIDTH = '6%';
@@ -820,6 +856,12 @@
         return `<td>${empty ? '<span class="empty-val">—</span>' : `<span class="attack-pill">${iconWarn()}${escapeHtml(val)}</span>`}</td>`;
       }
 
+      if (c.chips) {
+        const chip = c.chips[val];
+        if (!chip) return `<td class="empty-val">${empty ? '—' : escapeHtml(val)}</td>`;
+        return `<td><span class="chip ${chip.cls}">${escapeHtml(chip.label)}</span></td>`;
+      }
+
       if (c.desc) {
         const isExpanded = state.expandedDesc.has(v._id);
         const cls = ['wrap-cell', 'desc-cell', isExpanded ? 'expanded' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
@@ -827,7 +869,7 @@
         return `<td class="${cls}" data-action="toggle-desc"><div class="desc-text">${escapeHtml(val)}</div><span class="desc-toggle">${isExpanded ? 'Show less' : 'Show more'}</span></td>`;
       }
 
-      const cls = [c.mono ? 'mono' : '', c.name ? 'name-cell' : '', c.wrap ? 'wrap-cell' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
+      const cls = [c.mono ? 'mono' : '', c.right ? 'cell-right' : '', c.name ? 'name-cell' : '', c.wrap ? 'wrap-cell' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
       return `<td class="${cls}">${empty ? '—' : escapeHtml(val)}</td>`;
     }).join('');
 
