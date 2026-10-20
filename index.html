@@ -1,4 +1,9 @@
-<title>IRGC Vessel Watchlist</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IRGC Vessel Watchlist (Static)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,6 +25,10 @@
     --danger: #a8452e;
     --danger-soft: #f5ded6;
     --focus: #4a6a5a;
+    --good: #3f7a5c;
+    --good-soft: #dceae1;
+    --info: #3a5f8a;
+    --info-soft: #dee6ef;
     --shadow: 0 1px 2px rgba(20, 30, 24, 0.06), 0 8px 24px -12px rgba(20, 30, 24, 0.18);
   }
 
@@ -40,6 +49,10 @@
       --danger: #e2795d;
       --danger-soft: #3a2621;
       --focus: #8fb3a0;
+      --good: #7fcf9f;
+      --good-soft: #1d3327;
+      --info: #7fa8d9;
+      --info-soft: #1b2a3a;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
     }
   }
@@ -60,6 +73,10 @@
     --danger: #e2795d;
     --danger-soft: #3a2621;
     --focus: #8fb3a0;
+    --good: #7fcf9f;
+    --good-soft: #1d3327;
+    --info: #7fa8d9;
+    --info-soft: #1b2a3a;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
   }
 
@@ -76,12 +93,10 @@
   }
 
   .wrap {
-    max-width: 1880px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: clamp(20px, 3vw, 40px) clamp(16px, 3vw, 40px) 64px;
+    padding: 16px 20px 48px;
   }
-
-  /* ---------- masthead ---------- */
 
   .masthead {
     display: flex;
@@ -154,7 +169,7 @@
     border-radius: 3px;
     padding: 5px 9px;
     line-height: 1.3;
-    max-width: 190px;
+    max-width: 220px;
   }
 
   .count-badge {
@@ -187,8 +202,6 @@
     color: var(--ink-dim);
   }
 
-  /* ---------- toolbar ---------- */
-
   .toolbar {
     display: flex;
     gap: 12px;
@@ -212,7 +225,7 @@
     pointer-events: none;
   }
 
-  input[type="text"], input[type="search"], textarea, select {
+  input[type="text"], input[type="search"], input[type="password"], select {
     font-family: "Public Sans", sans-serif;
     font-size: 14px;
     color: var(--ink);
@@ -227,7 +240,7 @@
 
   .search-field input { padding-left: 34px; }
 
-  input:focus-visible, textarea:focus-visible, button:focus-visible {
+  input:focus-visible, button:focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 1px;
   }
@@ -267,8 +280,6 @@
     margin-left: auto;
   }
 
-  /* ---------- filter bar ---------- */
-
   .filter-bar {
     display: flex;
     gap: 14px;
@@ -297,61 +308,6 @@
     color: var(--ink-dim);
   }
 
-  /* ---------- add panel ---------- */
-
-  .add-panel {
-    background: var(--surface);
-    border: 1.5px dashed var(--line-strong);
-    border-radius: 5px;
-    padding: 20px 22px;
-    margin-bottom: 20px;
-    display: none;
-  }
-  .add-panel.open { display: block; }
-
-  .add-panel h2 {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-dim);
-    margin: 0 0 16px;
-  }
-
-  .field-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px 16px;
-  }
-
-  .field label {
-    display: block;
-    font-size: 11.5px;
-    font-weight: 600;
-    color: var(--ink-dim);
-    margin-bottom: 5px;
-  }
-
-  .field .req { color: var(--accent); }
-
-  .add-panel-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 18px;
-    justify-content: flex-end;
-  }
-
-  .form-error {
-    font-size: 12.5px;
-    color: var(--danger);
-    margin-top: 10px;
-    display: none;
-  }
-  .form-error.show { display: block; }
-
-  /* ---------- table ---------- */
-
   .table-shell {
     background: var(--surface);
     border: 1px solid var(--line);
@@ -362,6 +318,8 @@
 
   .table-scroll {
     overflow-x: auto;
+    overflow-y: auto;
+    max-height: 72vh;
   }
 
   table {
@@ -387,13 +345,6 @@
     z-index: 1;
   }
 
-  thead th:last-child {
-    right: 0;
-    z-index: 2;
-    text-align: right;
-    box-shadow: -6px 0 8px -6px rgba(0, 0, 0, 0.35);
-  }
-
   thead th.sortable {
     cursor: pointer;
     user-select: none;
@@ -411,20 +362,22 @@
   }
   tbody tr:nth-child(even) { background: var(--surface-2); }
   tbody tr:hover { background: var(--accent-soft); }
-  tbody tr.editing { background: var(--accent-soft); }
 
   td {
-    padding: 10px 14px;
-    vertical-align: middle;
+    padding: 11px 14px;
+    vertical-align: top;
     font-size: 13.5px;
+    line-height: 1.5;
   }
 
-  td.mono, .cell-imo, .cell-no {
+  td.mono {
     font-family: "IBM Plex Mono", monospace;
     font-variant-numeric: tabular-nums;
     font-size: 12.5px;
     color: var(--ink-dim);
   }
+
+  td.cell-right { text-align: right; }
 
   td.name-cell { font-weight: 600; }
 
@@ -433,6 +386,31 @@
   td.wrap-cell {
     white-space: normal;
     word-break: break-word;
+  }
+
+  td.desc-cell { cursor: pointer; }
+  td.desc-cell .desc-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  td.desc-cell.expanded .desc-text {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+  }
+  td.desc-cell .desc-toggle {
+    display: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+  td.desc-cell.expanded .desc-toggle,
+  td.desc-cell.clamped .desc-toggle {
+    display: inline-block;
   }
 
   .attack-pill {
@@ -449,60 +427,26 @@
     white-space: nowrap;
   }
 
-  td.actions-cell {
-    white-space: nowrap;
-    text-align: right;
-    position: sticky;
-    right: 0;
-    background: var(--surface);
-    box-shadow: -6px 0 8px -6px rgba(0, 0, 0, 0.2);
-  }
-  tbody tr:nth-child(even) td.actions-cell { background: var(--surface-2); }
-  tbody tr:hover td.actions-cell { background: var(--accent-soft); }
-  tbody tr.editing td.actions-cell { background: var(--accent-soft); }
-
-  .icon-btn {
-    background: transparent;
-    border: 1px solid transparent;
+  .chip {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     border-radius: 3px;
-    width: 30px;
-    height: 30px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--ink-dim);
+    padding: 3px 8px;
+    white-space: nowrap;
   }
-  .icon-btn:hover { background: var(--surface-2); border-color: var(--line-strong); color: var(--ink); }
-  .icon-btn.danger:hover { color: var(--danger); border-color: var(--danger); background: var(--danger-soft); }
-
-  td input[type="text"] {
-    padding: 6px 8px;
-    font-size: 13px;
-    min-width: 100px;
-  }
-
-  .row-save { background: var(--accent); color: var(--accent-ink); border: none; }
-  .row-save:hover { background: var(--accent-hover); }
+  .chip-good { color: var(--good); background: var(--good-soft); }
+  .chip-neutral { color: var(--ink-dim); background: var(--surface-2); border: 1px solid var(--line); }
+  .chip-danger { color: var(--danger); background: var(--danger-soft); }
+  .chip-info { color: var(--info); background: var(--info-soft); }
 
   .empty-state {
     padding: 48px 20px;
     text-align: center;
     color: var(--ink-dim);
     font-size: 14px;
-  }
-
-  .confirm-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: flex-end;
-    white-space: nowrap;
-  }
-  .confirm-bar span {
-    font-size: 12px;
-    color: var(--danger);
-    font-weight: 600;
   }
 
   footer {
@@ -517,19 +461,83 @@
     .masthead-right { width: 100%; justify-content: space-between; }
     table { min-width: 900px; }
   }
-</style>
 
-<div class="wrap">
+  /* ---------- lock screen ---------- */
+
+  .lock-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .lock-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    padding: 32px 28px;
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+  }
+
+  .lock-card .eyebrow { justify-content: center; margin-bottom: 10px; }
+
+  .lock-card h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 18px;
+  }
+
+  .lock-card input[type="password"] {
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+
+  .lock-card .btn { width: 100%; justify-content: center; }
+
+  .lock-error {
+    font-size: 12.5px;
+    color: var(--danger);
+    margin-top: 12px;
+    display: none;
+  }
+  .lock-error.show { display: block; }
+
+  #appRoot { display: none; }
+</style>
+</head>
+<body>
+
+<div class="lock-overlay" id="lockOverlay">
+  <div class="lock-card">
+    <div class="eyebrow">Sanctions Compliance Register</div>
+    <h2>Enter Password</h2>
+    <form id="lockForm">
+      <input type="password" id="lockInput" placeholder="Password" autocomplete="off" autofocus>
+      <button class="btn btn-primary" type="submit">Unlock</button>
+      <div class="lock-error" id="lockError">Incorrect password.</div>
+    </form>
+  </div>
+</div>
+
+<div class="wrap" id="appRoot">
 
   <div class="masthead">
     <div class="masthead-left">
-      <div class="eyebrow">Sanctions Compliance Register</div>
+      <div class="eyebrow">Sanctions Compliance Register · Static Mirror</div>
       <h1>IRGC Vessel Watchlist</h1>
-      <div class="sub">Working register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents. Edit entries or add new vessels directly below.</div>
+      <div class="sub">Read-only static snapshot of the working register. For live editing, use the Claude Artifact version.</div>
     </div>
     <div class="masthead-right">
-      <div class="storage-note">Draft copy — saved to this browser only</div>
-      <div id="reloadControl"></div>
+      <div class="storage-note" id="syncStatus">Static snapshot · 2026-10-20</div>
       <div class="count-badge">
         <span class="n" id="totalCount">0</span>
         <span class="l">on record</span>
@@ -546,14 +554,18 @@
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
       <input type="search" id="searchInput" placeholder="Search vessel, IMO, owner, manager, flag…" autocomplete="off">
     </div>
-    <button class="btn btn-primary" id="toggleAddBtn" type="button">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-      Add Vessel
-    </button>
     <span class="result-count" id="resultCount"></span>
   </div>
 
   <div class="filter-bar">
+    <div class="filter-field">
+      <label for="filterIrgc">IRGC 공식 LIST</label>
+      <select id="filterIrgc">
+        <option value="">All Vessels</option>
+        <option value="O">O</option>
+        <option value="X">X</option>
+      </select>
+    </div>
     <div class="filter-field">
       <label for="filterKind">Kind</label>
       <select id="filterKind"><option value="">All Kinds</option></select>
@@ -573,16 +585,6 @@
     <button class="btn btn-ghost" id="clearFiltersBtn" type="button">Clear Filters</button>
   </div>
 
-  <div class="add-panel" id="addPanel">
-    <h2>New Watchlist Entry</h2>
-    <div class="field-grid" id="addFields"></div>
-    <div class="form-error" id="addError">Vessel name is required.</div>
-    <div class="add-panel-actions">
-      <button class="btn btn-ghost" id="cancelAddBtn" type="button">Cancel</button>
-      <button class="btn btn-primary" id="saveAddBtn" type="button">Add to Register</button>
-    </div>
-  </div>
-
   <div class="table-shell">
     <div class="table-scroll">
       <table>
@@ -595,68 +597,44 @@
     <div class="empty-state" id="emptyState" style="display:none;">No vessels match your search.</div>
   </div>
 
-  <footer>IRGC Vessel Watchlist — internal compliance reference. Not a substitute for official OFAC/sanctions screening.</footer>
+  <footer>IRGC Vessel Watchlist — internal compliance reference. Not a substitute for official OFAC/sanctions screening. Static read-only mirror; data may lag behind the live register.</footer>
 
 </div>
 
 <script>
-  const STORAGE_KEY = 'irgc-vessel-watchlist-v1';
+  const VESSELS = [{"NO":1,"IRGC_LIST":"O","VESSEL NAME":"KIKU","IMO":"9329796","KINDS":"VLCC","Owner":"PRIMA ENERGY LTD","Owner Location":"GREECE","Manager":"APEX SHIPPING & ENERGY LTD","Flag":"PANAMA","Class":"NK","Iran Attack":"2026-06-27","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"076-26","Location":"8NM off Oman","Description":"Damaged. No Pollution."},{"NO":2,"IRGC_LIST":"O","VESSEL NAME":"MUBARAZ","IMO":"9074626","KINDS":"LNG","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":3,"IRGC_LIST":"O","VESSEL NAME":"MINOAN PIONEER","IMO":"9471630","KINDS":"BULK","Owner":"BOTTIGLIERI / ITALIAN-GREEK PRIVATE","Owner Location":"GREECE","Manager":"MODION MARTIME MANAGEMENT SA","Flag":"LIBERIA","Class":"RINA","Iran Attack":"2026-08-03","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"104-26","Location":"20NM northeast of  Al Khasab, Oman","Description":"Damaged. Pollution unconfirmed. One seafarer missing."},{"NO":4,"IRGC_LIST":"O","VESSEL NAME":"VADIN (LILA VADINAR)","IMO":"9324100","KINDS":"VLCC","Owner":"RFK SHIPPING IFSC PVT LTD","Owner Location":"INDIA","Manager":"SYNERGY OCEANIC SERVICES INDIA","Flag":"ANTIGUA AND BARBUDA","Class":"IRS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":5,"IRGC_LIST":"O","VESSEL NAME":"HAFEET","IMO":"9928009","KINDS":"VLCC","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":6,"IRGC_LIST":"O","VESSEL NAME":"AL REKAYYAT","IMO":"9397339","KINDS":"LNG","Owner":"NAKILAT SHIPPING QATAR","Owner Location":"QATAR","Manager":"NAKILAT SHIPPING QATAR LTD","Flag":"MARSHALL ISLAND","Class":"DNV","Iran Attack":"2026-07-06","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"080-26","Location":"8NM east of Limah, Oman","Description":"Damaged. No Pollution"},{"NO":7,"IRGC_LIST":"O","VESSEL NAME":"WEDYAN","IMO":"9524970","KINDS":"VLCC","Owner":"BAHRI GROUP","Owner Location":"SAUDI ARABIA","Manager":"BAHRI SHIP MANAGEMENT DMCC","Flag":"SAUDI ARABIA","Class":"LR","Iran Attack":"2026-07-06","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"081-26","Location":"16NM east of Khor Fakkan, UAE","Description":"Damaged. No pollution. No injuries."},{"NO":8,"IRGC_LIST":"O","VESSEL NAME":"CYPRUS PROSPERITY","IMO":"9595216","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-07-07","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"082-26","Location":"6NM east of Musandam Peninsula, Oman","Description":"Damaged. No pollution. No injuries."},{"NO":9,"IRGC_LIST":"O","VESSEL NAME":"AL RAWDAH","IMO":"9734513","KINDS":"LPG","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":10,"IRGC_LIST":"O","VESSEL NAME":"RASHEEDA","IMO":"9443413","KINDS":"LNG","Owner":"NAKILAT SHIPPING QATAR","Owner Location":"QATAR","Manager":"STASCO / QATARGAS LIQUEFIED GAS CO LTD","Flag":"OMAN","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":11,"IRGC_LIST":"O","VESSEL NAME":"LEBRETHAH","IMO":"9976927","KINDS":"LNG","Owner":"SK SHIPPING","Owner Location":"KOREA","Manager":"SK SHIPPING CO LTD-KRS","Flag":"LIBERIA","Class":"KR/BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":14,"IRGC_LIST":"O","VESSEL NAME":"GFS GALAXY","IMO":"9401271","KINDS":"CONTAINER","Owner":"GFS / UAE PRIVATE OWNERSHIP","Owner Location":"UAE","Manager":"GFS SHIP MANAGEMENT FZE","Flag":"CYPRUS","Class":"DNV","Iran Attack":"2026-07-11","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"083-26","Location":"9NM east of Oman","Description":"Damaged. No pollution. One seafarer fatality."},{"NO":15,"IRGC_LIST":"O","VESSEL NAME":"AL BAHYAH","IMO":"9937799","KINDS":"VLCC","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"2026-07-14","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"087-26","Location":"13 NM from the coast of Oman","Description":"Damaged. No pollution. One seafarer fatality. Three seafarers injured."},{"NO":16,"IRGC_LIST":"O","VESSEL NAME":"MOMBASA B","IMO":"9739501","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-07-14","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"086-26","Location":"13 NM from the coast of Oman","Description":"Damaged. No pollution. Abandoned. Eleven seafarers injured."},{"NO":17,"IRGC_LIST":"O","VESSEL NAME":"STOLT MAGNESIUM","IMO":"9739317","KINDS":"CHEMICAL","Owner":"STOLT-NIELSEN GROUP","Owner Location":"NETHERLANDS","Manager":"STOLT TANKERS BV","Flag":"LIBERIA","Class":"LR","Iran Attack":"2026-07-13","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"085-26","Location":"40 NM from the coast of Oman","Description":"Damaged.  No pollution."},{"NO":18,"IRGC_LIST":"O","VESSEL NAME":"AL WATAN","IMO":"9615030","KINDS":"BULK","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"NK","Iran Attack":"2026-08-14","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"113-26","Location":"Strait of Hormuz","Description":"Damaged. No pollution."},{"NO":19,"IRGC_LIST":"O","VESSEL NAME":"NAVIG8 MESSI","IMO":"9482859","KINDS":"LR-I","Owner":"NAVIG8 GROUP (STOCK BY ADNOC 80%)","Owner Location":"UK","Manager":"NAVIG8 ASIA PTE LTD","Flag":"SINGAPORE","Class":"KR","Iran Attack":"2026-08-13","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"111-26","Location":"Strait of Hormuz Outbound Transit","Description":"Damaged. No pollution."},{"NO":20,"IRGC_LIST":"O","VESSEL NAME":"SINGAPORE PROSPERITY","IMO":"9419967","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"COLUMBIA SHIP MANAGEMENT","Flag":"LIBERIA","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":21,"IRGC_LIST":"O","VESSEL NAME":"DISHA","IMO":"9250713","KINDS":"LNG","Owner":"SCI / INDIA LNG CONSORTIUM","Owner Location":"INDIA","Manager":"SHIPPING CORP. OF INDIA","Flag":"MALTA","Class":"IRS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":22,"IRGC_LIST":"O","VESSEL NAME":"GASLOG SHANGHAI","IMO":"9600528","KINDS":"LNG","Owner":"GASLOG GROUP","Owner Location":"GREECE","Manager":"GASLOG LNG SERVICES LTD.","Flag":"BERMUDA","Class":"ABS","Iran Attack":"2026-07-31","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"101-26","Location":"11NM northeast of Lima, Oman","Description":"Damaged. No pollution."},{"NO":23,"IRGC_LIST":"O","VESSEL NAME":"LUBNA","IMO":"9489065","KINDS":"MR","Owner":"BAHRI GROUP","Owner Location":"SAUDI ARABIA","Manager":"SYNERGY MIDEAST SHIP MGMT DMCC","Flag":"MARSHALL ISLAND","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":24,"IRGC_LIST":"O","VESSEL NAME":"HAZI 1","IMO":"7802598","KINDS":"OFFSHORE SUPPLY","Owner":"UNDISCLOSED","Owner Location":"","Manager":"","Flag":"MALI","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":25,"IRGC_LIST":"O","VESSEL NAME":"RYUJIN","IMO":"8206818","KINDS":"TUG","Owner":"UNDISCLOSED","Owner Location":"","Manager":"","Flag":"NICARAGUA","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":26,"IRGC_LIST":"O","VESSEL NAME":"ANNA BARBARA","IMO":"9407500","KINDS":"BULK","Owner":"BLUMENTHAL GROUP","Owner Location":"GERMANY","Manager":"BLUEMENTHAL ASIA PTE. LTD.","Flag":"LIBERIA","Class":"NK","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":27,"IRGC_LIST":"O","VESSEL NAME":"SUNBIRD ARROW","IMO":"9323821","KINDS":"ASPHALT","Owner":"NIPPON / GEARBULK","Owner Location":"NORWAY","Manager":"GEARBULK / SUNTECH","Flag":"MARSHALL ISLAND","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":28,"IRGC_LIST":"O","VESSEL NAME":"MINOAN DIGNITY","IMO":"9294484","KINDS":"BULK","Owner":"GREEK PRIVATE OWNERSHIP","Owner Location":"GREECE","Manager":"ASANTE MANAGEMENT","Flag":"LIBERIA","Class":"KR","Iran Attack":"2026-08-17","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"115-26","Location":"Strait of Hormuz","Description":"Damaged. No pollution. One seafarer fatality."},{"NO":29,"IRGC_LIST":"O","VESSEL NAME":"MARIA","IMO":"9917828","KINDS":"CHEMICAL","Owner":"BAHRI GROUP","Owner Location":"SAUDI ARABIA","Manager":"BAHRI SHIP MANAGEMENT DMCC","Flag":"SAUDI ARABIA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":30,"IRGC_LIST":"O","VESSEL NAME":"KAVOMALEAS","IMO":"1042823","KINDS":"LR-I","Owner":"DYNACOM GROUPO","Owner Location":"GREECE","Manager":"DYNACOM TANKER MANAGEMENT","Flag":"MALTA","Class":"","Iran Attack":"2026-07-19","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"092-26","Location":"8NM northwest of Kumzar, Oman","Description":"Damaged. No pollution. Abandoned."},{"NO":31,"IRGC_LIST":"O","VESSEL NAME":"MARDAN","IMO":"9360453","KINDS":"LR-II","Owner":"PAKISTAN GOVERNMENT","Owner Location":"PAKISTAN","Manager":"PAKISTAN NATIONAL SHIPPING CORP.","Flag":"PAKISTAN","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":32,"IRGC_LIST":"O","VESSEL NAME":"SWEDEN PROSPERITY","IMO":"9588392","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"COLUMBIA SHIP MANAGEMENT","Flag":"LIBERIA","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":33,"IRGC_LIST":"O","VESSEL NAME":"JARNAIN","IMO":"9823546","KINDS":"LR-II","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":34,"IRGC_LIST":"O","VESSEL NAME":"KAIFAN","IMO":"9656046","KINDS":"MR","Owner":"KUWAIT OIL TANKER","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER","Flag":"KUWAIT","Class":"NK","Iran Attack":"2026-07-20","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"094-26","Location":"8NM northeast of Limah, Oman","Description":"Damaged. Abandoned. Two seafarers injured."},{"NO":35,"IRGC_LIST":"O","VESSEL NAME":"NISSOS KEA","IMO":"9920758","KINDS":"VLCC","Owner":"KYKLADES / GREEK PRIVATE OWNERSHIP","Owner Location":"GREECE","Manager":"KYKLADES MARITIME CORP","Flag":"MARSHALL ISLAND","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":36,"IRGC_LIST":"O","VESSEL NAME":"ROTTERDAM ENERGY","IMO":"9508859","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":37,"IRGC_LIST":"O","VESSEL NAME":"AL HAMRA","IMO":"9074640","KINDS":"LNG","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":38,"IRGC_LIST":"O","VESSEL NAME":"UMM AL ASHTAN","IMO":"9074652","KINDS":"LNG","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":39,"IRGC_LIST":"O","VESSEL NAME":"MARIGOLD LNG","IMO":"9230062","KINDS":"LNG","Owner":"UAE PRIVATE / MARIGOLD LNG","Owner Location":"UAE","Manager":"KRATOS GAS TRANSPORT LLC","Flag":"MARSHALL ISLAND","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":40,"IRGC_LIST":"O","VESSEL NAME":"BANASTAR","IMO":"9228045","KINDS":"BULK","Owner":"KLAVENESS GROUP","Owner Location":"NORWAY","Manager":"KLAVENESS SHIP MANAGEMENT","Flag":"MARSHALL ISLAND","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":41,"IRGC_LIST":"O","VESSEL NAME":"NAVARA","IMO":"9241798","KINDS":"MR","Owner":"ARGONEVIS / GREEK PRIVATE OWNERSHIP","Owner Location":"GREECE","Manager":"ARGONEVIS MARINE SERVICES","Flag":"BARBADOS","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":42,"IRGC_LIST":"O","VESSEL NAME":"ARGOS EXPLORER (NISSOS HERACLEA)","IMO":"9419618","KINDS":"VLCC","Owner":"KYKLADES / GREEK PRIVATE OWNERSHIP","Owner Location":"GREECE","Manager":"KYKLADES MARITIME CORP","Flag":"LIBERIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":43,"IRGC_LIST":"X","VESSEL NAME":"BLUE STAR I","IMO":"9215115","KINDS":"SR","Owner":"UAE / ALFA ALSHARQ","Owner Location":"UAE","Manager":"ALFA ALSHARQ FOR REFINED OIL","Flag":"MARSHALL ISLAND","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":44,"IRGC_LIST":"O","VESSEL NAME":"ASHLEY","IMO":"9258466","KINDS":"LR-I","Owner":"UAE PRIVATE OWNERSHIP","Owner Location":"UAE","Manager":"NAVIGATOR LINE SM & OPS LLC","Flag":"ANTIGUA AND BARBUDA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":45,"IRGC_LIST":"O","VESSEL NAME":"MRAWETH","IMO":"9074638","KINDS":"LNG","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":46,"IRGC_LIST":"O","VESSEL NAME":"AL LULU","IMO":"9583627","KINDS":"LNG","Owner":"SAFEEN GROUP","Owner Location":"UAE","Manager":"NOATUM CSM FZCO","Flag":"MARSHALL ISLAND","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":47,"IRGC_LIST":"O","VESSEL NAME":"MALAYSIA PROSPERITY","IMO":"9395305","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"SYNERGY DENMARK","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-08-15","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"","Location":"Strait of Hormuz","Description":"Hull damaged (No.2 HFO Bunker Tank), lost 1,000 M/T HFO Bunker, No injuries."},{"NO":48,"IRGC_LIST":"O","VESSEL NAME":"PORTUGAL PROSPERITY","IMO":"9385843","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"SYNERGY DENMARK","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-08-26","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"","Location":"Strait of Hormuz","Description":"Hull damaged, No injuries."},{"NO":49,"IRGC_LIST":"X","VESSEL NAME":"SENEGAL PROSPERITY","IMO":"9532757","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"COLUMBIA SHIP MANAGEMENT","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-08-31","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"124-26","Location":"17NM east of Khasab, Oman","Description":"Hit by three \"rockets\" on the port side engine room and ballast tank. All shipboard communications lost. Vessel reported DIW and listing to port. The vessel has dropped anchor in position 2619N 05633E. Crew have been evacuated by local authorities, there are no casualties. The vessel is not under command."},{"NO":50,"IRGC_LIST":"O","VESSEL NAME":"METRO VENETIAN","IMO":"1013391","KINDS":"AFRAMAX","Owner":"DORIDA SHIPPING CO. / Metrostar Group","Owner Location":"GREECE","Manager":"V.Ships Management","Flag":"LIBERIA","Class":"DNV","Iran Attack":"2026-08-24","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"120-26","Location":"9NM northeast of Ash Shishah, Oman","Description":"Damaged. No pollution."},{"NO":51,"IRGC_LIST":"O","VESSEL NAME":"RIYAN STAR","IMO":"9156761","KINDS":"BULK","Owner":"RIYAN STAR MARINE LTD","Owner Location":"TURKEY","Manager":"Lora Shipping Ltd","Flag":"PANAMA","Class":"NK","Iran Attack":"2026-08-15","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"116-26","Location":"Strait of Hormuz","Description":"Damaged. No pollution. One seafarer fatality."},{"NO":52,"IRGC_LIST":"X","VESSEL NAME":"IDI","IMO":"9307982","KINDS":"MR","Owner":"CARMELIA INTERNATIONAL INC. / Greek private","Owner Location":"GREECE","Manager":"Spring Marine Management S.A.","Flag":"MARSHALL ISLAND","Class":"LR","Iran Attack":"2026-07-16","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"088-26","Location":"19NM east of Khasab, Oman","Description":"Damaged. No pollution."},{"NO":53,"IRGC_LIST":"X","VESSEL NAME":"EVER LOVELY","IMO":"9629110","KINDS":"CONTAINER","Owner":"Evergreen Group","Owner Location":"TAIWAN","Manager":"Evergreen Marine Corp.","Flag":"SINGAPORE","Class":"ABS","Iran Attack":"2026-06-25","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"074-26","Location":"7.5NM southeast of Dahit, Oman","Description":"Damaged. No pollution. No injuries."},{"NO":54,"IRGC_LIST":"X","VESSEL NAME":"BOCHEM MARENGO","IMO":"9749025","KINDS":"MR","Owner":"SALTER / YAWATAHAMA","Owner Location":"JAPAN","Manager":"Anglo-Eastern Shipmanagement","Flag":"HONG KONG","Class":"ABS","Iran Attack":"2026-06-12","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"041-26","Location":"6NM east of Oman","Description":"Damaged. No pollution. No injuries."},{"NO":55,"IRGC_LIST":"O","VESSEL NAME":"BURGAN","IMO":"9656022","KINDS":"VLCC","Owner":"KUWAIT OIL TANKER","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER","Flag":"KUWAIT","Class":"NK","Iran Attack":"2026-08-30","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"122-26","Location":"Transiting westbound through the Strait of Hormuz","Description":"Anchored. US NCAGS confirmed a vessel was hit on the starboard aft ballast tank by an unknown projectile. No crew casualties reported. Tug was dispatched to assist."},{"NO":56,"IRGC_LIST":"O","VESSEL NAME":"SIDR","IMO":"9854715","KINDS":"VLCC","Owner":"BAHRI GROUP","Owner Location":"SAUDI ARABIA","Manager":"BAHRI SHIP MANAGEMENT DMCC","Flag":"SAUDI ARABIA","Class":"ABS","Iran Attack":"2026-08-31","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"126-26","Location":"17NM east of Khasab, Oman","Description":"Damaged. No pollution. Two casualties reported in this incident have now been confirmed as fatalities."},{"NO":57,"IRGC_LIST":"X","VESSEL NAME":"FRANCE C","IMO":"9302159","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-08-08","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"108-26","Location":"Strait of Hormuz, 18 NM E of Khasab","Description":"Struck by unknown projectile, localized fire extinguished; vessel and crew safe."},{"NO":58,"IRGC_LIST":"O","VESSEL NAME":"AL SALAM II","IMO":"9328168","KINDS":"LR-I","Owner":"KUWAIT OIL TANKER","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER","Flag":"KUWAIT","Class":"DNV","Iran Attack":"2026-08-25","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"121-26","Location":"Strait of Hormuz, Khasab, Oman","Description":"Struck above waterline, hull pierced, fire extinguished. Anchored NW of Jazirat Tawakkul; crew safe."},{"NO":59,"IRGC_LIST":"O","VESSEL NAME":"TARIF","IMO":"9828390","KINDS":"LR-II","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"","Class":"","Iran Attack":"2026-08-13","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"112-26","Location":"Strait of Hormuz outbound","Description":"Struck by UAV(s); minor structural damage, proceeded under own power; no casualties/pollution."},{"NO":60,"IRGC_LIST":"X","VESSEL NAME":"CROATIA PROSPERITY","IMO":"9398072","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"FLEET SHIP MANAGEMENT","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-09-09","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"","Location":"Strait of Hormuz (CP-S)","Description":"Hull Damaged (No.1 WBT (S)), No pollutions, No injuries."},{"NO":61,"IRGC_LIST":"X","VESSEL NAME":"STARK 1","IMO":"9171450","KINDS":"LR-III","Owner":"IRAN GOVERNMENT","Owner Location":"IRAN","Manager":"National Iranian Tanker Co. (NITC)","Flag":"IRAN","Class":"DNV","Iran Attack":"2026-09-05","INCIDENT TYPE":"US DISABLING","UKMTO":"127-26 A","Location":"Vicinity of Jask, Gulf of Oman","Description":"At 051338 UTC USCENTCOM confirmed the vessel STARK 1 had been permanently disabled by US forces near Jask, Iran."},{"NO":62,"IRGC_LIST":"X","VESSEL NAME":"DOWNY","IMO":"9218480","KINDS":"VLCC","Owner":"IRAN GOVERNMENT","Owner Location":"IRAN","Manager":"National Iranian Tanker Co. (NITC)","Flag":"IRAN","Class":"","Iran Attack":"2026-09-05","INCIDENT TYPE":"US DISABLING","UKMTO":"127-26 B","Location":"Off the coast of Kharg Island, Iran.","Description":"At 051338 UTC USCENTCOM confirmed the vessel DOWNY had been permanently disabled by US forces near Kharg Island."},{"NO":63,"IRGC_LIST":"X","VESSEL NAME":"KYLO","IMO":"9189146","KINDS":"LR-III","Owner":"Mohammad Hossein Shamkhani network (Iran-Russia linked)","Owner Location":"IRAN","Manager":"Kylo Shipping Inc.","Flag":"COMOROS","Class":"CCS","Iran Attack":"2026-09-05","INCIDENT TYPE":"US DISABLING","UKMTO":"127-26 C","Location":"Gulf of Oman","Description":"At 051338 UTC USCENTCOM confirmed the vessel KYLO (also known as \"NOXEN\") had been permanently disabled and sunk by US force."},{"NO":64,"IRGC_LIST":"X","VESSEL NAME":"HORIZON 1","IMO":"9130456","KINDS":"LPG","Owner":"??","Owner Location":"??","Manager":"TBB Ship Management","Flag":"PALAU","Class":"DNV","Iran Attack":"2026-09-08","INCIDENT TYPE":"US DISABLING","UKMTO":"128-26","Location":"In international Waters, 38NM NE from the coast of Dibba, UAE.","Description":"At 082005 UTC: Managers of the LPG tanker reported that it was struck by a projectile on its stern. Vessel reported a fire which spread to its accommodation block; vessel was subsequently anchored with 3,177 MT LPG on board. Crew abandoned to life raft and were recovered safely to a bunker barge. On 08 September US CENTCOM stated that this was one of several vessels subjected to disabling action by U.S. military forces. Prior to strike, managers reported that U.S. forces directed the crew to abandon ship before the vessel was struck and rendered inoperable."},{"NO":65,"IRGC_LIST":"X","VESSEL NAME":"DERYA","IMO":"9569700","KINDS":"VLCC","Owner":"IRAN GOVERNMENT","Owner Location":"IRAN","Manager":"National Iranian Tanker Co. (NITC)","Flag":"IRAN","Class":"DNV","Iran Attack":"2026-09-08","INCIDENT TYPE":"US DISABLING","UKMTO":"129-26 A","Location":"IVO Kharg Island","Description":"On 08 September US CENTCOM stated that this was one of several vessels subjected to disabling action by U.S. military forces. There are no reports of casualties or environmental impact. Prior to strike, U.S. forces directed the crew to abandon ship before the vessel was struck and rendered inoperable."},{"NO":66,"IRGC_LIST":"X","VESSEL NAME":"KAVIZ","IMO":"9282041","KINDS":"VLCC","Owner":"Mohammad Hossein Shamkhani network (Iran-Russia linked)","Owner Location":"IRAN","Manager":"National Iranian Tanker Co. (NITC)","Flag":"PANAMA","Class":"","Iran Attack":"2026-09-08","INCIDENT TYPE":"US DISABLING","UKMTO":"129-26 B","Location":"Gulf of Oman","Description":"On 08 September US CENTCOM stated that this was one of several vessels subjected to disabling action by U.S. military forces. There are no reports of casualties or environmental impact. Prior to strike, U.S. forces directed the crew to abandon ship before the vessel was struck and rendered inoperable."},{"NO":67,"IRGC_LIST":"X","VESSEL NAME":"CHARMINAR","IMO":"9318022","KINDS":"MR","Owner":"Mohammad Hossein Shamkhani network (Iran-Russia linked)","Owner Location":"IRAN","Manager":"Alacritas Shipping FZE","Flag":"COMOROS","Class":"LR","Iran Attack":"2026-09-08","INCIDENT TYPE":"US DISABLING","UKMTO":"129-26 C","Location":"Gulf of Oman","Description":"On 08 September US CENTCOM stated that this was one of several vessels subjected to disabling action by U.S. military forces. There are no reports of casualties or environmental impact. Prior to strike, U.S. forces directed the crew to abandon ship before the vessel was struck and rendered inoperable."},{"NO":68,"IRGC_LIST":"O","VESSEL NAME":"RIESCO","IMO":"9251822","KINDS":"VLCC","Owner":"Mohammad Hossein Shamkhani network (Iran-Russia linked)","Owner Location":"IRAN","Manager":"Delnaz Ship Management","Flag":"ZIMBABWE","Class":"","Iran Attack":"2026-09-08","INCIDENT TYPE":"US DISABLING","UKMTO":"129-26 D","Location":"Gulf of Oman","Description":"On 08 September US CENTCOM stated that this was one of several vessels subjected to disabling action by U.S. military forces. There are no reports of casualties or environmental impact. Prior to strike, U.S. forces directed the crew to abandon ship before the vessel was struck and rendered inoperable. The vessel subsequently sank."},{"NO":69,"IRGC_LIST":"X","VESSEL NAME":"HERCULES STAR","IMO":"9916135","KINDS":"BUNKER TANKER","Owner":"Macaw Shipping Ltd","Owner Location":"SPAIN","Manager":"Peninsula Petroleum S.L.","Flag":"GIBRALTAR","Class":"LR","Iran Attack":"2026-09-09","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"130-26","Location":"24NM northwest of Port Rashid, UAE","Description":"At 090248 UTC: A tanker was reported as listing while at anchor in Port Rashid Anchorage, indicating possible flooding following a suspected projectile strike. One fatality was reported among the crew, and one crew member remained missing. Several support vessels, including a tug and an unidentified Coast Guard vessel, were reported in proximity."},{"NO":70,"IRGC_LIST":"X","VESSEL NAME":"NEW ANDROS","IMO":"9294252","KINDS":"VLCC","Owner":"Greek shipping interest","Owner Location":"GREECE","Manager":"New Shipping Ltd","Flag":"PANAMA","Class":"NK","Iran Attack":"2026-09-09","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"131-26","Location":"28NM south-east of Al-Faw, Iraq","Description":"At 090230 UTC: The master reported that the vessel was struck by an unknown projectile without prior warning via VHF Channel 16, impacting the forward ballast tank. No casualties were reported and all crew were reported as safe. The vessel subsequently anchored, with local authorities on scene."},{"NO":71,"IRGC_LIST":"X","VESSEL NAME":"ROMANCE","IMO":"9468815","KINDS":"MR","Owner":"KOSO SHIPPING SA","Owner Location":"UAE","Manager":"AVANAH PETROLEUM DMCC","Flag":"PANAMA","Class":"ABS","Iran Attack":"2026-09-10","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"133-26 A","Location":"4NM W of Khasab, Oman","Description":"The Master of the vessel reports seeing four unknown projectiles hit two unknown vessels causing a fire on one vessel and unsure of the status of the second vessel, 6NM north of his position."},{"NO":72,"IRGC_LIST":"O","VESSEL NAME":"EL GAIA","IMO":"9325336","KINDS":"MR","Owner":"EL GAIA SHIPPING INC","Owner Location":"UAE","Manager":"ELSEY SHIP MANAGEMENT LLC","Flag":"PANAMA","Class":"NK","Iran Attack":"2026-09-12","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"134-26","Location":"Strait of Hormuz","Description":"A vessel has been struck by an unknown projectile while transiting the Strait of Hormuz. Status of crew, damage assessment and environmental impact are unknown at present. Update 001: A fire has broken out onboard the vessel following the reported attack. Local authorities are on the scene and assisting in evacuating crew members. (One Crew missing)"},{"NO":73,"IRGC_LIST":"O","VESSEL NAME":"ABU DHABI-III","IMO":"9489027","KINDS":"AFRAMAX","Owner":"ADNOC Logistics & Services","Owner Location":"UAE","Manager":"ADNOC Logistics & Services","Flag":"LIBERIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":74,"IRGC_LIST":"O","VESSEL NAME":"DELMA","IMO":"9719408","KINDS":"LPG","Owner":"DALMA INC","Owner Location":"UAE","Manager":"ADNOC Logistics & Services","Flag":"LIBERIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":75,"IRGC_LIST":"O","VESSEL NAME":"ZIXUAN","IMO":"9317298","KINDS":"LPG","Owner":"GODDNESS SHIPPING CORP","Owner Location":"UAE","Manager":"DATUN SHIPPING LTD","Flag":"VANUATU","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":76,"IRGC_LIST":"O","VESSEL NAME":"IXORA","IMO":"9940459","KINDS":"AFRAMAX","Owner":"AL ABRAR INTERNATIONAL TRADING","Owner Location":"UAE","Manager":"RED SEA MARINE SERVICES LLC","Flag":"LIBERIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":77,"IRGC_LIST":"O","VESSEL NAME":"OLYMPIOS GAS","IMO":"1069637","KINDS":"LPG","Owner":"ENTERPRO ENTERPRISES INC","Owner Location":"GREECE","Manager":"BENELUX OVERSEAS INC","Flag":"LIBERIA","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":78,"IRGC_LIST":"O","VESSEL NAME":"ASPHALT ALLIANCE","IMO":"9287883","KINDS":"ASPHALT","Owner":"GALANT SHIPPING INC.","Owner Location":"UAE","Manager":"AVINYA SHIP MANAGEMENT SERVICE","Flag":"PANAMA","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":79,"IRGC_LIST":"O","VESSEL NAME":"YAQUT","IMO":"9917878","KINDS":"CHEMICAL","Owner":"NATIONAL CHEMICAL CARRIERS CO","Owner Location":"SAUDI ARABIA","Manager":"BAHRI SHIP MANAGEMENT DMCC","Flag":"SAUDI ARABIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":80,"IRGC_LIST":"O","VESSEL NAME":"ZAYNAH","IMO":"9854703","KINDS":"VLCC","Owner":"NATIONAL SHIPING CO. OF SAUDI ARABIA (BAHRI)","Owner Location":"SAUDI ARABIA","Manager":"BAHRI SHIP MANAGEMENT DMCC","Flag":"SAUDI ARABIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":81,"IRGC_LIST":"O","VESSEL NAME":"AJWAD","IMO":"9830795","KINDS":"VLCC","Owner":"NATIONAL SHIPING CO. OF SAUDI ARABIA (BAHRI)","Owner Location":"SAUDI ARABIA","Manager":"BAHRI SHIP MANAGEMENT DMCC","Flag":"SAUDI ARABIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":82,"IRGC_LIST":"O","VESSEL NAME":"GAS MARAKUA","IMO":"9240421","KINDS":"LPG","Owner":"MAKARUA SHIPPING LTD","Owner Location":"CHINA","Manager":"OCEAN FIONA SHIPPING CO LTD","Flag":"SIERRA LEONE","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":83,"IRGC_LIST":"O","VESSEL NAME":"ALFONSO","IMO":"9256298","KINDS":"SR","Owner":"AURIGA SHIPTRADE INC","Owner Location":"UAE","Manager":"ARGONEVIS MARINE SERVICES","Flag":"BARBADOS","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":84,"IRGC_LIST":"O","VESSEL NAME":"GAS WARICH","IMO":"9364382","KINDS":"LPG","Owner":"MANAPOURI SHIPPING LTD","Owner Location":"CHINA","Manager":"AEGIS SHIP MANAGEMENT LTD","Flag":"BARBADOS","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":85,"IRGC_LIST":"O","VESSEL NAME":"SILVER SHINE (ARSAN)","IMO":"9421415","KINDS":"VLCC","Owner":"NATIONAL SHIPPING CO. SAUDI ARABIA (Bahri)","Owner Location":"SAUDI ARABIA","Manager":"BAHRI SHIP MANAGEMENT DMCC","Flag":"SAUDI ARABIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":86,"IRGC_LIST":"O","VESSEL NAME":"PSERIMOS","IMO":"1033810","KINDS":"AFRAMAX","Owner":"PSERIMOS SHIPS LTD","Owner Location":"GREECE","Manager":"PSERIMOS SHIPS LTD","Flag":"MALTA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":87,"IRGC_LIST":"O","VESSEL NAME":"ON PRIDE","IMO":"9945318","KINDS":"LR-II","Owner":"VITOL INTERNATIONAL SHIPPING","Owner Location":"SINGAPORE","Manager":"ANGLO-EASTERN TANKER MGMT-HKG","Flag":"LIBERIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":88,"IRGC_LIST":"O","VESSEL NAME":"ON PEACE","IMO":"9893204","KINDS":"LR-II","Owner":"VITOL INTERNATIONAL SHIPPING","Owner Location":"SINGAPORE","Manager":"ANGLO-EASTERN TANKER MGMT-HKG","Flag":"PANAMA","Class":"ABS","Iran Attack":"2026-10-05","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"157-26","Location":"Strait of Hormuz","Description":"on 05 Oct the vessel was struck by an unknown projectile while transiting the SOH outbound. Twelve crew members were reported to have been injured. The injured crew have been evacuated. Vessel damage unknown."},{"NO":89,"IRGC_LIST":"O","VESSEL NAME":"ON PHOENIX","IMO":"9893228","KINDS":"LR-II","Owner":"VITOL INTERNATIONAL SHIPPING","Owner Location":"SINGAPORE","Manager":"ANGLO-EASTERN TANKER MGMT-HKG","Flag":"PANAMA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":90,"IRGC_LIST":"O","VESSEL NAME":"SINBAD","IMO":"9413688","KINDS":"AFRAMAX","Owner":"SINBAD MARITIME SHIPPING SA","Owner Location":"UAE","Manager":"ANGLO-EASTERN TANKER MGMT-HKG","Flag":"LIBERIA","Class":"ABS","Iran Attack":"2026-09-29","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"145-26","Location":"Strait of Hormuz","Description":"A verified source has reported that a tanker transiting inbound has been struck by an unknown projectile."},{"NO":91,"IRGC_LIST":"O","VESSEL NAME":"AL DAAYEN","IMO":"9325702","KINDS":"LNG","Owner":"AL DAAYEN LLC","Owner Location":"UK","Manager":"SEAPEAK MARITIME LTD","Flag":"BAHAMAS","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":92,"IRGC_LIST":"O","VESSEL NAME":"OTTOMAN COURTESY","IMO":"9788708","KINDS":"SUEZMAX","Owner":"GUNGEN DENIZCILIK VE TICARET","Owner Location":"TURKEY","Manager":"GUNGEN DENIZCILIK VE TICARET","Flag":"TURKEY","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":93,"IRGC_LIST":"O","VESSEL NAME":"XING SHENG","IMO":"9384904","KINDS":"BULK","Owner":"XINGSHENG 01 SHIPPING LTD","Owner Location":"CHINA","Manager":"HONG KONG SEAMEN HOME MARITIME","Flag":"PANAMA","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":94,"IRGC_LIST":"O","VESSEL NAME":"AL RIQQA","IMO":"9534808","KINDS":"VLCC","Owner":"KUWAIT OIL TANKER","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER","Flag":"KUWAIT","Class":"NK","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":95,"IRGC_LIST":"O","VESSEL NAME":"AL KOUT","IMO":"9653434","KINDS":"VLCC","Owner":"KUWAIT OIL TANKER","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER","Flag":"KUWAIT","Class":"NK","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":96,"IRGC_LIST":"X","VESSEL NAME":"ST HELENA","IMO":"8716306","KINDS":"PASSENGER","Owner":"","Owner Location":"","Manager":"","Flag":"DJIBOUTI","Class":"","Iran Attack":"2026-09-14","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"135-26","Location":"Strait of Hormuz","Description":"(Attack, Indian Ocean) – Attack on Vessel, Strait of Hormuz. 14th Sept time late UKMTO report"},{"NO":97,"IRGC_LIST":"X","VESSEL NAME":"TREND","IMO":"9477177","KINDS":"SR","Owner":"SAIF SHIPS & BOATS TRADING LLC","Owner Location":"UAE","Manager":"VERITAL MARINE SERVICES LLC","Flag":"TOGO","Class":"LR","Iran Attack":"2026-09-18","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"138-26","Location":"Strait of Hormuz","Description":"tanker being hit by an unknown projectile causing a fire onboard which has since been extinguished. All crew are reported safe and environmental impact is unconfirmed at present."},{"NO":98,"IRGC_LIST":"O","VESSEL NAME":"LR STEPHANIE","IMO":"9282625","KINDS":"VLCC","Owner":"MARION SEAWAYS S.A.","Owner Location":"GREECE","Manager":"ROYAL MARINE S.A.","Flag":"ISLE OF MAN","Class":"NK","Iran Attack":"2026-09-21","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"140-26","Location":"Strait of Hormuz","Description":"Military authorities have informed UKMTO that a tanker conducting an inbound transit was struck by an unknown projectile. Two crew have sustained minor injuries and the vessel is reported to be continuing to its next port of call under its own power. There is no reported environmental impact at this time."},{"NO":99,"IRGC_LIST":"O","VESSEL NAME":"AL MARYAH","IMO":"9393682","KINDS":"LPG","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"DNV","Iran Attack":"2026-09-21","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"141-26","Location":"Strait of Hormuz","Description":"LPG tanker transiting outbound of Strait of Hormuz. A Master has reported an LPG tanker has been hit by debris from unknown projectiles. The Master reports all crew are safe and no environmental impact. The tanker will continue to its next port of call."},{"NO":100,"IRGC_LIST":"O","VESSEL NAME":"CAPE DAO","IMO":"9219020","KINDS":"BULK","Owner":"FORTHMARIN CORP LTD","Owner Location":"UAE","Manager":"PEONIES SHIPMANAGEMENT – FZE","Flag":"ANTIGUA & BARBUDA","Class":"RINA","Iran Attack":"2026-09-23","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"142-26","Location":"Strait of Hormuz","Description":"The Company Security Officer of a cargo vessel reports being stuck by an unknown projectile. The vessel is on fire and adrift. All crew have been evacuated with 2 casualties reported. Authorities are investigating. There is no reported environmental impact at this time."},{"NO":101,"IRGC_LIST":"O","VESSEL NAME":"AL SHMOUKH","IMO":"9726126","KINDS":"LPG","Owner":"AL SHUMOUKH INC","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":102,"IRGC_LIST":"O","VESSEL NAME":"ANNA-META","IMO":"9514406","KINDS":"BULK","Owner":"PROFIT MARITIME LIMITED","Owner Location":"GERMANY","Manager":"BLUMENTHAL ASIA PTE. LTD.","Flag":"LIBERIA","Class":"NK","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":104,"IRGC_LIST":"O","VESSEL NAME":"ALGERIA PROSPERITY","IMO":"9534042","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"EXECUTIVE SHIP MANAGEMENT","Flag":"LIBERIA","Class":"RINA","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":105,"IRGC_LIST":"O","VESSEL NAME":"OCEAN LOYALTY","IMO":"9375238","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"SYNERGY","Flag":"MARSHALL ISLAND","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":106,"IRGC_LIST":"O","VESSEL NAME":"AL FUNTAS","IMO":"9653408","KINDS":"VLCC","Owner":"KUWAIT OIL TANKER","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER","Flag":"KUWAIT","Class":"NK","Iran Attack":"2026-09-28","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"143-26","Location":"Strait of Hormuz, approx. 8nm off Limah, Oman","Description":"vessel struck by a suspected unknown projectile while transiting the Strait of Hormuz, resulting in a fire. The fire has since been extinguished and the vessel is underway. Crew are safe, there has been no reported environmental impact or damage assessment."},{"NO":107,"IRGC_LIST":"O","VESSEL NAME":"MERSIN PROSPERITY","IMO":"9327554","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-09-29","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"144-26","Location":"Strait of Hormuz","Description":"A verified source has reported that a crude oil tanker has been struck on the port side by an unknown projectile."},{"NO":108,"IRGC_LIST":"O","VESSEL NAME":"AL RUWAIS","IMO":"9828405","KINDS":"LR-II","Owner":"AL RUWAIS INC","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"LR","Iran Attack":"2026-09-29","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"146-26","Location":"Strait of Hormuz","Description":"A verified source has reported that a tanker has been struck by an unknown projectile."},{"NO":109,"IRGC_LIST":"O","VESSEL NAME":"KAZIMAH III","IMO":"9329693","KINDS":"VLCC","Owner":"KUWAIT OIL TANKER","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER","Flag":"KUWAIT","Class":"DNV","Iran Attack":"2026-10-01","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"147-26","Location":"Strait of Hormuz","Description":"a tanker being stuck by an unknown projectile while transiting the Strait of Hormuz, resulting in a fire. Crew have been reported safe, damage assessment and environmental impact is unknown at time of report."},{"NO":110,"IRGC_LIST":"O","VESSEL NAME":"GHANA PROSPERITY","IMO":"9732541","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"COLUMBIA SHIP MANAGEMENT","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-10-03","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"155-26","Location":"Strait of Hormuz (CP-D)","Description":"Vessel got hit on WBT 5S Listing to port ME ok and crew safe Another small boat around"},{"NO":111,"IRGC_LIST":"O","VESSEL NAME":"UHUD","IMO":"9254939","KINDS":"MR","Owner":"EMIRATES SHIPPING LLC","Owner Location":"UAE","Manager":"EMIRATES SHIPPING LLC","Flag":"PANAMA","Class":"DNV","Iran Attack":"2026-10-02","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"148-26","Location":"Strait of Hormuz","Description":"The vessel's master reported that a drone entered the ship's funnel and dropped into the engine room, causing a small fire and a short loss of power. All crew were reported safe. No environmental damage reported."},{"NO":112,"IRGC_LIST":"X","VESSEL NAME":"PROMISE","IMO":"1038896","KINDS":"VLCC","Owner":"DYNACOM TANKERS","Owner Location":"GREECE","Manager":"DYNACOM TANKERS MANAGEMENT LTD","Flag":"LIBERIA","Class":"LR","Iran Attack":"2026-10-02","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"149-26","Location":"Strait of Hormuz","Description":"It was struck on its port quarter by an unknown projectile while transiting outbound in the SOH. Impact resulted in immediate smoke coming from the engine room, in conjunction with a loss of power which necessitated emergency generator use. After briefly drifting, the vessel was able to continue its transit to Fujairah with assistance from a tug. Crew was reported safe. No environmental damage reported."},{"NO":113,"IRGC_LIST":"O","VESSEL NAME":"LIPSI","IMO":"1025033","KINDS":"LR-II","Owner":"DYNACOM TANKERS","Owner Location":"GREECE","Manager":"DYNACOM TANKERS MANAGEMENT LTD","Flag":"LIBERIA","Class":"","Iran Attack":"2026-10-03","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"150-26","Location":"Strait of Hormuz","Description":"A vessel was struck by an unknown projectile on its port quarter while transiting the SOH outbound. Vessel lost propulsion. Crew reported safe. No environment damage reported."},{"NO":114,"IRGC_LIST":"O","VESSEL NAME":"GAS VELA","IMO":"9969845","KINDS":"LPG","Owner":"HUIZHANG TIANJIN SHIPPING","Owner Location":"CHINA","Manager":"SINOGAS MARITIME LTD","Flag":"SINGAPORE","Class":"","Iran Attack":"2026-10-04","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"153-26","Location":"Strait of Hormuz","Description":"On 04 Oct the vessel was struck by a suspected UAV while transiting the SOH inbound. No crew injuries reported. The vessel was able to continue its voyage."},{"NO":115,"IRGC_LIST":"O","VESSEL NAME":"CAMEROON PROSPERITY","IMO":"9315159","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-10-04","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"154-26","Location":"Strait of Hormuz","Description":"04 Oct the vessel was struck by two unknown projectiles while transiting the SOH inbound IVO the Musandam Peninsula. No crew injuries reported."},{"NO":116,"IRGC_LIST":"X","VESSEL NAME":"ACERS","IMO":"9301902","KINDS":"MR","Owner":"VALVORIA SHIPPING LTD","Owner Location":"UAE","Manager":"CYMARE NAVIGATION FZC","Flag":"ANTIGUA & BARBUDA","Class":"BV","Iran Attack":"2026-10-07","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"158-26","Location":"Qatari coast (AG)","Description":"07 Oct the vessel was struck by three UAVs while transiting in the Central Arabian Gulf, approx. 51NM from the Qatari coast, igniting a fire in the engine room that was subsequently extinguished. One crew member injury reported. Vessel was able to continue its voyage."},{"NO":117,"IRGC_LIST":"O","VESSEL NAME":"GEM NO.2","IMO":"9735373","KINDS":"VLCC","Owner":"GEM NO 2 MARITIME CORP","Owner Location":"TAIWAN","Manager":"FLEET MANAGEMENT LTD-HKG","Flag":"PANAMA","Class":"ABS","Iran Attack":"2026-10-09","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"160-26","Location":"Arabian Gulf, at anchor in UAE TTW about 11-13 NM off the coast","Description":"At 1134 UTC on 9 October, a security company contacted UKMTO to report a possible attack on a vessel in the Arabian Gulf, at anchor about 11-13 NM off the coast of the UAE. UKMTO then conducted a welfare check, and a nearby vessel's master reported witnessing smoke coming from the vessel earlier reported as having been hit. That same evening, India's Minister of Ports, Shipping & Waterways also confirmed the attack and additionally reported that all Indian crew were safe."},{"NO":118,"IRGC_LIST":"O","VESSEL NAME":"VALTHERA","IMO":"9296389","KINDS":"LR-III","Owner":"TEEKAY MARINE SINGAPORE","Owner Location":"UAE","Manager":"CELERIS WAVECOURSE CORP","Flag":"MARSHALL ISLAND","Class":"LR","Iran Attack":"2026-10-10","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"162-26","Location":"Strait of Hormuz","Description":"UKMTO received a report from the master of an outbound tanker being hit by an unknown projectile on the port side, causing a fire. The fire has now been extinguished, a damage assessment is to be conducted, and the vessel no longer requires assistance. The crew are safe, and the vessel is awaiting its next orders."},{"NO":119,"IRGC_LIST":"O","VESSEL NAME":"PETRO DOLPHIN","IMO":"1072294","KINDS":"SR","Owner":"HITECH INFINITY PETROLEUM FZC","Owner Location":"UAE","Manager":"HITECH INFINITY PETROLEUM FZC","Flag":"NICARAGUA","Class":"","Iran Attack":"2026-10-11","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"165-26","Location":"IVO anchorage Sohar, Oman","Description":"On 11 Oct a products tanker, identified by the IMO as the PETRO DOLPHIN, was struck by a UAV leading to the evacuation of the crew. Indian Ministry of External Affairs reported that two crew members were missing. NAVAREA IX 372/26 reported that as of 14 Oct the vessel was drifting approx. 50 NM northeast of Sohar port."},{"NO":120,"IRGC_LIST":"X","VESSEL NAME":"AL MAQAM","IMO":"9732577","KINDS":"VLCC","Owner":"ADNOC GROUP","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"ABS","Iran Attack":"2026-10-11","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"166-26","Location":"Strait of Hormuz","Description":"On 11 Oct a tanker, identified by the IMO as AL MAQAM, was struck by an unknown projectile while transiting the SOH outbound. No crew injuries reported. Vessel damage and environmental impact unknown."},{"NO":121,"IRGC_LIST":"X","VESSEL NAME":"DP WORLD KAVERI","IMO":"9363429","KINDS":"CONTAINER","Owner":"TRANSWORLD SHIPPING LINES LTD","Owner Location":"INDIA","Manager":"TW SHIP MANAGEMENT PVT LTD","Flag":"INDIA","Class":"","Iran Attack":"2026-10-11","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"167-26","Location":"Strait of Hormuz","Description":"On 11 Oct a container ship, identified by the IMO as the DP WORLD KAVERI, was struck by an unknown projectile while transiting the SOH inbound. One minor crew injury reported. Vessel was able to continue its voyage. No environmental damage reported."},{"NO":122,"IRGC_LIST":"O","VESSEL NAME":"KITION M","IMO":"9321160","KINDS":"LR-I","Owner":"BENETECH SHIPPING SA","Owner Location":"GREECE","Manager":"BENETECH SHIPPING SA","Flag":"PANAMA","Class":"BV","Iran Attack":"2026-10-11","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"168-26","Location":"Strait of Hormuz","Description":"11 Oct a products tanker, identified by the IMO as the KITION M, was struck by an unknown projectile while transiting the SOH outbound. Vessel was able to continue its voyage. Reports of environmental damage unconfirmed."},{"NO":123,"IRGC_LIST":"O","VESSEL NAME":"EVER VICT","IMO":"9266774","KINDS":"LR-I","Owner":"EASTWIND MARINE SERVICES CO","Owner Location":"TAIWAN","Manager":"EASTWIND MARINE SERVICES CO","Flag":"BAHAMAS","Class":"NK","Iran Attack":"2026-10-11","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"169-26","Location":"Strait of Hormuz","Description":"On 11 Oct a crude oil tanker, identified by the IMO as the EVER VICT, was struck by an unknown projectile while transiting the SOH outbound. Reports of crew injuries unconfirmed. Vessel self-reported as not under command."},{"NO":124,"IRGC_LIST":"O","VESSEL NAME":"GFS PRIDE","IMO":"9349045","KINDS":"CONTAINER","Owner":"GFS / UAE PRIVATE OWNERSHIP","Owner Location":"UAE","Manager":"GFS SHIP MANAGEMENT FZE","Flag":"SINGAPORE","Class":"KR","Iran Attack":"2026-10-13","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"170-26","Location":"Strait of Hormuz","Description":"On 13 Oct a vessel, identified by the IMO as the GFS PRIDE, was struck by an unknown projectile while transiting the SOH outbound. NAVAREA IX 373/26 reported the vessel sank resulting in floating container debris, approx. 4 NM northwest of Ras Shaykh Masud. All crew evacuated with no injuries. Status of vessel debris, cargo and environmental pollution unconfirmed."},{"NO":125,"IRGC_LIST":"O","VESSEL NAME":"GFS GISELLE","IMO":"9704661","KINDS":"CONTAINER","Owner":"GFS / UAE PRIVATE OWNERSHIP","Owner Location":"UAE","Manager":"GFS SHIP MANAGEMENT FZE","Flag":"SINGAPORE","Class":"DNV","Iran Attack":"2026-10-13","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"172-26","Location":"Strait of Hormuz","Description":"A report that on 13 Oct a container ship, identified by the IMO as the GFS GISELLE, was struck by an unknown projectile while transiting the SOH inbound. Minor damage reported but the vessel continued its voyage. No crew injuries or environmental impact reported."},{"NO":126,"IRGC_LIST":"X","VESSEL NAME":"AL SAADIYAT","IMO":"9760598","KINDS":"CONTAINER","Owner":"GFS / UAE PRIVATE OWNERSHIP","Owner Location":"UAE","Manager":"GFS SHIP MANAGEMENT FZE","Flag":"MARSHALL ISLAND","Class":"DNV","Iran Attack":"2026-10-13","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"173-26","Location":"Strait of Hormuz","Description":"A report that on 13 Oct a container ship, identified by the IMO as the AL SAADIYAT, was struck by an unknown projectile while transiting the SOH outbound. Minor damage reported but the vessel continued its voyage. No crew injuries or environmental impact reported."},{"NO":127,"IRGC_LIST":"O","VESSEL NAME":"MARAN GAS MYSTRAS","IMO":"9658238","KINDS":"LNG","Owner":"Blueskies Shipping Company Ltd.","Owner Location":"GREECE","Manager":"Maran Gas Maritime","Flag":"GREECE","Class":"LR","Iran Attack":"2026-10-05","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"156-26","Location":"Strait of Hormuz","Description":"On 05 Oct the vessel was struck by an unknown projectile while transiting the SOH outbound. Fire ignited in the engine room and was subsequently extinguished. No crew injuries reported. The vessel was able to continue its voyage."},{"NO":128,"IRGC_LIST":"O","VESSEL NAME":"ST1","IMO":"9256999","KINDS":"VLCC","Owner":"HORIZON SHIPPING LTD","Owner Location":"UAE","Manager":"NOATUM CSM FZCO","Flag":"MARSHALL ISLAND","Class":"DNV","Iran Attack":"2026-10-06","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"159-26","Location":"Strait of Hormuz","Description":"On 06 Oct, the vessel was struck by an unknown projectile in the port aft quarter, causing the vessel to lose power. There were no casualties or injuries reported. The vessel is en route to Ras Al Khaimah with tug assistance."},{"NO":129,"IRGC_LIST":"O","VESSEL NAME":"ANGOLA PROSPERITY","IMO":"9896414","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"COLUMBIA SHIP MANAGEMENT","Flag":"LIBERIA","Class":"BV","Iran Attack":"2026-10-11","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"164-26","Location":"Strait of Hormuz","Description":"Vessel had been hit by an unknown projectile. The vessel has been struck on the port side and sustained damage to the steering gear room and port side water tank. There is no visible fire. The crew are safe and well with no injuries sustained. The vessel is now proceeding to Fujairah anchorage."},{"NO":130,"IRGC_LIST":"","VESSEL NAME":"UNKNOWN","IMO":"UNKNOWN","KINDS":"","Owner":"","Owner Location":"","Manager":"","Flag":"","Class":"","Iran Attack":"2026-10-13","INCIDENT TYPE":"IRAN ATTACK","UKMTO":"171-26","Location":"Strait of Hormuz","Description":"Report that on 13 Oct a tanker was struck by an unknown projectile while transiting the SOH outbound. Vessel was able to continue its voyage. No crew injuries reported."},{"NO":131,"IRGC_LIST":"O","VESSEL NAME":"MINOAN GLORY","IMO":"9364447","KINDS":"BULK","Owner":"OSTRIA NAVIGATION SA","Owner Location":"GREECE","Manager":"MODION MARITIME MANAGEMENT SA","Flag":"LIBERIA","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":132,"IRGC_LIST":"O","VESSEL NAME":"AL SALAM","IMO":"9923085","KINDS":"LPG","Owner":"ADNOC LOGISTICS & SERVICES","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":133,"IRGC_LIST":"O","VESSEL NAME":"GAS AL AHMADIAH","IMO":"9849629","KINDS":"LPG","Owner":"KUWAIT OIL TANKER COMPANY S.A.K.","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER COMPANY S.A.K.","Flag":"KUWAIT","Class":"NK","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":134,"IRGC_LIST":"O","VESSEL NAME":"ROMANIA PROSPERITY","IMO":"9315161","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":135,"IRGC_LIST":"O","VESSEL NAME":"AL YAMAMAH","IMO":"9856696","KINDS":"MR","Owner":"KUWAIT OIL TANKER CO SAK","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER COMPANY S.A.K.","Flag":"KUWAIT","Class":"LR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":136,"IRGC_LIST":"O","VESSEL NAME":"GAS AL NEGEH","IMO":"9329722","KINDS":"LPG","Owner":"KUWAIT OIL TANKER COMPANY S.A.K.","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER COMPANY S.A.K.","Flag":"KUWAIT","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":137,"IRGC_LIST":"O","VESSEL NAME":"NISSOS KYTHNOS","IMO":"9853852","KINDS":"VLCC","Owner":"ANASSA NAVIGATION SA","Owner Location":"GREECE","Manager":"KYKLADES MARITIME CORP.","Flag":"MARSHALL ISLAND","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":138,"IRGC_LIST":"O","VESSEL NAME":"BAHRA","IMO":"9595008","KINDS":"CRUDE","Owner":"KUWAIT OIL TANKER CO SAK","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER COMPANY S.A.K.","Flag":"KUWAIT","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":139,"IRGC_LIST":"O","VESSEL NAME":"AL SOOR II","IMO":"9329784","KINDS":"LR-II","Owner":"","Owner Location":"","Manager":"","Flag":"KUWAIT","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":140,"IRGC_LIST":"O","VESSEL NAME":"NISSOS DESPOTIKO","IMO":"9845697","KINDS":"VLCC","Owner":"OMEGA SEVEN MARINE CORP","Owner Location":"GREECE","Manager":"KYKLADES MARITIME CORP.","Flag":"MARSHALL ISLAND","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":141,"IRGC_LIST":"O","VESSEL NAME":"GAS UMM AL ROWAISAT","IMO":"9849631","KINDS":"LPG","Owner":"KUWAIT OIL TANKER COMPANY S.A.K.","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER COMPANY S.A.K.","Flag":"KUWAIT","Class":"NK","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":142,"IRGC_LIST":"O","VESSEL NAME":"UMM AL AISH","IMO":"9534781","KINDS":"VLCC","Owner":"KUWAIT OIL TANKER COMPANY S.A.K.","Owner Location":"KUWAIT","Manager":"KUWAIT OIL TANKER COMPANY S.A.K.","Flag":"KUWAIT","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":143,"IRGC_LIST":"O","VESSEL NAME":"SAMOA PROSPERITY","IMO":"9294575","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"EXECUTIVE SHIP MANAGEMENT","Flag":"LIBERIA","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":144,"IRGC_LIST":"O","VESSEL NAME":"DAS","IMO":"9854507","KINDS":"VLCC","Owner":"ADNOC LOGISTICS & SERVICES","Owner Location":"UAE","Manager":"ADNOC LOGISTICS & SERVICES","Flag":"LIBERIA","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":145,"IRGC_LIST":"O","VESSEL NAME":"NISSOS KEROS","IMO":"9856074","KINDS":"VLCC","Owner":"ARETHUSA SHIPPING CORP.","Owner Location":"GREECE","Manager":"KYKLADES MARITIME CORP.","Flag":"MARSHALL ISLAND","Class":"ABS","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":146,"IRGC_LIST":"O","VESSEL NAME":"QASBA","IMO":"9853589","KINDS":"VLCC","Owner":"NATIONAL SHIPPING COMPANY OF SAUDI ARABIA (BAHRI)","Owner Location":"","Manager":"BAHRI SHIP MANAGEMENT DMCC","Flag":"SAUDI ARABIA","Class":"DNV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":147,"IRGC_LIST":"O","VESSEL NAME":"OCEAN MOLICA","IMO":"9139270","KINDS":"BULK","Owner":"WESTERN BULK SHIPPING CO LTD","Owner Location":"","Manager":"WESTERN BULK SHIPPING CO LTD","Flag":"PANAMA","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":148,"IRGC_LIST":"O","VESSEL NAME":"SINGAPORE ENERGY","IMO":"9534846","KINDS":"VLCC","Owner":"SINOKOR GROUP","Owner Location":"KOREA","Manager":"FLEET SHIP MANAGEMENT","Flag":"LIBERIA","Class":"BV","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":149,"IRGC_LIST":"O","VESSEL NAME":"SAFEEN PRESTIGE","IMO":"9593517","KINDS":"CONTAINER","Owner":"TRANSMAR INTERNATIONAL SHPG","Owner Location":"","Manager":"GFS SHIP MANAGEMENT FZE","Flag":"MALTA","Class":"","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""},{"NO":150,"IRGC_LIST":"O","VESSEL NAME":"NV SUNSHINE","IMO":"9350288","KINDS":"LPG","Owner":"NHAT VIET TRANSPORTATION CORP","Owner Location":"VIETNAM","Manager":"NHAT VIET TRANSPORTATION CORP","Flag":"VIETNAM","Class":"KR","Iran Attack":"","INCIDENT TYPE":"","UKMTO":"","Location":"","Description":""}];
+
+  const IRGC_CHIPS = { O: { cls: 'chip-good', label: 'O' }, X: { cls: 'chip-neutral', label: 'X' } };
+  const INCIDENT_CHIPS = {
+    'IRAN ATTACK': { cls: 'chip-danger', label: 'IRAN ATTACK' },
+    'US DISABLING': { cls: 'chip-info', label: 'US DISABLING' }
+  };
 
   const COLUMNS = [
-    { key: 'NO', label: 'No.', mono: true, numeric: true, width: '3%' },
-    { key: 'VESSEL NAME', label: 'Vessel Name', name: true, width: '9%' },
-    { key: 'IMO', label: 'IMO', mono: true, numeric: true, width: '6%' },
+    { key: 'NO', label: 'No.', mono: true, numeric: true, right: true, width: '3%' },
+    { key: 'IRGC_LIST', label: 'IRGC 공식 LIST', chips: IRGC_CHIPS, width: '3%' },
+    { key: 'VESSEL NAME', label: 'Vessel Name', name: true, width: '10%' },
+    { key: 'IMO', label: 'IMO', mono: true, numeric: true, right: true, width: '6%' },
     { key: 'KINDS', label: 'Kind', width: '5%' },
-    { key: 'Owner', label: 'Owner', wrap: true, width: '10%' },
-    { key: 'Owner Location', label: 'Owner Location', width: '6%' },
-    { key: 'Manager', label: 'Manager', wrap: true, width: '10%' },
+    { key: 'Owner', label: 'Owner', wrap: true, width: '12%' },
+    { key: 'Owner Location', label: 'Owner Location', width: '7%' },
+    { key: 'Manager', label: 'Manager', wrap: true, width: '11%' },
     { key: 'Flag', label: 'Flag', width: '6%' },
     { key: 'Class', label: 'Class', mono: true, width: '4%' },
-    { key: 'Iran Attack', label: 'Iran Attack', attack: true, width: '8%' },
-    { key: 'Location', label: 'Location', wrap: true, width: '11%' },
-    { key: 'Description', label: 'Description', wrap: true, width: '16%' }
+    { key: 'Iran Attack', label: 'Attacked Date', attack: true, width: '8%' },
+    { key: 'INCIDENT TYPE', label: 'Incident Type', chips: INCIDENT_CHIPS, width: '6%' },
+    { key: 'UKMTO', label: 'UKMTO', mono: true, width: '5%' },
+    { key: 'Location', label: 'Location', wrap: true, width: '9%' },
+    { key: 'Description', label: 'Description', wrap: true, desc: true, width: '8%' }
   ];
-
-  const ACTIONS_WIDTH = '6%';
-
-  const SEED_DATA = [{"NO": 1, "VESSEL NAME": "KIKU", "IMO": 9329796, "KINDS": "VLCC", "Owner": "PRIMA ENERGY LTD", "Owner Location": "GREECE", "Manager": "APEX SHIPPING & ENERGY LTD", "Flag": "PANAMA", "Class": "NK", "Iran Attack": "2026-06-27", "Location": "8NM off Oman", "Description": "Damaged. No Pollution."}, {"NO": 6, "VESSEL NAME": "AL REKAYYAT", "IMO": 9397339, "KINDS": "LNG", "Owner": "NAKILAT SHIPPING QATAR", "Owner Location": "QATAR", "Manager": "NAKILAT SHIPPING QATAR LTD", "Flag": "MARSHALL ISLAND", "Class": "DNV", "Iran Attack": "2026-07-06", "Location": "8NM east of Limah, Oman", "Description": "Damaged. No Pollution"}, {"NO": 7, "VESSEL NAME": "WEDYAN", "IMO": 9524970, "KINDS": "VLCC", "Owner": "BAHRI GROUP", "Owner Location": "SAUDI ARABIA", "Manager": "BAHRI SHIP MANAGEMENT DMCC", "Flag": "SAUDI ARABIA", "Class": "LR", "Iran Attack": "2026-07-06", "Location": "16NM east of Khor Fakkan, UAE", "Description": "Damaged. No pollution. No injuries."}, {"NO": 8, "VESSEL NAME": "CYPRUS PROSPERITY", "IMO": 9595216, "KINDS": "VLCC", "Owner": "SINOKOR GROUP", "Owner Location": "KOREA", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "BV", "Iran Attack": "2026-07-07", "Location": "6NM east of Musandam Peninsula, Oman", "Description": "Damaged. No pollution. No injuries."}, {"NO": 14, "VESSEL NAME": "GFS GALAXY", "IMO": 9401271, "KINDS": "CONTAINER", "Owner": "GFS / UAE PRIVATE OWNERSHIP", "Owner Location": "UAE", "Manager": "GFS SHIP MANAGEMENT FZE", "Flag": "CYPRUS", "Class": "DNV", "Iran Attack": "2026-07-11", "Location": "9NM east of Oman", "Description": "Damaged. No pollution. One seafarer fatality."}, {"NO": 17, "VESSEL NAME": "STOLT MAGNESIUM", "IMO": 9739317, "KINDS": "CHEMICAL", "Owner": "STOLT-NIELSEN GROUP", "Owner Location": "NETHERLANDS", "Manager": "STOLT TANKERS BV", "Flag": "LIBERIA", "Class": "LR", "Iran Attack": "2026-07-13", "Location": "40 NM from the coast of Oman", "Description": "Damaged.  No pollution."}, {"NO": 15, "VESSEL NAME": "AL BAHYAH", "IMO": 9937799, "KINDS": "VLCC", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "LR", "Iran Attack": "2026-07-14", "Location": "13 NM from the coast of Oman", "Description": "Damaged. No pollution. One seafarer fatality. Three seafarers injured."}, {"NO": 16, "VESSEL NAME": "MOMBASA B", "IMO": 9739501, "KINDS": "VLCC", "Owner": "SINOKOR GROUP", "Owner Location": "KOREA", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "BV", "Iran Attack": "2026-07-14", "Location": "13 NM from the coast of Oman", "Description": "Damaged. No pollution. Abandoned. Eleven seafarers injured."}, {"NO": 30, "VESSEL NAME": "KAVOMALEAS", "IMO": 1042823, "KINDS": "LR1", "Owner": "DYNACOM GROUPO", "Owner Location": "GREECE", "Manager": "DYNACOM TANKER MANAGEMENT", "Flag": "MALTA", "Class": null, "Iran Attack": "2026-07-19", "Location": "8NM northwest of Kumzar, Oman", "Description": "Damaged. No pollution. Abandoned."}, {"NO": 34, "VESSEL NAME": "KAIFAN", "IMO": 9656046, "KINDS": "MR", "Owner": "KUWAIT OIL TANKER", "Owner Location": "KUWAIT", "Manager": "KUWAIT OIL TANKER", "Flag": "KUWAIT", "Class": "NK", "Iran Attack": "2026-07-20", "Location": "8NM northeast of Limah, Oman", "Description": "Damaged. Abandoned. Two seafarers injured."}, {"NO": 22, "VESSEL NAME": "GASLOG SHANGHAI", "IMO": 9600528, "KINDS": "LNG", "Owner": "GASLOG GROUP", "Owner Location": "GREECE", "Manager": "GASLOG LNG SERVICES LTD.", "Flag": "BERMUDA", "Class": "ABS", "Iran Attack": "2026-07-31", "Location": "11NM northeast of Lima, Oman", "Description": "Damaged. No pollution."}, {"NO": 3, "VESSEL NAME": "MINOAN PIONEER", "IMO": 9471630, "KINDS": "BULK", "Owner": "BOTTIGLIERI / ITALIAN-GREEK PRIVATE", "Owner Location": "GREECE", "Manager": "MODION MARTIME MANAGEMENT SA", "Flag": "LIBERIA", "Class": "RINA", "Iran Attack": "2026-08-03", "Location": "20NM northeast of  Al Khasab, Oman", "Description": "Damaged. Pollution unconfirmed. One seafarer missing."}, {"NO": 19, "VESSEL NAME": "NAVIG8 MESSI", "IMO": 9482859, "KINDS": "LR1", "Owner": "NAVIG8 GROUP (STOCK BY ADNOC 80%)", "Owner Location": "UK", "Manager": "NAVIG8 ASIA PTE LTD", "Flag": "SINGAPORE", "Class": "KR", "Iran Attack": "2026-08-13", "Location": "Strait of Hormuz Outbound Transit", "Description": "Damaged. No pollution."}, {"NO": 18, "VESSEL NAME": "AL WATAN", "IMO": 9615030, "KINDS": "BULK", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "NK", "Iran Attack": "2026-08-14", "Location": "Strait of Hormuz", "Description": "Damaged. No pollution."}, {"NO": 28, "VESSEL NAME": "MINOAN DIGNITY", "IMO": 9294484, "KINDS": "BULK", "Owner": "GREEK PRIVATE OWNERSHIP", "Owner Location": "GREECE", "Manager": "ASANTE MANAGEMENT", "Flag": "LIBERIA", "Class": "KR", "Iran Attack": "2026-08-17", "Location": "Strait of Hormuz", "Description": "Damaged. No pollution. One seafarer fatality."}, {"NO": 2, "VESSEL NAME": "MUBARAZ", "IMO": 9074626, "KINDS": "LNG", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 4, "VESSEL NAME": "VADIN (LILA VADINAR)", "IMO": 9324100, "KINDS": "VLCC", "Owner": "RFK SHIPPING IFSC PVT LTD", "Owner Location": "INDIA", "Manager": "SYNERGY OCEANIC SERVICES INDIA", "Flag": "ANTIGUA AND BARBUDA", "Class": "IRS", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 5, "VESSEL NAME": "HAFEET", "IMO": 9928009, "KINDS": "VLCC", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 9, "VESSEL NAME": "AL RAWDAH", "IMO": 9734513, "KINDS": "LPG", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 10, "VESSEL NAME": "RASHEEDA", "IMO": 9443413, "KINDS": "LNG", "Owner": "NAKILAT SHIPPING QATAR", "Owner Location": "QATAR", "Manager": "STASCO / QATARGAS LIQUEFIED GAS CO LTD", "Flag": "OMAN", "Class": "ABS", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 11, "VESSEL NAME": "LEBRETHAH", "IMO": 9976927, "KINDS": "LNG", "Owner": "SK SHIPPING", "Owner Location": "KOREA", "Manager": "SK SHIPPING CO LTD-KRS", "Flag": "LIBERIA", "Class": "KR/BV", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 12, "VESSEL NAME": "", "IMO": 9324100, "KINDS": "VLCC", "Owner": "RFK SHIPPING IFSC PVT LTD", "Owner Location": "INDIA", "Manager": "SYNERGY OCEANIC SERVICES INDIA", "Flag": "ANTIGUA AND BARBUDA", "Class": "IRS", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 13, "VESSEL NAME": "MAHA ROOS", "IMO": 9231004, "KINDS": "BULK", "Owner": "B.G. SHIRKE GROUP", "Owner Location": "INDIA", "Manager": "FIVE STARTS SHIPPING", "Flag": "INDIA", "Class": "IRS", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 20, "VESSEL NAME": "SINGAPORE PROSPERITY", "IMO": 9419967, "KINDS": "VLCC", "Owner": "SINOKOR GROUP", "Owner Location": "KOREA", "Manager": "COLUMBIA SHIP MANAGEMENT", "Flag": "LIBERIA", "Class": "BV", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 21, "VESSEL NAME": "DISHA", "IMO": 9250713, "KINDS": "LNG", "Owner": "SCI / INDIA LNG CONSORTIUM", "Owner Location": "INDIA", "Manager": "SHIPPING CORP. OF INDIA", "Flag": "MALTA", "Class": "IRS", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 23, "VESSEL NAME": "LUBNA", "IMO": 9489065, "KINDS": "MR", "Owner": "BAHRI GROUP", "Owner Location": "SAUDI ARABIA", "Manager": "SYNERGY MIDEAST SHIP MGMT DMCC", "Flag": "MARSHALL ISLAND", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 24, "VESSEL NAME": "HAZI 1", "IMO": 7802598, "KINDS": "OFFSHORE SUPPLY", "Owner": "UNDISCLOSED", "Owner Location": null, "Manager": null, "Flag": "MALI", "Class": null, "Iran Attack": null, "Location": null, "Description": null}, {"NO": 25, "VESSEL NAME": "RYUJIN", "IMO": 8206818, "KINDS": "TUG", "Owner": "UNDISCLOSED", "Owner Location": null, "Manager": null, "Flag": "NICARAGUA", "Class": null, "Iran Attack": null, "Location": null, "Description": null}, {"NO": 26, "VESSEL NAME": "ANNA BARBARA", "IMO": 9407500, "KINDS": "BULK", "Owner": "BLUMENTHAL GROUP", "Owner Location": "GERMANY", "Manager": "BLUEMENTHAL ASIA PTE. LTD.", "Flag": "LIBERIA", "Class": "NK", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 27, "VESSEL NAME": "SUNBIRD ARROW", "IMO": 9323821, "KINDS": "ASPHALT", "Owner": "NIPPON / GEARBULK", "Owner Location": "NORWAY", "Manager": "GEARBULK / SUNTECH", "Flag": "MARSHALL ISLAND", "Class": "DNV", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 29, "VESSEL NAME": "MARIA", "IMO": 9917828, "KINDS": "CHEMICAL", "Owner": "BAHRI GROUP", "Owner Location": "SAUDI ARABIA", "Manager": "BAHRI SHIP MANAGEMENT DMCC", "Flag": "SAUDI ARABIA", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 31, "VESSEL NAME": "MARDAN", "IMO": 9360453, "KINDS": "LR2", "Owner": "PAKISTAN GOVERNMENT", "Owner Location": "PAKISTAN", "Manager": "PAKISTAN NATIONAL SHIPPING CORP.", "Flag": "PAKISTAN", "Class": "ABS", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 32, "VESSEL NAME": "SWEDEN PROSPERITY", "IMO": 9588392, "KINDS": "VLCC", "Owner": "SINOKOR", "Owner Location": "KOREA", "Manager": "COLUMBIA SHIP MANAGEMENT", "Flag": "LIBERIA", "Class": "BV", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 33, "VESSEL NAME": "JARNAIN", "IMO": 9823546, "KINDS": "LR2", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "DNV", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 35, "VESSEL NAME": "NISSOS KEA", "IMO": 9920758, "KINDS": "VLCC", "Owner": "KYKLADES / GREEK PRIVATE OWNERSHIP", "Owner Location": "GREECE", "Manager": "KYKLADES MARITIME CORP", "Flag": "MARSHALL ISLAND", "Class": null, "Iran Attack": null, "Location": null, "Description": null}, {"NO": 36, "VESSEL NAME": "ROTTERDAM ENERGY", "IMO": 9508859, "KINDS": "VLCC", "Owner": "SINOKOR", "Owner Location": "KOREA", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "BV", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 37, "VESSEL NAME": "AL HAMRA", "IMO": 9074640, "KINDS": "LNG", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 38, "VESSEL NAME": "UMM AL ASHTAN", "IMO": 9074652, "KINDS": "LNG", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 39, "VESSEL NAME": "MARIGOLD LNG", "IMO": 9230062, "KINDS": "LNG", "Owner": "UAE PRIVATE / MARIGOLD LNG", "Owner Location": "UAE", "Manager": "KRATOS GAS TRANSPORT LLC", "Flag": "MARSHALL ISLAND", "Class": "DNV", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 40, "VESSEL NAME": "BANASTAR", "IMO": 9228045, "KINDS": "BULK", "Owner": "KLAVENESS GROUP", "Owner Location": "NORWAY", "Manager": "KLAVENESS SHIP MANAGEMENT", "Flag": "MARSHALL ISLAND", "Class": "DNV", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 41, "VESSEL NAME": "NAVARA", "IMO": 9241798, "KINDS": "MR", "Owner": "ARGONEVIS / GREEK PRIVATE OWNERSHIP", "Owner Location": "GREECE", "Manager": "ARGONEVIS MARINE SERVICES", "Flag": "BARBADOS", "Class": "ABS", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 42, "VESSEL NAME": "NISSOS HERACLEA", "IMO": 9419618, "KINDS": "VLCC", "Owner": "KYKLADES / GREEK PRIVATE OWNERSHIP", "Owner Location": "GREECE", "Manager": "KYKLADES MARITIME CORP", "Flag": "LIBERIA", "Class": "ABS", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 43, "VESSEL NAME": "BLUE STAR I", "IMO": 9215115, "KINDS": "SR", "Owner": "UAE / ALFA ALSHARQ", "Owner Location": "UAE", "Manager": "ALFA ALSHARQ FOR REFINED OIL", "Flag": "MARSHALL ISLAND", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 44, "VESSEL NAME": "ASHLEY", "IMO": 9258466, "KINDS": "LR1", "Owner": "UAE PRIVATE OWNERSHIP", "Owner Location": "UAE", "Manager": "NAVIGATOR LINE SM & OPS LLC", "Flag": "ANTIGUA AND BARBUDA", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 45, "VESSEL NAME": "MRAWETH", "IMO": 9074638, "KINDS": "LNG", "Owner": "ADNOC GROUP", "Owner Location": "UAE", "Manager": "ADNOC LOGISTICS & SERVICES", "Flag": "LIBERIA", "Class": "LR", "Iran Attack": null, "Location": null, "Description": null}, {"NO": 46, "VESSEL NAME": "AL LULU", "IMO": 9583627, "KINDS": "LNG", "Owner": "SAFEEN GROUP", "Owner Location": "UAE", "Manager": "NOATUM CSM FZCO", "Flag": "MARSHALL ISLAND", "Class": "BV", "Iran Attack": null, "Location": null, "Description": null}];
 
   let state = {
     vessels: [],
     query: '',
-    filters: { kind: '', flag: '', attack: '' },
+    filters: { irgc: '', kind: '', flag: '', attack: '' },
     sort: { key: null, dir: 'asc' },
-    editingId: null,
-    confirmDeleteId: null
+    expandedDesc: new Set()
   };
-
-  function withIds(list) {
-    return list.map((v, i) => ({ ...v, _id: 'seed-' + i }));
-  }
-
-  function load() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed) && parsed.length) return parsed;
-      }
-    } catch (e) {}
-    return withIds(SEED_DATA);
-  }
-
-  function persist() {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.vessels)); } catch (e) {}
-  }
-
-  function nextNo() {
-    const nums = state.vessels.map(v => Number(v.NO)).filter(n => !isNaN(n));
-    return nums.length ? Math.max(...nums) + 1 : 1;
-  }
-
-  function makeId() {
-    return 'v' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-  }
 
   function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
@@ -664,6 +642,7 @@
 
   function matchesFilters(v) {
     const f = state.filters;
+    if (f.irgc && v['IRGC_LIST'] !== f.irgc) return false;
     if (f.kind && v['KINDS'] !== f.kind) return false;
     if (f.flag && v['Flag'] !== f.flag) return false;
     if (f.attack === 'attacked' && !v['Iran Attack']) return false;
@@ -689,9 +668,6 @@
       kinds.map(k => `<option value="${escapeHtml(k)}">${escapeHtml(k)}</option>`).join('');
     flagSel.innerHTML = '<option value="">All Flags</option>' +
       flags.map(f => `<option value="${escapeHtml(f)}">${escapeHtml(f)}</option>`).join('');
-
-    kindSel.value = state.filters.kind;
-    flagSel.value = state.filters.flag;
   }
 
   function renderHeader() {
@@ -700,7 +676,7 @@
       const active = state.sort.key === c.key;
       const arrow = active ? (state.sort.dir === 'asc' ? '▲' : '▼') : '';
       return `<th style="width:${c.width}" class="sortable${active ? ' sorted' : ''}" data-sort-key="${escapeHtml(c.key)}">${escapeHtml(c.label)}${arrow ? ` <span class="sort-arrow">${arrow}</span>` : ''}</th>`;
-    }).join('') + `<th style="width:${ACTIONS_WIDTH}; text-align:right;">Actions</th>`;
+    }).join('');
 
     row.querySelectorAll('th.sortable').forEach(th => {
       th.addEventListener('click', () => {
@@ -730,6 +706,8 @@
 
   function renderTable() {
     const tbody = document.getElementById('tableBody');
+    const emptyEl = document.getElementById('emptyState');
+
     const q = state.query.trim().toLowerCase();
     let filtered = state.vessels.filter(v => matchesQuery(v, q));
 
@@ -746,112 +724,74 @@
     document.getElementById('attackCount').textContent =
       state.vessels.filter(v => v['Iran Attack']).length;
     const f = state.filters;
-    const filtersActive = q || f.kind || f.flag || f.attack;
+    const filtersActive = q || f.irgc || f.kind || f.flag || f.attack;
     document.getElementById('resultCount').textContent =
       filtersActive ? `${filtered.length} of ${state.vessels.length} shown` : '';
-    document.getElementById('emptyState').style.display = filtered.length ? 'none' : 'block';
+    emptyEl.textContent = 'No vessels match your search.';
+    emptyEl.style.display = filtered.length ? 'none' : 'block';
 
-    tbody.innerHTML = filtered.map(v => rowHtml(v)).join('');
+    tbody.innerHTML = filtered.map((v, idx) => rowHtml(v, idx + 1)).join('');
+
+    tbody.querySelectorAll('td.desc-cell:not(.expanded) .desc-text').forEach(el => {
+      if (el.scrollHeight > el.clientHeight + 1) {
+        el.closest('td.desc-cell').classList.add('clamped');
+      }
+    });
   }
 
-  function rowHtml(v) {
-    const isEditing = state.editingId === v._id;
-    const isConfirming = state.confirmDeleteId === v._id;
+  function iconWarn() {
+    return `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>`;
+  }
 
-    if (isEditing) {
-      const cells = COLUMNS.map(c => {
-        const val = v[c.key] == null ? '' : v[c.key];
-        return `<td><input type="text" data-field="${escapeHtml(c.key)}" value="${escapeHtml(val)}"></td>`;
-      }).join('');
-      return `<tr class="editing" data-id="${v._id}">${cells}
-        <td class="actions-cell">
-          <button class="icon-btn row-save" title="Save" data-action="save">${iconCheck()}</button>
-          <button class="icon-btn" title="Cancel" data-action="cancel-edit">${iconX()}</button>
-        </td>
-      </tr>`;
-    }
-
+  function rowHtml(v, displayNo) {
     const cells = COLUMNS.map(c => {
       const val = v[c.key];
       const empty = val === null || val === undefined || val === '';
+
+      if (c.key === 'NO') {
+        return `<td class="mono cell-right">${displayNo}</td>`;
+      }
 
       if (c.attack) {
         return `<td>${empty ? '<span class="empty-val">—</span>' : `<span class="attack-pill">${iconWarn()}${escapeHtml(val)}</span>`}</td>`;
       }
 
-      const cls = [c.mono ? 'mono' : '', c.name ? 'name-cell' : '', c.wrap ? 'wrap-cell' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
+      if (c.chips) {
+        const chip = c.chips[val];
+        if (!chip) return `<td class="empty-val">${empty ? '—' : escapeHtml(val)}</td>`;
+        return `<td><span class="chip ${chip.cls}">${escapeHtml(chip.label)}</span></td>`;
+      }
+
+      if (c.desc) {
+        const isExpanded = state.expandedDesc.has(v.NO);
+        const cls = ['wrap-cell', 'desc-cell', isExpanded ? 'expanded' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
+        if (empty) return `<td class="${cls}">—</td>`;
+        return `<td class="${cls}" data-no="${v.NO}"><div class="desc-text">${escapeHtml(val)}</div><span class="desc-toggle">${isExpanded ? 'Show less' : 'Show more'}</span></td>`;
+      }
+
+      const cls = [c.mono ? 'mono' : '', c.right ? 'cell-right' : '', c.name ? 'name-cell' : '', c.wrap ? 'wrap-cell' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
       return `<td class="${cls}">${empty ? '—' : escapeHtml(val)}</td>`;
     }).join('');
 
-    const actions = isConfirming
-      ? `<td class="actions-cell"><div class="confirm-bar"><span>Delete this entry?</span>
-          <button class="icon-btn danger" title="Confirm delete" data-action="confirm-delete">${iconCheck()}</button>
-          <button class="icon-btn" title="Cancel" data-action="cancel-delete">${iconX()}</button>
-        </div></td>`
-      : `<td class="actions-cell">
-          <button class="icon-btn" title="Edit" data-action="edit">${iconPencil()}</button>
-          <button class="icon-btn danger" title="Delete" data-action="delete">${iconTrash()}</button>
-        </td>`;
-
-    return `<tr data-id="${v._id}">${cells}${actions}</tr>`;
-  }
-
-  function iconPencil() {
-    return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>`;
-  }
-  function iconTrash() {
-    return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>`;
-  }
-  function iconCheck() {
-    return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>`;
-  }
-  function iconX() {
-    return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>`;
-  }
-  function iconWarn() {
-    return `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>`;
+    return `<tr>${cells}</tr>`;
   }
 
   document.getElementById('tableBody').addEventListener('click', (e) => {
-    const btn = e.target.closest('button[data-action]');
-    if (!btn) return;
-    const tr = btn.closest('tr');
-    const id = tr.dataset.id;
-    const action = btn.dataset.action;
-
-    if (action === 'edit') {
-      state.editingId = id;
-      state.confirmDeleteId = null;
-    } else if (action === 'cancel-edit') {
-      state.editingId = null;
-    } else if (action === 'save') {
-      const inputs = tr.querySelectorAll('input[data-field]');
-      const updates = {};
-      inputs.forEach(inp => updates[inp.dataset.field] = inp.value.trim());
-      if (!updates['VESSEL NAME']) {
-        inputs[1] && inputs[1].focus();
-        return;
-      }
-      const idx = state.vessels.findIndex(v => v._id === id);
-      state.vessels[idx] = { ...state.vessels[idx], ...updates };
-      state.editingId = null;
-      persist();
-      populateFilterOptions();
-    } else if (action === 'delete') {
-      state.confirmDeleteId = id;
-    } else if (action === 'cancel-delete') {
-      state.confirmDeleteId = null;
-    } else if (action === 'confirm-delete') {
-      state.vessels = state.vessels.filter(v => v._id !== id);
-      state.confirmDeleteId = null;
-      persist();
-      populateFilterOptions();
-    }
+    const descCell = e.target.closest('td[data-no]');
+    if (!descCell) return;
+    const no = descCell.dataset.no;
+    if (state.expandedDesc.has(no)) state.expandedDesc.delete(no);
+    else state.expandedDesc.add(no);
     renderTable();
   });
 
   document.getElementById('searchInput').addEventListener('input', (e) => {
     state.query = e.target.value;
+    renderTable();
+  });
+
+  document.getElementById('filterIrgc').addEventListener('change', (e) => {
+    state.filters.irgc = e.target.value;
     renderTable();
   });
 
@@ -871,100 +811,56 @@
   });
 
   document.getElementById('clearFiltersBtn').addEventListener('click', () => {
-    state.filters = { kind: '', flag: '', attack: '' };
+    state.filters = { irgc: '', kind: '', flag: '', attack: '' };
+    document.getElementById('filterIrgc').value = '';
     document.getElementById('filterKind').value = '';
     document.getElementById('filterFlag').value = '';
     document.getElementById('filterAttack').value = '';
     renderTable();
   });
 
-  const addPanel = document.getElementById('addPanel');
-  const addFieldsEl = document.getElementById('addFields');
-
-  function renderAddFields() {
-    addFieldsEl.innerHTML = COLUMNS.filter(c => c.key !== 'NO').map(c => `
-      <div class="field">
-        <label>${escapeHtml(c.label)}${c.name ? ' <span class="req">*</span>' : ''}</label>
-        <input type="text" data-field="${escapeHtml(c.key)}" placeholder="${escapeHtml(c.label)}">
-      </div>
-    `).join('');
-  }
-  renderAddFields();
-
-  document.getElementById('toggleAddBtn').addEventListener('click', () => {
-    addPanel.classList.toggle('open');
-    if (addPanel.classList.contains('open')) {
-      addPanel.querySelector('input')?.focus();
-    }
-  });
-
-  document.getElementById('cancelAddBtn').addEventListener('click', () => {
-    addPanel.classList.remove('open');
-    renderAddFields();
-    document.getElementById('addError').classList.remove('show');
-  });
-
-  document.getElementById('saveAddBtn').addEventListener('click', () => {
-    const inputs = addFieldsEl.querySelectorAll('input[data-field]');
-    const entry = { NO: nextNo(), _id: makeId() };
-    inputs.forEach(inp => entry[inp.dataset.field] = inp.value.trim());
-
-    if (!entry['VESSEL NAME']) {
-      document.getElementById('addError').classList.add('show');
-      return;
-    }
-    document.getElementById('addError').classList.remove('show');
-    state.vessels.push(entry);
-    persist();
+  function init() {
+    state.vessels = VESSELS;
+    renderHeader();
     populateFilterOptions();
-    renderAddFields();
-    addPanel.classList.remove('open');
-    state.query = '';
-    state.filters = { kind: '', flag: '', attack: '' };
-    document.getElementById('searchInput').value = '';
-    document.getElementById('filterKind').value = '';
-    document.getElementById('filterFlag').value = '';
-    document.getElementById('filterAttack').value = '';
     renderTable();
-  });
+  }
 
-  function renderReloadControl(confirming) {
-    const el = document.getElementById('reloadControl');
-    if (confirming) {
-      el.innerHTML = `<div class="confirm-bar">
-        <span>Discard local changes and reload?</span>
-        <button class="icon-btn danger" id="reloadConfirmYes" title="Confirm reload">${iconCheck()}</button>
-        <button class="icon-btn" id="reloadConfirmNo" title="Cancel">${iconX()}</button>
-      </div>`;
-      document.getElementById('reloadConfirmYes').addEventListener('click', doReloadSeed);
-      document.getElementById('reloadConfirmNo').addEventListener('click', () => renderReloadControl(false));
+  const LOCK_HASH = 'd790eebbb772d2d74df94e6aaae6216a6dcb70045c54427881074f2be213807b';
+  const LOCK_SESSION_KEY = 'irgc_watchlist_unlocked';
+
+  async function sha256Hex(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function unlockApp() {
+    document.getElementById('lockOverlay').style.display = 'none';
+    document.getElementById('appRoot').style.display = 'block';
+    init();
+  }
+
+  document.getElementById('lockForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('lockInput');
+    const hash = await sha256Hex(input.value);
+    if (hash === LOCK_HASH) {
+      try { sessionStorage.setItem(LOCK_SESSION_KEY, '1'); } catch (e) {}
+      document.getElementById('lockError').classList.remove('show');
+      unlockApp();
     } else {
-      el.innerHTML = `<button class="btn btn-ghost" id="reloadSeedBtn" type="button" title="Discard local changes and reload the latest built-in data">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
-        Reload Latest Data
-      </button>`;
-      document.getElementById('reloadSeedBtn').addEventListener('click', () => renderReloadControl(true));
+      document.getElementById('lockError').classList.add('show');
+      input.value = '';
+      input.focus();
     }
-  }
+  });
 
-  function doReloadSeed() {
-    localStorage.removeItem(STORAGE_KEY);
-    state.vessels = withIds(SEED_DATA);
-    state.query = '';
-    state.filters = { kind: '', flag: '', attack: '' };
-    state.editingId = null;
-    state.confirmDeleteId = null;
-    persist();
-    document.getElementById('searchInput').value = '';
-    document.getElementById('filterAttack').value = '';
-    populateFilterOptions();
-    renderTable();
-    renderReloadControl(false);
+  let alreadyUnlocked = false;
+  try { alreadyUnlocked = sessionStorage.getItem(LOCK_SESSION_KEY) === '1'; } catch (e) {}
+  if (alreadyUnlocked) {
+    unlockApp();
   }
-
-  renderReloadControl(false);
-  renderHeader();
-  state.vessels = load();
-  populateFilterOptions();
-  renderTable();
 </script>
+
+</body>
+</html>
