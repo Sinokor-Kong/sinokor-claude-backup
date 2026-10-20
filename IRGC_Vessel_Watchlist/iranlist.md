@@ -2,7 +2,7 @@
 
 Sanctions compliance register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents.
 
-**129 vessels on record — 73 attacked**
+**127 vessels on record — 73 attacked**
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | ATTACKED DATE | INCIDENT TYPE | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -17,7 +17,6 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 9 | O | AL RAWDAH | 9734513 | LPG | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |  |
 | 10 | O | RASHEEDA | 9443413 | LNG | NAKILAT SHIPPING QATAR | QATAR | STASCO / QATARGAS LIQUEFIED GAS CO LTD | OMAN | ABS |  |  |  |  |  |
 | 11 | O | LEBRETHAH | 9976927 | LNG | SK SHIPPING | KOREA | SK SHIPPING CO LTD-KRS | LIBERIA | KR/BV |  |  |  |  |  |
-| 13 | O | MAHA ROOS | 9231004 | BULK | B.G. SHIRKE GROUP | INDIA | FIVE STARTS SHIPPING | INDIA | IRS |  |  |  |  |  |
 | 14 | O | GFS GALAXY | 9401271 | CONTAINER | GFS / UAE PRIVATE OWNERSHIP | UAE | GFS SHIP MANAGEMENT FZE | CYPRUS | DNV | 2026-07-11 | IRAN ATTACK | 083-26 | 9NM east of Oman | Damaged. No pollution. One seafarer fatality. |
 | 15 | O | AL BAHYAH | 9937799 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR | 2026-07-14 | IRAN ATTACK | 087-26 | 13 NM from the coast of Oman | Damaged. No pollution. One seafarer fatality. Three seafarers injured. |
 | 16 | O | MOMBASA B | 9739501 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-07-14 | IRAN ATTACK | 086-26 | 13 NM from the coast of Oman | Damaged. No pollution. Abandoned. Eleven seafarers injured. |
@@ -107,7 +106,6 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 100 | X | CAPE DAO | 9219020 | BULK | FORTHMARIN CORP LTD | UAE | PEONIES SHIPMANAGEMENT – FZE | ANTIGUA & BARBUDA | RINA | 2026-09-23 | IRAN ATTACK | 142-26 | Strait of Hormuz | The Company Security Officer of a cargo vessel reports being stuck by an unknown projectile. The vessel is on fire and adrift. All crew have been evacuated with 2 casualties reported. Authorities are investigating. There is no reported environmental impact at this time. |
 | 101 | O | AL SHMOUKH | 9726126 | LPG | AL SHUMOUKH INC | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |  |
 | 102 | O | ANNA-META | 9514406 | BULK | PROFIT MARITIME LIMITED | GERMANY | BLUMENTHAL ASIA PTE. LTD. | LIBERIA | NK |  |  |  |  |  |
-| 103 | O | ARSAN | 9421415 | VLCC | NATIONAL SHIPPING CO. SAUDI ARABIA (Bahri) | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | LR |  |  |  |  |  |
 | 104 | O | ALGERIA PROSPERITY | 9534042 | VLCC | SINOKOR GROUP | KOREA | EXECUTIVE SHIP MANAGEMENT | LIBERIA | RINA |  |  |  |  |  |
 | 105 | O | OCEAN LOYALTY | 9375238 | VLCC | SINOKOR GROUP | KOREA | SYNERGY | MARSHALL ISLAND | BV |  |  |  |  |  |
 | 106 | X | AL FUNTAS | 9653408 | VLCC | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | NK | 2026-09-28 | IRAN ATTACK | 143-26 | Strait of Hormuz, approx. 8nm off Limah, Oman | vessel struck by a suspected unknown projectile while transiting the Strait of Hormuz, resulting in a fire. The fire has since been extinguished and the vessel is underway. Crew are safe, there has been no reported environmental impact or damage assessment. |
