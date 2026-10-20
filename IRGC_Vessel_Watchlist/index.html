@@ -822,7 +822,7 @@
     emptyEl.textContent = 'No vessels match your search.';
     emptyEl.style.display = filtered.length ? 'none' : 'block';
 
-    tbody.innerHTML = filtered.map(v => rowHtml(v)).join('');
+    tbody.innerHTML = filtered.map((v, idx) => rowHtml(v, idx + 1)).join('');
 
     tbody.querySelectorAll('td.desc-cell:not(.expanded) .desc-text').forEach(el => {
       if (el.scrollHeight > el.clientHeight + 1) {
@@ -831,12 +831,15 @@
     });
   }
 
-  function rowHtml(v) {
+  function rowHtml(v, displayNo) {
     const isEditing = state.editingId === v._id;
     const isConfirming = state.confirmDeleteId === v._id;
 
     if (isEditing) {
       const cells = COLUMNS.map(c => {
+        if (c.key === 'NO') {
+          return `<td class="mono cell-right">${displayNo}</td>`;
+        }
         const val = v[c.key] == null ? '' : v[c.key];
         return `<td><input type="text" data-field="${escapeHtml(c.key)}" value="${escapeHtml(val)}"></td>`;
       }).join('');
@@ -851,6 +854,10 @@
     const cells = COLUMNS.map(c => {
       const val = v[c.key];
       const empty = val === null || val === undefined || val === '';
+
+      if (c.key === 'NO') {
+        return `<td class="mono cell-right">${displayNo}</td>`;
+      }
 
       if (c.attack) {
         return `<td>${empty ? '<span class="empty-val">—</span>' : `<span class="attack-pill">${iconWarn()}${escapeHtml(val)}</span>`}</td>`;
