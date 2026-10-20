@@ -549,17 +549,40 @@
     font-size: 14px;
   }
 
-  .confirm-bar {
-    display: flex;
+  .pending-bar {
+    display: none;
     align-items: center;
-    gap: 10px;
-    justify-content: flex-end;
-    white-space: nowrap;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    padding: 10px 16px;
+    margin-bottom: 16px;
   }
-  .confirm-bar span {
-    font-size: 12px;
-    color: var(--danger);
+  .pending-bar.show { display: flex; }
+  .pending-bar .pending-text {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
     font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .pending-bar .pending-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  tbody tr.row-pending-delete td:not(.actions-cell) {
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+  tbody tr.row-pending-edit {
+    background: var(--info-soft);
+  }
+  tbody tr.row-pending-edit:nth-child(even) {
+    background: var(--info-soft);
   }
 
   footer {
@@ -607,6 +630,14 @@
       Add Vessel
     </button>
     <span class="result-count" id="resultCount"></span>
+  </div>
+
+  <div class="pending-bar" id="pendingBar">
+    <span class="pending-text" id="pendingText"></span>
+    <div class="pending-actions">
+      <button class="btn btn-ghost" id="discardPendingBtn" type="button">취소</button>
+      <button class="btn btn-primary" id="savePendingBtn" type="button">저장</button>
+    </div>
   </div>
 
   <div class="filter-bar">
@@ -697,8 +728,8 @@
     filters: { irgc: '', kind: '', flag: '', attack: '' },
     sort: { key: null, dir: 'asc' },
     editingId: null,
-    confirmDeleteId: null,
-    expandedDesc: new Set()
+    expandedDesc: new Set(),
+    pending: { edits: {}, deletes: new Set() }
   };
 
   let vesselsCol = null;
@@ -829,18 +860,41 @@
         el.closest('td.desc-cell').classList.add('clamped');
       }
     });
+
+    updatePendingBar();
+  }
+
+  function pendingEditCount() { return Object.keys(state.pending.edits).length; }
+  function pendingDeleteCount() { return state.pending.deletes.size; }
+
+  function updatePendingBar() {
+    const bar = document.getElementById('pendingBar');
+    const editN = pendingEditCount();
+    const delN = pendingDeleteCount();
+    const total = editN + delN;
+    if (!total) {
+      bar.classList.remove('show');
+      return;
+    }
+    const parts = [];
+    if (delN) parts.push(`삭제 ${delN}`);
+    if (editN) parts.push(`수정 ${editN}`);
+    document.getElementById('pendingText').textContent = `변경사항 ${total}건 (${parts.join(' · ')})`;
+    bar.classList.add('show');
   }
 
   function rowHtml(v, displayNo) {
     const isEditing = state.editingId === v._id;
-    const isConfirming = state.confirmDeleteId === v._id;
+    const pendingEdit = state.pending.edits[v._id] || null;
+    const isPendingDelete = state.pending.deletes.has(v._id);
+    const dv = pendingEdit ? { ...v, ...pendingEdit } : v;
 
     if (isEditing) {
       const cells = COLUMNS.map(c => {
         if (c.key === 'NO') {
           return `<td class="mono cell-right">${displayNo}</td>`;
         }
-        const val = v[c.key] == null ? '' : v[c.key];
+        const val = dv[c.key] == null ? '' : dv[c.key];
         return `<td><input type="text" data-field="${escapeHtml(c.key)}" value="${escapeHtml(val)}"></td>`;
       }).join('');
       return `<tr class="editing" data-id="${v._id}">${cells}
@@ -852,7 +906,7 @@
     }
 
     const cells = COLUMNS.map(c => {
-      const val = v[c.key];
+      const val = dv[c.key];
       const empty = val === null || val === undefined || val === '';
 
       if (c.key === 'NO') {
@@ -880,17 +934,17 @@
       return `<td class="${cls}">${empty ? '—' : escapeHtml(val)}</td>`;
     }).join('');
 
-    const actions = isConfirming
-      ? `<td class="actions-cell"><div class="confirm-bar"><span>Delete this entry?</span>
-          <button class="icon-btn danger" title="Confirm delete" data-action="confirm-delete">${iconCheck()}</button>
-          <button class="icon-btn" title="Cancel" data-action="cancel-delete">${iconX()}</button>
-        </div></td>`
+    const actions = isPendingDelete
+      ? `<td class="actions-cell">
+          <button class="icon-btn" title="복구" data-action="restore">${iconUndo()}</button>
+        </td>`
       : `<td class="actions-cell">
           <button class="icon-btn" title="Edit" data-action="edit">${iconPencil()}</button>
           <button class="icon-btn danger" title="Delete" data-action="delete">${iconTrash()}</button>
         </td>`;
 
-    return `<tr data-id="${v._id}">${cells}${actions}</tr>`;
+    const rowCls = [isPendingDelete ? 'row-pending-delete' : '', pendingEdit && !isPendingDelete ? 'row-pending-edit' : ''].filter(Boolean).join(' ');
+    return `<tr data-id="${v._id}"${rowCls ? ` class="${rowCls}"` : ''}>${cells}${actions}</tr>`;
   }
 
   function iconPencil() {
@@ -908,8 +962,11 @@
   function iconWarn() {
     return `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>`;
   }
+  function iconUndo() {
+    return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h10a5 5 0 0 1 0 10H9"/><path d="M8 5 3 10l5 5"/></svg>`;
+  }
 
-  document.getElementById('tableBody').addEventListener('click', async (e) => {
+  document.getElementById('tableBody').addEventListener('click', (e) => {
     const descCell = e.target.closest('td[data-action="toggle-desc"]');
     if (descCell) {
       const id = descCell.closest('tr').dataset.id;
@@ -927,7 +984,6 @@
 
     if (action === 'edit') {
       state.editingId = id;
-      state.confirmDeleteId = null;
       renderTable();
     } else if (action === 'cancel-edit') {
       state.editingId = null;
@@ -941,30 +997,40 @@
         return;
       }
       state.editingId = null;
+      state.pending.edits[id] = { ...(state.pending.edits[id] || {}), ...updates };
       renderTable();
-      if (!vesselsCol) return;
-      try {
-        await vesselsCol.doc(id).update(updates);
-      } catch (err) {
-        console.error(err);
-        setSyncStatus('저장 실패: ' + (err && err.code ? err.code : 'error'), true);
-      }
     } else if (action === 'delete') {
-      state.confirmDeleteId = id;
+      state.pending.deletes.add(id);
+      delete state.pending.edits[id];
       renderTable();
-    } else if (action === 'cancel-delete') {
-      state.confirmDeleteId = null;
+    } else if (action === 'restore') {
+      state.pending.deletes.delete(id);
       renderTable();
-    } else if (action === 'confirm-delete') {
-      state.confirmDeleteId = null;
-      renderTable();
-      if (!vesselsCol) return;
-      try {
-        await vesselsCol.doc(id).delete();
-      } catch (err) {
-        console.error(err);
-        setSyncStatus('삭제 실패: ' + (err && err.code ? err.code : 'error'), true);
+    }
+  });
+
+  document.getElementById('discardPendingBtn').addEventListener('click', () => {
+    state.pending = { edits: {}, deletes: new Set() };
+    renderTable();
+  });
+
+  document.getElementById('savePendingBtn').addEventListener('click', async () => {
+    if (!vesselsCol) return;
+    const editEntries = Object.entries(state.pending.edits);
+    const deleteIds = [...state.pending.deletes];
+    state.pending = { edits: {}, deletes: new Set() };
+    renderTable();
+    try {
+      for (const [id, updates] of editEntries) {
+        await vesselsCol.doc(id).update(updates);
       }
+      for (const id of deleteIds) {
+        await vesselsCol.doc(id).delete();
+      }
+      setSyncStatus('Live · synced');
+    } catch (err) {
+      console.error(err);
+      setSyncStatus('저장 실패: ' + (err && err.code ? err.code : 'error'), true);
     }
   });
 
