@@ -133,23 +133,23 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 128 | O | ST1 | 9256999 | VLCC | HORIZON SHIPPING LTD | UAE | NOATUM CSM FZCO | MARSHALL ISLAND | DNV | 2026-10-06 | IRAN ATTACK | 159-26 | Strait of Hormuz | On 06 Oct, the vessel was struck by an unknown projectile in the port aft quarter, causing the vessel to lose power. There were no casualties or injuries reported. The vessel is en route to Ras Al Khaimah with tug assistance. |
 | 129 | O | ANGOLA PROSPERITY | 9896414 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-10-11 | IRAN ATTACK | 164-26 | Strait of Hormuz | Vessel had been hit by an unknown projectile. The vessel has been struck on the port side and sustained damage to the steering gear room and port side water tank. There is no visible fire. The crew are safe and well with no injuries sustained. The vessel is now proceeding to Fujairah anchorage. |
 | 130 |  | UNKNOWN | UNKNOWN |  |  |  |  |  |  | 2026-10-13 | IRAN ATTACK | 171-26 | Strait of Hormuz | Report that on 13 Oct a tanker was struck by an unknown projectile while transiting the SOH outbound. Vessel was able to continue its voyage. No crew injuries reported. |
-| 131 | O | MINOAN GLORY | 9364447 |  |  |  |  |  |  |  |  |  |  |  |
-| 132 | O | AL SALAM | 9923085 |  |  |  |  |  |  |  |  |  |  |  |
-| 133 | O | GAS AL AHMADIAH | 9849629 |  |  |  |  |  |  |  |  |  |  |  |
+| 131 | O | MINOAN GLORY | 9364447 | BULK | OSTRIA NAVIGATION SA | GREECE | MODION MARITIME MANAGEMENT SA | LIBERIA |  |  |  |  |  |  |
+| 132 | O | AL SALAM | 9923085 | LPG | ADNOC LOGISTICS & SERVICES | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | ABS |  |  |  |  |  |
+| 133 | O | GAS AL AHMADIAH | 9849629 | LPG | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | NK |  |  |  |  |  |
 | 134 | O | ROMANIA PROSPERITY | 9315161 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV |  |  |  |  |  |
-| 135 | O | AL YAMAMAH | 9856696 |  |  |  |  |  |  |  |  |  |  |  |
-| 136 | O | GAS AL NEGEH | 9329722 |  |  |  |  |  |  |  |  |  |  |  |
-| 137 | O | NISSOS KYTHNOS | 9853852 |  |  |  |  |  |  |  |  |  |  |  |
-| 138 | O | BAHRA | 9595008 |  |  |  |  |  |  |  |  |  |  |  |
-| 139 | O | AL SOOR II | 9329784 |  |  |  |  |  |  |  |  |  |  |  |
-| 140 | O | NISSOS DESPOTIKO | 9845697 |  |  |  |  |  |  |  |  |  |  |  |
-| 141 | O | GAS UMM AL ROWAISAT | 9849631 |  |  |  |  |  |  |  |  |  |  |  |
-| 142 | O | UMM AL AISH | 9534781 |  |  |  |  |  |  |  |  |  |  |  |
+| 135 | O | AL YAMAMAH | 9856696 | MR | KUWAIT OIL TANKER CO SAK | KUWAIT | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | LR |  |  |  |  |  |
+| 136 | O | GAS AL NEGEH | 9329722 | LPG | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT |  |  |  |  |  |  |
+| 137 | O | NISSOS KYTHNOS | 9853852 | VLCC | ANASSA NAVIGATION SA | GREECE | KYKLADES MARITIME CORP. | MARSHALL ISLAND | DNV |  |  |  |  |  |
+| 138 | O | BAHRA | 9595008 | CRUDE | KUWAIT OIL TANKER CO SAK | KUWAIT | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT |  |  |  |  |  |  |
+| 139 | O | AL SOOR II | 9329784 | LR-II |  |  |  | KUWAIT |  |  |  |  |  |  |
+| 140 | O | NISSOS DESPOTIKO | 9845697 | VLCC | OMEGA SEVEN MARINE CORP | GREECE | KYKLADES MARITIME CORP. | MARSHALL ISLAND | DNV |  |  |  |  |  |
+| 141 | O | GAS UMM AL ROWAISAT | 9849631 | LPG | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | NK |  |  |  |  |  |
+| 142 | O | UMM AL AISH | 9534781 | VLCC | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | DNV |  |  |  |  |  |
 | 143 | O | SAMOA PROSPERITY | 9294575 | VLCC | SINOKOR GROUP | KOREA | EXECUTIVE SHIP MANAGEMENT | LIBERIA | ABS |  |  |  |  |  |
-| 144 | O | DAS | 9854507 |  |  |  |  |  |  |  |  |  |  |  |
-| 145 | O | NISSOS KEROS | 9856074 |  |  |  |  |  |  |  |  |  |  |  |
-| 146 | O | QASBA | 9853589 |  |  |  |  |  |  |  |  |  |  |  |
-| 147 | O | OCEAN MOLICA | 9139270 |  |  |  |  |  |  |  |  |  |  |  |
+| 144 | O | DAS | 9854507 | VLCC | ADNOC LOGISTICS & SERVICES | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA |  |  |  |  |  |  |
+| 145 | O | NISSOS KEROS | 9856074 | VLCC | ARETHUSA SHIPPING CORP. | GREECE | KYKLADES MARITIME CORP. | MARSHALL ISLAND | ABS |  |  |  |  |  |
+| 146 | O | QASBA | 9853589 | VLCC | NATIONAL SHIPPING COMPANY OF SAUDI ARABIA (BAHRI) |  | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | DNV |  |  |  |  |  |
+| 147 | O | OCEAN MOLICA | 9139270 | BULK | WESTERN BULK SHIPPING CO LTD |  | WESTERN BULK SHIPPING CO LTD | PANAMA |  |  |  |  |  |  |
 | 148 | O | SINGAPORE ENERGY | 9534846 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
-| 149 | O | SAFEEN PRESTIGE | 9593517 |  |  |  |  |  |  |  |  |  |  |  |
-| 150 | O | NV SUNSHINE | 9350288 |  |  |  |  |  |  |  |  |  |  |  |
+| 149 | O | SAFEEN PRESTIGE | 9593517 | CONTAINER | TRANSMAR INTERNATIONAL SHPG |  | GFS SHIP MANAGEMENT FZE | MALTA |  |  |  |  |  |  |
+| 150 | O | NV SUNSHINE | 9350288 | LPG | NHAT VIET TRANSPORTATION CORP | VIETNAM | NHAT VIET TRANSPORTATION CORP | VIETNAM | KR |  |  |  |  |  |
