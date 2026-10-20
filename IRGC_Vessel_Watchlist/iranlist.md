@@ -136,7 +136,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 131 | O | MINOAN GLORY | 9364447 |  |  |  |  |  |  |  |  |  |  |  |
 | 132 | O | AL SALAM | 9923085 |  |  |  |  |  |  |  |  |  |  |  |
 | 133 | O | GAS AL AHMADIAH | 9849629 |  |  |  |  |  |  |  |  |  |  |  |
-| 134 | O | ROMANIA PROSPERITY | 9315161 |  |  |  |  |  |  |  |  |  |  |  |
+| 134 | O | ROMANIA PROSPERITY | 9315161 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV |  |  |  |  |  |
 | 135 | O | AL YAMAMAH | 9856696 |  |  |  |  |  |  |  |  |  |  |  |
 | 136 | O | GAS AL NEGEH | 9329722 |  |  |  |  |  |  |  |  |  |  |  |
 | 137 | O | NISSOS KYTHNOS | 9853852 |  |  |  |  |  |  |  |  |  |  |  |
@@ -145,11 +145,11 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 140 | O | NISSOS DESPOTIKO | 9845697 |  |  |  |  |  |  |  |  |  |  |  |
 | 141 | O | GAS UMM AL ROWAISAT | 9849631 |  |  |  |  |  |  |  |  |  |  |  |
 | 142 | O | UMM AL AISH | 9534781 |  |  |  |  |  |  |  |  |  |  |  |
-| 143 | O | SAMOA PROSPERITY | 9294575 |  |  |  |  |  |  |  |  |  |  |  |
+| 143 | O | SAMOA PROSPERITY | 9294575 | VLCC | SINOKOR GROUP | KOREA | EXECUTIVE SHIP MANAGEMENT | LIBERIA | ABS |  |  |  |  |  |
 | 144 | O | DAS | 9854507 |  |  |  |  |  |  |  |  |  |  |  |
 | 145 | O | NISSOS KEROS | 9856074 |  |  |  |  |  |  |  |  |  |  |  |
 | 146 | O | QASBA | 9853589 |  |  |  |  |  |  |  |  |  |  |  |
 | 147 | O | OCEAN MOLICA | 9139270 |  |  |  |  |  |  |  |  |  |  |  |
-| 148 | O | SINGAPORE ENERGY | 9534846 |  |  |  |  |  |  |  |  |  |  |  |
+| 148 | O | SINGAPORE ENERGY | 9534846 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 149 | O | SAFEEN PRESTIGE | 9593517 |  |  |  |  |  |  |  |  |  |  |  |
 | 150 | O | NV SUNSHINE | 9350288 |  |  |  |  |  |  |  |  |  |  |  |
