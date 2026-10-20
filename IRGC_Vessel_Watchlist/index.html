@@ -597,9 +597,72 @@
     .masthead-right { width: 100%; justify-content: space-between; }
     table { min-width: 900px; }
   }
+
+  /* ---------- lock screen ---------- */
+
+  .lock-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .lock-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    padding: 32px 28px;
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+  }
+
+  .lock-card .eyebrow { justify-content: center; margin-bottom: 10px; }
+
+  .lock-card h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 18px;
+  }
+
+  .lock-card input[type="password"] {
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+
+  .lock-card .btn { width: 100%; justify-content: center; }
+
+  .lock-error {
+    font-size: 12.5px;
+    color: var(--danger);
+    margin-top: 12px;
+    display: none;
+  }
+  .lock-error.show { display: block; }
+
+  #appRoot { display: none; }
 </style>
 
-<div class="wrap">
+<div class="lock-overlay" id="lockOverlay">
+  <div class="lock-card">
+    <div class="eyebrow">Sanctions Compliance Register</div>
+    <h2>Enter Password</h2>
+    <form id="lockForm">
+      <input type="password" id="lockInput" placeholder="Password" autocomplete="off" autofocus>
+      <button class="btn btn-primary" type="submit">Unlock</button>
+      <div class="lock-error" id="lockError">Incorrect password.</div>
+    </form>
+  </div>
+</div>
+
+<div class="wrap" id="appRoot">
 
   <div class="masthead">
     <div class="masthead-left">
@@ -1155,5 +1218,38 @@
     });
   }
 
-  init();
+  const LOCK_HASH = 'd790eebbb772d2d74df94e6aaae6216a6dcb70045c54427881074f2be213807b';
+  const LOCK_SESSION_KEY = 'irgc_watchlist_unlocked';
+
+  async function sha256Hex(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function unlockApp() {
+    document.getElementById('lockOverlay').style.display = 'none';
+    document.getElementById('appRoot').style.display = '';
+    init();
+  }
+
+  document.getElementById('lockForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('lockInput');
+    const hash = await sha256Hex(input.value);
+    if (hash === LOCK_HASH) {
+      try { sessionStorage.setItem(LOCK_SESSION_KEY, '1'); } catch (e) {}
+      document.getElementById('lockError').classList.remove('show');
+      unlockApp();
+    } else {
+      document.getElementById('lockError').classList.add('show');
+      input.value = '';
+      input.focus();
+    }
+  });
+
+  let alreadyUnlocked = false;
+  try { alreadyUnlocked = sessionStorage.getItem(LOCK_SESSION_KEY) === '1'; } catch (e) {}
+  if (alreadyUnlocked) {
+    unlockApp();
+  }
 </script>
