@@ -2,7 +2,7 @@
 
 Sanctions compliance register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents.
 
-**147 vessels on record — 73 attacked**
+**148 vessels on record — 75 attacked**
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | ATTACKED DATE | INCIDENT TYPE | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -86,7 +86,6 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 80 | O | ZAYNAH | 9854703 | VLCC | NATIONAL SHIPING CO. OF SAUDI ARABIA (BAHRI) | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | ABS |  |  |  |  |  |
 | 81 | O | AJWAD | 9830795 | VLCC | NATIONAL SHIPING CO. OF SAUDI ARABIA (BAHRI) | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | ABS |  |  |  |  |  |
 | 82 | O | GAS MARAKUA | 9240421 | LPG | MAKARUA SHIPPING LTD | CHINA | OCEAN FIONA SHIPPING CO LTD | SIERRA LEONE | LR |  |  |  |  |  |
-| 83 | O | ALFONSO | 9256298 | SR | AURIGA SHIPTRADE INC | UAE | ARGONEVIS MARINE SERVICES | BARBADOS | DNV |  |  |  |  |  |
 | 84 | O | GAS WARICH | 9364382 | LPG | MANAPOURI SHIPPING LTD | CHINA | AEGIS SHIP MANAGEMENT LTD | BARBADOS | LR |  |  |  |  |  |
 | 85 | O | SILVER SHINE (ARSAN) | 9421415 | VLCC | NATIONAL SHIPPING CO. SAUDI ARABIA (Bahri) | SAUDI ARABIA | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | ABS |  |  |  |  |  |
 | 86 | O | PSERIMOS | 1033810 | AFRAMAX | PSERIMOS SHIPS LTD | GREECE | PSERIMOS SHIPS LTD | MALTA | LR |  |  |  |  |  |
@@ -132,7 +131,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 127 | O | MARAN GAS MYSTRAS | 9658238 | LNG | Blueskies Shipping Company Ltd. | GREECE | Maran Gas Maritime | GREECE | LR | 2026-10-05 | IRAN ATTACK | 156-26 | Strait of Hormuz | On 05 Oct the vessel was struck by an unknown projectile while transiting the SOH outbound. Fire ignited in the engine room and was subsequently extinguished. No crew injuries reported. The vessel was able to continue its voyage. |
 | 128 | O | ST1 | 9256999 | VLCC | HORIZON SHIPPING LTD | UAE | NOATUM CSM FZCO | MARSHALL ISLAND | DNV | 2026-10-06 | IRAN ATTACK | 159-26 | Strait of Hormuz | On 06 Oct, the vessel was struck by an unknown projectile in the port aft quarter, causing the vessel to lose power. There were no casualties or injuries reported. The vessel is en route to Ras Al Khaimah with tug assistance. |
 | 129 | O | ANGOLA PROSPERITY | 9896414 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-10-11 | IRAN ATTACK | 164-26 | Strait of Hormuz | Vessel had been hit by an unknown projectile. The vessel has been struck on the port side and sustained damage to the steering gear room and port side water tank. There is no visible fire. The crew are safe and well with no injuries sustained. The vessel is now proceeding to Fujairah anchorage. |
-| 130 |  | UNKNOWN | UNKNOWN |  |  |  |  |  |  | 2026-10-13 | IRAN ATTACK | 171-26 | Strait of Hormuz | Report that on 13 Oct a tanker was struck by an unknown projectile while transiting the SOH outbound. Vessel was able to continue its voyage. No crew injuries reported. |
+| 130 | O | ALFONSO | 9256298 | SR | AURIGA SHIPTRADE INC | UAE | ARGONEVIS MARINE SERVICES | BARBADOS | DNV | 2026-10-13 | IRAN ATTACK | 171-26 | Strait of Hormuz | Report that on 13 Oct a tanker was struck by an unknown projectile while transiting the SOH outbound. Vessel was able to continue its voyage. No crew injuries reported. |
 | 131 | O | MINOAN GLORY | 9364447 | BULK | OSTRIA NAVIGATION SA | GREECE | MODION MARITIME MANAGEMENT SA | LIBERIA |  |  |  |  |  |  |
 | 132 | O | AL SALAM | 9923085 | LPG | ADNOC LOGISTICS & SERVICES | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | ABS |  |  |  |  |  |
 | 133 | O | GAS AL AHMADIAH | 9849629 | LPG | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | KUWAIT OIL TANKER COMPANY S.A.K. | KUWAIT | NK |  |  |  |  |  |
@@ -153,3 +152,5 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 148 | O | SINGAPORE ENERGY | 9534846 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 149 | O | SAFEEN PRESTIGE | 9593517 | CONTAINER | TRANSMAR INTERNATIONAL SHPG |  | GFS SHIP MANAGEMENT FZE | MALTA |  |  |  |  |  |  |
 | 150 | O | NV SUNSHINE | 9350288 | LPG | NHAT VIET TRANSPORTATION CORP | VIETNAM | NHAT VIET TRANSPORTATION CORP | VIETNAM | KR |  |  |  |  |  |
+| 151 | X | KUWAIT PROSPERITY | 9722936 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-10-20 | IRAN ATTACK |  | Strait of Hormuz | struck by an unidentified flying object, suspected to be a drone.  Subsequently, the vessel was struck on the Main Deck above the Cargo Oil Tank, resulting in a brief fire, which was successfully extinguished by the vessel's crew..  a hole approximately 30 centimeters in diameter on main deck. |
+| 152 | X | JIF BARRACUDA | 9345506 | TUG VESSEL | SEA BARRACUDA BV | NETHERLANDS | SEACONTRACTORS BV | NETHERLANDS | BV | 2026-10-18 | IRAN ATTACK | 177-26 | Northeast of Khor Fakka | an incident northeast of Khor Fakkan, UAE. A tug travelling southbound has reported being struck by 2 unknown projectiles. The tug has sustained damage but is continuing on its route. One minor casualty has been reported. Vessels are advised to transit with caution and report any suspicious activity to UKMTO, whilst authorities investigate. |
