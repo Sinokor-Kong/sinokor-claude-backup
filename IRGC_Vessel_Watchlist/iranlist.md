@@ -2,7 +2,7 @@
 
 Sanctions compliance register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents.
 
-**148 vessels on record — 75 attacked**
+**263 vessels on record — 77 attacked**
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | ATTACKED DATE | INCIDENT TYPE | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -52,7 +52,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 46 | O | AL LULU | 9583627 | LNG | SAFEEN GROUP | UAE | NOATUM CSM FZCO | MARSHALL ISLAND | BV |  |  |  |  |  |
 | 47 | O | MALAYSIA PROSPERITY | 9395305 | VLCC | SINOKOR GROUP | KOREA | SYNERGY DENMARK | LIBERIA | BV | 2026-08-15 | IRAN ATTACK |  | Strait of Hormuz | Hull damaged (No.2 HFO Bunker Tank), lost 1,000 M/T HFO Bunker, No injuries. |
 | 48 | O | PORTUGAL PROSPERITY | 9385843 | VLCC | SINOKOR GROUP | KOREA | SYNERGY DENMARK | LIBERIA | BV | 2026-08-26 | IRAN ATTACK |  | Strait of Hormuz | Hull damaged, No injuries. |
-| 49 | X | SENEGAL PROSPERITY | 9532757 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-08-31 | IRAN ATTACK | 124-26 | 17NM east of Khasab, Oman | Hit by three "rockets" on the port side engine room and ballast tank. All shipboard communications lost. Vessel reported DIW and listing to port. The vessel has dropped anchor in position 2619N 05633E. Crew have been evacuated by local authorities, there are no casualties. The vessel is not under command. |
+| 49 | O | SENEGAL PROSPERITY | 9532757 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-08-31 | IRAN ATTACK | 124-26 | 17NM east of Khasab, Oman | Hit by three "rockets" on the port side engine room and ballast tank. All shipboard communications lost. Vessel reported DIW and listing to port. The vessel has dropped anchor in position 2619N 05633E. Crew have been evacuated by local authorities, there are no casualties. The vessel is not under command. |
 | 50 | O | METRO VENETIAN | 1013391 | AFRAMAX | DORIDA SHIPPING CO. / Metrostar Group | GREECE | V.Ships Management | LIBERIA | DNV | 2026-08-24 | IRAN ATTACK | 120-26 | 9NM northeast of Ash Shishah, Oman | Damaged. No pollution. |
 | 51 | O | RIYAN STAR | 9156761 | BULK | RIYAN STAR MARINE LTD | TURKEY | Lora Shipping Ltd | PANAMA | NK | 2026-08-15 | IRAN ATTACK | 116-26 | Strait of Hormuz | Damaged. No pollution. One seafarer fatality. |
 | 52 | X | IDI | 9307982 | MR | CARMELIA INTERNATIONAL INC. / Greek private | GREECE | Spring Marine Management S.A. | MARSHALL ISLAND | LR | 2026-07-16 | IRAN ATTACK | 088-26 | 19NM east of Khasab, Oman | Damaged. No pollution. |
@@ -99,7 +99,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 94 | O | AL RIQQA | 9534808 | VLCC | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | NK |  |  |  |  |  |
 | 95 | O | AL KOUT | 9653434 | VLCC | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | NK |  |  |  |  |  |
 | 96 | X | ST HELENA | 8716306 | PASSENGER |  |  |  | DJIBOUTI |  | 2026-09-14 | IRAN ATTACK | 135-26 | Strait of Hormuz | (Attack, Indian Ocean) – Attack on Vessel, Strait of Hormuz. 14th Sept time late UKMTO report |
-| 97 | X | TREND | 9477177 | SR | SAIF SHIPS & BOATS TRADING LLC | UAE | VERITAL MARINE SERVICES LLC | TOGO | LR | 2026-09-18 | IRAN ATTACK | 138-26 | Strait of Hormuz | tanker being hit by an unknown projectile causing a fire onboard which has since been extinguished. All crew are reported safe and environmental impact is unconfirmed at present. |
+| 97 | O | TREND | 9477177 | SR | SAIF SHIPS & BOATS TRADING LLC | UAE | VERITAL MARINE SERVICES LLC | TOGO | LR | 2026-09-18 | IRAN ATTACK | 138-26 | Strait of Hormuz | tanker being hit by an unknown projectile causing a fire onboard which has since been extinguished. All crew are reported safe and environmental impact is unconfirmed at present. |
 | 98 | O | LR STEPHANIE | 9282625 | VLCC | MARION SEAWAYS S.A. | GREECE | ROYAL MARINE S.A. | ISLE OF MAN | NK | 2026-09-21 | IRAN ATTACK | 140-26 | Strait of Hormuz | Military authorities have informed UKMTO that a tanker conducting an inbound transit was struck by an unknown projectile. Two crew have sustained minor injuries and the vessel is reported to be continuing to its next port of call under its own power. There is no reported environmental impact at this time. |
 | 99 | O | AL MARYAH | 9393682 | LPG | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | DNV | 2026-09-21 | IRAN ATTACK | 141-26 | Strait of Hormuz | LPG tanker transiting outbound of Strait of Hormuz. A Master has reported an LPG tanker has been hit by debris from unknown projectiles. The Master reports all crew are safe and no environmental impact. The tanker will continue to its next port of call. |
 | 100 | O | CAPE DAO | 9219020 | BULK | FORTHMARIN CORP LTD | UAE | PEONIES SHIPMANAGEMENT – FZE | ANTIGUA & BARBUDA | RINA | 2026-09-23 | IRAN ATTACK | 142-26 | Strait of Hormuz | The Company Security Officer of a cargo vessel reports being stuck by an unknown projectile. The vessel is on fire and adrift. All crew have been evacuated with 2 casualties reported. Authorities are investigating. There is no reported environmental impact at this time. |
@@ -113,15 +113,15 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 109 | O | KAZIMAH III | 9329693 | VLCC | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | DNV | 2026-10-01 | IRAN ATTACK | 147-26 | Strait of Hormuz | a tanker being stuck by an unknown projectile while transiting the Strait of Hormuz, resulting in a fire. Crew have been reported safe, damage assessment and environmental impact is unknown at time of report. |
 | 110 | O | GHANA PROSPERITY | 9732541 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-10-03 | IRAN ATTACK | 155-26 | Strait of Hormuz (CP-D) | Vessel got hit on WBT 5S Listing to port ME ok and crew safe Another small boat around |
 | 111 | O | UHUD | 9254939 | MR | EMIRATES SHIPPING LLC | UAE | EMIRATES SHIPPING LLC | PANAMA | DNV | 2026-10-02 | IRAN ATTACK | 148-26 | Strait of Hormuz | The vessel's master reported that a drone entered the ship's funnel and dropped into the engine room, causing a small fire and a short loss of power. All crew were reported safe. No environmental damage reported. |
-| 112 | X | PROMISE | 1038896 | VLCC | DYNACOM TANKERS | GREECE | DYNACOM TANKERS MANAGEMENT LTD | LIBERIA | LR | 2026-10-02 | IRAN ATTACK | 149-26 | Strait of Hormuz | It was struck on its port quarter by an unknown projectile while transiting outbound in the SOH. Impact resulted in immediate smoke coming from the engine room, in conjunction with a loss of power which necessitated emergency generator use. After briefly drifting, the vessel was able to continue its transit to Fujairah with assistance from a tug. Crew was reported safe. No environmental damage reported. |
+| 112 | O | PROMISE | 1038896 | VLCC | DYNACOM TANKERS | GREECE | DYNACOM TANKERS MANAGEMENT LTD | LIBERIA | LR | 2026-10-02 | IRAN ATTACK | 149-26 | Strait of Hormuz | It was struck on its port quarter by an unknown projectile while transiting outbound in the SOH. Impact resulted in immediate smoke coming from the engine room, in conjunction with a loss of power which necessitated emergency generator use. After briefly drifting, the vessel was able to continue its transit to Fujairah with assistance from a tug. Crew was reported safe. No environmental damage reported. |
 | 113 | O | LIPSI | 1025033 | LR-II | DYNACOM TANKERS | GREECE | DYNACOM TANKERS MANAGEMENT LTD | LIBERIA |  | 2026-10-03 | IRAN ATTACK | 150-26 | Strait of Hormuz | A vessel was struck by an unknown projectile on its port quarter while transiting the SOH outbound. Vessel lost propulsion. Crew reported safe. No environment damage reported. |
 | 114 | O | GAS VELA | 9969845 | LPG | HUIZHANG TIANJIN SHIPPING | CHINA | SINOGAS MARITIME LTD | SINGAPORE |  | 2026-10-04 | IRAN ATTACK | 153-26 | Strait of Hormuz | On 04 Oct the vessel was struck by a suspected UAV while transiting the SOH inbound. No crew injuries reported. The vessel was able to continue its voyage. |
 | 115 | O | CAMEROON PROSPERITY | 9315159 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-10-04 | IRAN ATTACK | 154-26 | Strait of Hormuz | 04 Oct the vessel was struck by two unknown projectiles while transiting the SOH inbound IVO the Musandam Peninsula. No crew injuries reported. |
-| 116 | X | ACERS | 9301902 | MR | VALVORIA SHIPPING LTD | UAE | CYMARE NAVIGATION FZC | ANTIGUA & BARBUDA | BV | 2026-10-07 | IRAN ATTACK | 158-26 | Qatari coast (AG) | 07 Oct the vessel was struck by three UAVs while transiting in the Central Arabian Gulf, approx. 51NM from the Qatari coast, igniting a fire in the engine room that was subsequently extinguished. One crew member injury reported. Vessel was able to continue its voyage. |
+| 116 | O | ACERS | 9301902 | MR | VALVORIA SHIPPING LTD | UAE | CYMARE NAVIGATION FZC | ANTIGUA & BARBUDA | BV | 2026-10-07 | IRAN ATTACK | 158-26 | Qatari coast (AG) | 07 Oct the vessel was struck by three UAVs while transiting in the Central Arabian Gulf, approx. 51NM from the Qatari coast, igniting a fire in the engine room that was subsequently extinguished. One crew member injury reported. Vessel was able to continue its voyage. |
 | 117 | O | GEM NO.2 | 9735373 | VLCC | GEM NO 2 MARITIME CORP | TAIWAN | FLEET MANAGEMENT LTD-HKG | PANAMA | ABS | 2026-10-09 | IRAN ATTACK | 160-26 | Arabian Gulf, at anchor in UAE TTW about 11-13 NM off the coast | At 1134 UTC on 9 October, a security company contacted UKMTO to report a possible attack on a vessel in the Arabian Gulf, at anchor about 11-13 NM off the coast of the UAE. UKMTO then conducted a welfare check, and a nearby vessel's master reported witnessing smoke coming from the vessel earlier reported as having been hit. That same evening, India's Minister of Ports, Shipping & Waterways also confirmed the attack and additionally reported that all Indian crew were safe. |
 | 118 | O | VALTHERA | 9296389 | LR-III | TEEKAY MARINE SINGAPORE | UAE | CELERIS WAVECOURSE CORP | MARSHALL ISLAND | LR | 2026-10-10 | IRAN ATTACK | 162-26 | Strait of Hormuz | UKMTO received a report from the master of an outbound tanker being hit by an unknown projectile on the port side, causing a fire. The fire has now been extinguished, a damage assessment is to be conducted, and the vessel no longer requires assistance. The crew are safe, and the vessel is awaiting its next orders. |
 | 119 | O | PETRO DOLPHIN | 1072294 | SR | HITECH INFINITY PETROLEUM FZC | UAE | HITECH INFINITY PETROLEUM FZC | NICARAGUA |  | 2026-10-11 | IRAN ATTACK | 165-26 | IVO anchorage Sohar, Oman | On 11 Oct a products tanker, identified by the IMO as the PETRO DOLPHIN, was struck by a UAV leading to the evacuation of the crew. Indian Ministry of External Affairs reported that two crew members were missing. NAVAREA IX 372/26 reported that as of 14 Oct the vessel was drifting approx. 50 NM northeast of Sohar port. |
-| 120 | X | AL MAQAM | 9732577 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | ABS | 2026-10-11 | IRAN ATTACK | 166-26 | Strait of Hormuz | On 11 Oct a tanker, identified by the IMO as AL MAQAM, was struck by an unknown projectile while transiting the SOH outbound. No crew injuries reported. Vessel damage and environmental impact unknown. |
+| 120 | O | AL MAQAM | 9732577 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | ABS | 2026-10-11 | IRAN ATTACK | 166-26 | Strait of Hormuz | On 11 Oct a tanker, identified by the IMO as AL MAQAM, was struck by an unknown projectile while transiting the SOH outbound. No crew injuries reported. Vessel damage and environmental impact unknown. |
 | 121 | X | DP WORLD KAVERI | 9363429 | CONTAINER | TRANSWORLD SHIPPING LINES LTD | INDIA | TW SHIP MANAGEMENT PVT LTD | INDIA |  | 2026-10-11 | IRAN ATTACK | 167-26 | Strait of Hormuz | On 11 Oct a container ship, identified by the IMO as the DP WORLD KAVERI, was struck by an unknown projectile while transiting the SOH inbound. One minor crew injury reported. Vessel was able to continue its voyage. No environmental damage reported. |
 | 122 | O | KITION M | 9321160 | LR-I | BENETECH SHIPPING SA | GREECE | BENETECH SHIPPING SA | PANAMA | BV | 2026-10-11 | IRAN ATTACK | 168-26 | Strait of Hormuz | 11 Oct a products tanker, identified by the IMO as the KITION M, was struck by an unknown projectile while transiting the SOH outbound. Vessel was able to continue its voyage. Reports of environmental damage unconfirmed. |
 | 123 | O | EVER VICT | 9266774 | LR-I | EASTWIND MARINE SERVICES CO | TAIWAN | EASTWIND MARINE SERVICES CO | BAHAMAS | NK | 2026-10-11 | IRAN ATTACK | 169-26 | Strait of Hormuz | On 11 Oct a crude oil tanker, identified by the IMO as the EVER VICT, was struck by an unknown projectile while transiting the SOH outbound. Reports of crew injuries unconfirmed. Vessel self-reported as not under command. |
@@ -152,5 +152,120 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 148 | O | SINGAPORE ENERGY | 9534846 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 149 | O | SAFEEN PRESTIGE | 9593517 | CONTAINER | TRANSMAR INTERNATIONAL SHPG |  | GFS SHIP MANAGEMENT FZE | MALTA |  |  |  |  |  |  |
 | 150 | O | NV SUNSHINE | 9350288 | LPG | NHAT VIET TRANSPORTATION CORP | VIETNAM | NHAT VIET TRANSPORTATION CORP | VIETNAM | KR |  |  |  |  |  |
-| 151 | X | KUWAIT PROSPERITY | 9722936 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-10-20 | IRAN ATTACK |  | Strait of Hormuz | struck by an unidentified flying object, suspected to be a drone.  Subsequently, the vessel was struck on the Main Deck above the Cargo Oil Tank, resulting in a brief fire, which was successfully extinguished by the vessel's crew..  a hole approximately 30 centimeters in diameter on main deck. |
+| 151 | O | KUWAIT PROSPERITY | 9722936 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-10-20 | IRAN ATTACK |  | Strait of Hormuz | struck by an unidentified flying object, suspected to be a drone.  Subsequently, the vessel was struck on the Main Deck above the Cargo Oil Tank, resulting in a brief fire, which was successfully extinguished by the vessel's crew..  a hole approximately 30 centimeters in diameter on main deck. |
 | 152 | X | JIF BARRACUDA | 9345506 | TUG VESSEL | SEA BARRACUDA BV | NETHERLANDS | SEACONTRACTORS BV | NETHERLANDS | BV | 2026-10-18 | IRAN ATTACK | 177-26 | Northeast of Khor Fakka | an incident northeast of Khor Fakkan, UAE. A tug travelling southbound has reported being struck by 2 unknown projectiles. The tug has sustained damage but is continuing on its route. One minor casualty has been reported. Vessels are advised to transit with caution and report any suspicious activity to UKMTO, whilst authorities investigate. |
+| 153 | O | AL DASMA | 9653446 | AFRAMAX | Kuwait Oil Tanker Company S.A.K. | KUWAIT | Kuwait Oil Tanker Company S.A.K. | KUWAIT | NK | 2026-10-21 | IRAN ATTACK | 179-26 | Strait of Hormuz | struck by an unknown projectile approx. 11 NM west of Bukha, Oman. The fire was extinguished and NAVAREA IX reported that the vessel was anchored approx. 1.3 NM west of Bukha. All crew reported safe and no environmental damage reported |
+| 154 | X | LEONORA KOSAN | 9390953 | LPG | BW Epic Kosan | SINGAPORE | BW EPIC KOSAN | SINGAPORE | BV | 2026-10-22 | IRAN ATTACK | 181-26 | 7NM northeast of Limah, Oman | A tanker has reported being hit by an unknown projectile whilst transiting outbound in the Strait of Hormuz. The tanker was able to continue its voyage to the next port of call. |
+| 155 | O | AL AREESH | 9325697 |  |  |  |  |  |  |  |  |  |  |  |
+| 156 | O | SEA SOAR | 9177569 |  |  |  |  |  |  |  |  |  |  |  |
+| 157 | O | FINLAND PROSPERITY | 9376751 |  |  |  |  |  |  |  |  |  |  |  |
+| 158 | O | AFRICAN LOON | 9748071 |  |  |  |  |  |  |  |  |  |  |  |
+| 159 | O | ALRAYA | 9320831 |  |  |  |  |  |  |  |  |  |  |  |
+| 160 | O | AL ADAILIAH | 9856684 |  |  |  |  |  |  |  |  |  |  |  |
+| 161 | O | AL DERWAZAH | 9653410 |  |  |  |  |  |  |  |  |  |  |  |
+| 162 | O | AL DHANNAH | 9783734 |  |  |  |  |  |  |  |  |  |  |  |
+| 163 | O | AL FAYA | 9602629 |  |  |  |  |  |  |  |  |  |  |  |
+| 164 | O | AL GHASHAMIYA | 9397286 |  |  |  |  |  |  |  |  |  |  |  |
+| 165 | O | AL KHTAM | 9823534 |  |  |  |  |  |  |  |  |  |  |  |
+| 166 | O | AL RAYYAN | 9086734 |  |  |  |  |  |  |  |  |  |  |  |
+| 167 | O | AL YAHR | 9470040 |  |  |  |  |  |  |  |  |  |  |  |
+| 168 | O | AL YARMOUK | 9653422 |  |  |  |  |  |  |  |  |  |  |  |
+| 169 | O | ANGOLA B | 9623685 |  |  |  |  |  |  |  |  |  |  |  |
+| 170 | O | ARGENTINA B | 9389021 |  |  |  |  |  |  |  |  |  |  |  |
+| 171 | O | ASTRID | 9246475 |  |  |  |  |  |  |  |  |  |  |  |
+| 172 | O | BAHAMAS PROSPERITY | 9327114 |  |  |  |  |  |  |  |  |  |  |  |
+| 173 | O | BAHRAIN PROSPERITY | 9596947 |  |  |  |  |  |  |  |  |  |  |  |
+| 174 | O | BARBADOS PROSPERITY | 9377418 |  |  |  |  |  |  |  |  |  |  |  |
+| 175 | O | BASRAH ENERGY | 9391775 |  |  |  |  |  |  |  |  |  |  |  |
+| 176 | O | BNEIDER | 9595010 |  |  |  |  |  |  |  |  |  |  |  |
+| 177 | O | BRAVE OCEAN | 9359363 |  |  |  |  |  |  |  |  |  |  |  |
+| 178 | O | BRUNEI PROSPERITY | 9389899 |  |  |  |  |  |  |  |  |  |  |  |
+| 179 | O | BULGARIA PROSPERITY | 9387566 |  |  |  |  |  |  |  |  |  |  |  |
+| 180 | O | CAPETAN ANDREAS | 9284374 |  |  |  |  |  |  |  |  |  |  |  |
+| 181 | O | CE HAMILTON | 9411238 |  |  |  |  |  |  |  |  |  |  |  |
+| 182 | O | CHILE PROSPERITY | 9826847 |  |  |  |  |  |  |  |  |  |  |  |
+| 183 | O | CYH QUANZHOU | 9743722 |  |  |  |  |  |  |  |  |  |  |  |
+| 184 | O | CYH YONGCHUN | 9689926 |  |  |  |  |  |  |  |  |  |  |  |
+| 185 | O | DAR SALWA | 9534779 |  |  |  |  |  |  |  |  |  |  |  |
+| 186 | O | DIYYINAH I | 9487251 |  |  |  |  |  |  |  |  |  |  |  |
+| 187 | O | EGYPT PROSPERITY | 9534004 |  |  |  |  |  |  |  |  |  |  |  |
+| 188 | O | ELINA II | 9508706 |  |  |  |  |  |  |  |  |  |  |  |
+| 189 | O | ELLIE | 9418614 |  |  |  |  |  |  |  |  |  |  |  |
+| 190 | O | EMERALD SHINE | 9384227 |  |  |  |  |  |  |  |  |  |  |  |
+| 191 | O | ETERNAL STARS | 9290842 |  |  |  |  |  |  |  |  |  |  |  |
+| 192 | O | FELICITY | 9267118 |  |  |  |  |  |  |  |  |  |  |  |
+| 193 | O | FIJI PROSPERITY | 9740330 |  |  |  |  |  |  |  |  |  |  |  |
+| 194 | O | FUJAIRAH ENERGY | 9723071 |  |  |  |  |  |  |  |  |  |  |  |
+| 195 | O | GAS AL KUWAIT II | 9329710 |  |  |  |  |  |  |  |  |  |  |  |
+| 196 | O | GAS AL MUBARAKIAH | 9849617 |  |  |  |  |  |  |  |  |  |  |  |
+| 197 | O | GAS AQUA | 9687514 |  |  |  |  |  |  |  |  |  |  |  |
+| 198 | O | GAS GARUDA | 9266982 |  |  |  |  |  |  |  |  |  |  |  |
+| 199 | O | GAS POLARIS | 9230048 |  |  |  |  |  |  |  |  |  |  |  |
+| 200 | O | GREECE PROSPERITY | 9723112 |  |  |  |  |  |  |  |  |  |  |  |
+| 201 | O | GRIT | 9243150 |  |  |  |  |  |  |  |  |  |  |  |
+| 202 | O | GUYANA PROSPERITY | 9728693 |  |  |  |  |  |  |  |  |  |  |  |
+| 203 | O | HELGA | 9176993 |  |  |  |  |  |  |  |  |  |  |  |
+| 204 | O | HESTIA | 9310654 |  |  |  |  |  |  |  |  |  |  |  |
+| 205 | O | IMOLA | 1014876 |  |  |  |  |  |  |  |  |  |  |  |
+| 206 | O | IMPERIAL | 9400849 |  |  |  |  |  |  |  |  |  |  |  |
+| 207 | O | INDONESIA ENERGY | 9359466 |  |  |  |  |  |  |  |  |  |  |  |
+| 208 | O | INDONESIA PROSPERITY | 9595228 |  |  |  |  |  |  |  |  |  |  |  |
+| 209 | O | JAMAICA PROSPERITY | 9529956 |  |  |  |  |  |  |  |  |  |  |  |
+| 210 | O | JIAFA | 9282869 |  |  |  |  |  |  |  |  |  |  |  |
+| 211 | O | KAI RUI | 9229623 |  |  |  |  |  |  |  |  |  |  |  |
+| 212 | O | KIANA | 9161481 |  |  |  |  |  |  |  |  |  |  |  |
+| 213 | O | KIARA M | 9285823 |  |  |  |  |  |  |  |  |  |  |  |
+| 214 | O | LEEM | 9284245 |  |  |  |  |  |  |  |  |  |  |  |
+| 215 | O | LIWA V | 9489039 |  |  |  |  |  |  |  |  |  |  |  |
+| 216 | O | LOUIZA | 9281554 |  |  |  |  |  |  |  |  |  |  |  |
+| 217 | O | LOYALTY | 9182306 |  |  |  |  |  |  |  |  |  |  |  |
+| 218 | O | LUCIA A | 9228655 |  |  |  |  |  |  |  |  |  |  |  |
+| 219 | O | LUCIE B | 9587166 |  |  |  |  |  |  |  |  |  |  |  |
+| 220 | O | LUCKYRIDE | 9358400 |  |  |  |  |  |  |  |  |  |  |  |
+| 221 | O | LUMINA POLARIS | 9264908 |  |  |  |  |  |  |  |  |  |  |  |
+| 222 | O | MEZAIRA'A | 9487275 |  |  |  |  |  |  |  |  |  |  |  |
+| 223 | O | MONACO PROSPERITY | 9597240 |  |  |  |  |  |  |  |  |  |  |  |
+| 224 | O | MONARCH | 9370537 |  |  |  |  |  |  |  |  |  |  |  |
+| 225 | O | MONJASA SHAKER | 9510591 |  |  |  |  |  |  |  |  |  |  |  |
+| 226 | O | MOZAMBIQUE B | 9709075 |  |  |  |  |  |  |  |  |  |  |  |
+| 227 | O | MUTRIBA | 9656058 |  |  |  |  |  |  |  |  |  |  |  |
+| 228 | O | MYANMAR PROSPERITY | 9315070 |  |  |  |  |  |  |  |  |  |  |  |
+| 229 | O | NAUTILUS | 1030052 |  |  |  |  |  |  |  |  |  |  |  |
+| 230 | O | NAVIG8 PRECISION | 9831294 |  |  |  |  |  |  |  |  |  |  |  |
+| 231 | O | NAVIG8 WOLF | 9935301 |  |  |  |  |  |  |  |  |  |  |  |
+| 232 | O | NAVIS | 9237395 |  |  |  |  |  |  |  |  |  |  |  |
+| 233 | O | NCC FAJR | 9595644 |  |  |  |  |  |  |  |  |  |  |  |
+| 234 | O | NISSOS RHENIA | 9845685 |  |  |  |  |  |  |  |  |  |  |  |
+| 235 | O | NOBLE | 9389253 |  |  |  |  |  |  |  |  |  |  |  |
+| 236 | O | PANAMA PROSPERITY | 9514561 |  |  |  |  |  |  |  |  |  |  |  |
+| 237 | O | PEARL SHINE | 9386952 |  |  |  |  |  |  |  |  |  |  |  |
+| 238 | O | PERU PROSPERITY | 9418066 |  |  |  |  |  |  |  |  |  |  |  |
+| 239 | O | PHILIPPINES PROSPERITY | 9377420 |  |  |  |  |  |  |  |  |  |  |  |
+| 240 | O | PHOTINI | 9753363 |  |  |  |  |  |  |  |  |  |  |  |
+| 241 | O | PIONEER | 1024950 |  |  |  |  |  |  |  |  |  |  |  |
+| 242 | O | RAIN CUBIC | 9384203 |  |  |  |  |  |  |  |  |  |  |  |
+| 243 | O | RAWAQ | 9853591 |  |  |  |  |  |  |  |  |  |  |  |
+| 244 | O | RENAD | 9310161 |  |  |  |  |  |  |  |  |  |  |  |
+| 245 | O | SANAM | 9858486 |  |  |  |  |  |  |  |  |  |  |  |
+| 246 | O | SC PRESTIGE | 9331672 |  |  |  |  |  |  |  |  |  |  |  |
+| 247 | O | SEA V | 9332535 |  |  |  |  |  |  |  |  |  |  |  |
+| 248 | O | SEABUS | 9377781 |  |  |  |  |  |  |  |  |  |  |  |
+| 249 | O | SERENO | 9437658 |  |  |  |  |  |  |  |  |  |  |  |
+| 250 | O | SIFSAFAH | 9856713 |  |  |  |  |  |  |  |  |  |  |  |
+| 251 | O | SOGL | 9208227 |  |  |  |  |  |  |  |  |  |  |  |
+| 252 | O | SONANGOL NAMIBE | 9325049 |  |  |  |  |  |  |  |  |  |  |  |
+| 253 | O | SPAIN B | 9722924 |  |  |  |  |  |  |  |  |  |  |  |
+| 254 | O | ST3 | 9220964 |  |  |  |  |  |  |  |  |  |  |  |
+| 255 | O | SUPREME | 9296418 |  |  |  |  |  |  |  |  |  |  |  |
+| 256 | O | SURINAME PROSPERITY | 9376749 |  |  |  |  |  |  |  |  |  |  |  |
+| 257 | O | SUVARI REIS | 9084267 |  |  |  |  |  |  |  |  |  |  |  |
+| 258 | O | SWEIHAN | 9722223 |  |  |  |  |  |  |  |  |  |  |  |
+| 259 | O | TANZANIA PROSPERITY | 9414931 |  |  |  |  |  |  |  |  |  |  |  |
+| 260 | O | THAILAND PROSPERITY | 9575955 |  |  |  |  |  |  |  |  |  |  |  |
+| 261 | O | TITANIUM SHINE | 9519482 |  |  |  |  |  |  |  |  |  |  |  |
+| 262 | O | TOGO PROSPERITY | 9411032 |  |  |  |  |  |  |  |  |  |  |  |
+| 263 | O | TORKEL | 9340635 |  |  |  |  |  |  |  |  |  |  |  |
+| 264 | O | TUNISIA PROSPERITY | 9568809 |  |  |  |  |  |  |  |  |  |  |  |
+| 265 | O | UQAB | 9830824 |  |  |  |  |  |  |  |  |  |  |  |
+| 266 | O | VAUGHAN | 9256901 |  |  |  |  |  |  |  |  |  |  |  |
+| 267 | O | VELOS AMBER | 9571038 |  |  |  |  |  |  |  |  |  |  |  |
