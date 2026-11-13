@@ -539,6 +539,14 @@
     min-width: 100px;
   }
 
+  td textarea {
+    padding: 6px 8px;
+    font-size: 13px;
+    min-width: 120px;
+    font-family: inherit;
+    resize: vertical;
+  }
+
   .row-save { background: var(--accent); color: var(--accent-ink); border: none; }
   .row-save:hover { background: var(--accent-hover); }
 
@@ -784,6 +792,11 @@
 
   const ACTIONS_WIDTH = '6%';
 
+  // Fields that may hold more than one incident, newline-separated, with each
+  // line manually prefixed "①", "②", … to mark which attack it belongs to.
+  const MULTILINE_KEYS = new Set(['Iran Attack', 'INCIDENT TYPE', 'UKMTO', 'Location', 'Description']);
+  const CIRCLED_NUM_RE = /^[①-⑳]\s*/;
+
   let state = {
     vessels: [],
     ready: false,
@@ -958,6 +971,9 @@
           return `<td class="mono cell-right">${displayNo}</td>`;
         }
         const val = dv[c.key] == null ? '' : dv[c.key];
+        if (MULTILINE_KEYS.has(c.key)) {
+          return `<td><textarea data-field="${escapeHtml(c.key)}" rows="2">${escapeHtml(val)}</textarea></td>`;
+        }
         return `<td><input type="text" data-field="${escapeHtml(c.key)}" value="${escapeHtml(val)}"></td>`;
       }).join('');
       return `<tr class="editing" data-id="${v._id}">${cells}
@@ -977,10 +993,28 @@
       }
 
       if (c.attack) {
-        return `<td>${empty ? '<span class="empty-val">—</span>' : `<span class="attack-pill">${iconWarn()}${escapeHtml(val)}</span>`}</td>`;
+        if (empty) return `<td><span class="empty-val">—</span></td>`;
+        const lines = String(val).split('\n');
+        if (lines.length === 1) {
+          return `<td><span class="attack-pill">${iconWarn()}${escapeHtml(val)}</span></td>`;
+        }
+        const pills = lines.map(l => `<span class="attack-pill">${iconWarn()}${escapeHtml(l)}</span>`).join('');
+        return `<td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">${pills}</div></td>`;
       }
 
       if (c.chips) {
+        if (!empty && String(val).includes('\n')) {
+          const lines = String(val).split('\n');
+          const chipsHtml = lines.map(l => {
+            const bare = l.replace(CIRCLED_NUM_RE, '');
+            const prefixMatch = l.match(CIRCLED_NUM_RE);
+            const chip = c.chips[bare];
+            const cls = chip ? chip.cls : 'chip-neutral';
+            const label = (prefixMatch ? prefixMatch[0] : '') + (chip ? chip.label : bare);
+            return `<span class="chip ${cls}">${escapeHtml(label)}</span>`;
+          }).join('');
+          return `<td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">${chipsHtml}</div></td>`;
+        }
         const chip = c.chips[val];
         if (!chip) return `<td class="empty-val">${empty ? '—' : escapeHtml(val)}</td>`;
         return `<td><span class="chip ${chip.cls}">${escapeHtml(chip.label)}</span></td>`;
@@ -990,11 +1024,13 @@
         const isExpanded = state.expandedDesc.has(v._id);
         const cls = ['wrap-cell', 'desc-cell', isExpanded ? 'expanded' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
         if (empty) return `<td class="${cls}">—</td>`;
-        return `<td class="${cls}" data-action="toggle-desc"><div class="desc-text">${escapeHtml(val)}</div><span class="desc-toggle">${isExpanded ? 'Show less' : 'Show more'}</span></td>`;
+        const display = escapeHtml(val).replace(/\n/g, '<br>');
+        return `<td class="${cls}" data-action="toggle-desc"><div class="desc-text">${display}</div><span class="desc-toggle">${isExpanded ? 'Show less' : 'Show more'}</span></td>`;
       }
 
       const cls = [c.mono ? 'mono' : '', c.right ? 'cell-right' : '', c.name ? 'name-cell' : '', c.wrap ? 'wrap-cell' : '', empty ? 'empty-val' : ''].filter(Boolean).join(' ');
-      return `<td class="${cls}">${empty ? '—' : escapeHtml(val)}</td>`;
+      const display = empty ? '—' : escapeHtml(val).replace(/\n/g, '<br>');
+      return `<td class="${cls}">${display}</td>`;
     }).join('');
 
     const actions = isPendingDelete
@@ -1052,7 +1088,7 @@
       state.editingId = null;
       renderTable();
     } else if (action === 'save') {
-      const inputs = tr.querySelectorAll('input[data-field]');
+      const inputs = tr.querySelectorAll('input[data-field], textarea[data-field]');
       const updates = {};
       inputs.forEach(inp => updates[inp.dataset.field] = inp.value.trim());
       if (!updates['VESSEL NAME']) {
@@ -1138,7 +1174,9 @@
     addFieldsEl.innerHTML = COLUMNS.filter(c => c.key !== 'NO').map(c => `
       <div class="field">
         <label>${escapeHtml(c.label)}${c.name ? ' <span class="req">*</span>' : ''}</label>
-        <input type="text" data-field="${escapeHtml(c.key)}" placeholder="${escapeHtml(c.label)}">
+        ${MULTILINE_KEYS.has(c.key)
+          ? `<textarea data-field="${escapeHtml(c.key)}" rows="2" placeholder="${escapeHtml(c.label)}"></textarea>`
+          : `<input type="text" data-field="${escapeHtml(c.key)}" placeholder="${escapeHtml(c.label)}">`}
       </div>
     `).join('');
   }
@@ -1158,7 +1196,7 @@
   });
 
   document.getElementById('saveAddBtn').addEventListener('click', async () => {
-    const inputs = addFieldsEl.querySelectorAll('input[data-field]');
+    const inputs = addFieldsEl.querySelectorAll('input[data-field], textarea[data-field]');
     const entry = { NO: nextNo() };
     inputs.forEach(inp => entry[inp.dataset.field] = inp.value.trim());
 
