@@ -2,7 +2,7 @@
 
 Sanctions compliance register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents.
 
-**263 vessels on record — 77 attacked**
+**262 vessels on record — 81 attacked**
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | Owner | Owner Location | Manager | Flag | Class | ATTACKED DATE | INCIDENT TYPE | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -22,9 +22,8 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 16 | O | MOMBASA B | 9739501 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV | 2026-07-14 | IRAN ATTACK | 086-26 | 13 NM from the coast of Oman | Damaged. No pollution. Abandoned. Eleven seafarers injured. |
 | 17 | O | STOLT MAGNESIUM | 9739317 | CHEMICAL | STOLT-NIELSEN GROUP | NETHERLANDS | STOLT TANKERS BV | LIBERIA | LR | 2026-07-13 | IRAN ATTACK | 085-26 | 40 NM from the coast of Oman | Damaged.  No pollution. |
 | 18 | O | AL WATAN | 9615030 | BULK | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | NK | 2026-08-14 | IRAN ATTACK | 113-26 | Strait of Hormuz | Damaged. No pollution. |
-| 19 | O | NAVIG8 MESSI | 9482859 | LR-I | NAVIG8 GROUP (STOCK BY ADNOC 80%) | UK | NAVIG8 ASIA PTE LTD | SINGAPORE | KR | 2026-08-13 | IRAN ATTACK | 111-26 | Strait of Hormuz Outbound Transit | Damaged. No pollution. |
+| 19 | O | NAVIG8 MESSI | 9482859 | LR-I | NAVIG8 GROUP (STOCK BY ADNOC 80%) | UK | NAVIG8 ASIA PTE LTD | SINGAPORE | KR | ①2026-08-13<br>②2026-11-08 | ①IRAN ATTACK<br>②IRAN ATTACK | ①111-26<br>②199-26 | Strait of Hormuz Outbound Transit | ①Damaged. No pollution.<br>②an incident 8NM northwest of Khasab, Oman. Military authorities reported the Tanker is on fire which has resulted in the evacuation of the crew. |
 | 20 | O | SINGAPORE PROSPERITY | 9419967 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
-| 21 | X | DISHA | 9250713 | LNG | SCI / INDIA LNG CONSORTIUM | INDIA | SHIPPING CORP. OF INDIA | MALTA | IRS |  |  |  |  |  |
 | 22 | O | GASLOG SHANGHAI | 9600528 | LNG | GASLOG GROUP | GREECE | GASLOG LNG SERVICES LTD. | BERMUDA | ABS | 2026-07-31 | IRAN ATTACK | 101-26 | 11NM northeast of Lima, Oman | Damaged. No pollution. |
 | 23 | O | LUBNA | 9489065 | MR | BAHRI GROUP | SAUDI ARABIA | SYNERGY MIDEAST SHIP MGMT DMCC | MARSHALL ISLAND | LR |  |  |  |  |  |
 | 24 | O | HAZI 1 | 7802598 | OFFSHORE SUPPLY | UNDISCLOSED |  |  | MALI |  |  |  |  |  |  |
@@ -46,7 +45,6 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 40 | O | BANASTAR | 9228045 | BULK | KLAVENESS GROUP | NORWAY | KLAVENESS SHIP MANAGEMENT | MARSHALL ISLAND | DNV |  |  |  |  |  |
 | 41 | O | NAVARA | 9241798 | MR | ARGONEVIS / GREEK PRIVATE OWNERSHIP | GREECE | ARGONEVIS MARINE SERVICES | BARBADOS | ABS |  |  |  |  |  |
 | 42 | O | ARGOS EXPLORER (NISSOS HERACLEA) | 9419618 | VLCC | KYKLADES / GREEK PRIVATE OWNERSHIP | GREECE | KYKLADES MARITIME CORP | LIBERIA | ABS |  |  |  |  |  |
-| 43 | X | BLUE STAR I | 9215115 | SR | UAE / ALFA ALSHARQ | UAE | ALFA ALSHARQ FOR REFINED OIL | MARSHALL ISLAND | LR |  |  |  |  |  |
 | 44 | O | ASHLEY | 9258466 | LR-I | UAE PRIVATE OWNERSHIP | UAE | NAVIGATOR LINE SM & OPS LLC | ANTIGUA AND BARBUDA | LR |  |  |  |  |  |
 | 45 | O | MRAWETH | 9074638 | LNG | ADNOC GROUP | UAE | ADNOC LOGISTICS & SERVICES | LIBERIA | LR |  |  |  |  |  |
 | 46 | O | AL LULU | 9583627 | LNG | SAFEEN GROUP | UAE | NOATUM CSM FZCO | MARSHALL ISLAND | BV |  |  |  |  |  |
@@ -95,7 +93,6 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 90 | O | SINBAD | 9413688 | AFRAMAX | SINBAD MARITIME SHIPPING SA | UAE | ANGLO-EASTERN TANKER MGMT-HKG | LIBERIA | ABS | 2026-09-29 | IRAN ATTACK | 145-26 | Strait of Hormuz | A verified source has reported that a tanker transiting inbound has been struck by an unknown projectile. |
 | 91 | O | AL DAAYEN | 9325702 | LNG | AL DAAYEN LLC | UK | SEAPEAK MARITIME LTD | BAHAMAS | ABS |  |  |  |  |  |
 | 92 | O | OTTOMAN COURTESY | 9788708 | SUEZMAX | GUNGEN DENIZCILIK VE TICARET | TURKEY | GUNGEN DENIZCILIK VE TICARET | TURKEY | ABS |  |  |  |  |  |
-| 93 | X | XING SHENG | 9384904 | BULK | XINGSHENG 01 SHIPPING LTD | CHINA | HONG KONG SEAMEN HOME MARITIME | PANAMA | BV |  |  |  |  |  |
 | 94 | O | AL RIQQA | 9534808 | VLCC | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | NK |  |  |  |  |  |
 | 95 | O | AL KOUT | 9653434 | VLCC | KUWAIT OIL TANKER | KUWAIT | KUWAIT OIL TANKER | KUWAIT | NK |  |  |  |  |  |
 | 96 | X | ST HELENA | 8716306 | PASSENGER |  |  |  | DJIBOUTI |  | 2026-09-14 | IRAN ATTACK | 135-26 | Strait of Hormuz | (Attack, Indian Ocean) – Attack on Vessel, Strait of Hormuz. 14th Sept time late UKMTO report |
@@ -149,7 +146,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 145 | O | NISSOS KEROS | 9856074 | VLCC | ARETHUSA SHIPPING CORP. | GREECE | KYKLADES MARITIME CORP. | MARSHALL ISLAND | ABS |  |  |  |  |  |
 | 146 | O | QASBA | 9853589 | VLCC | NATIONAL SHIPPING COMPANY OF SAUDI ARABIA (BAHRI) |  | BAHRI SHIP MANAGEMENT DMCC | SAUDI ARABIA | DNV |  |  |  |  |  |
 | 147 | O | OCEAN MOLICA | 9139270 | BULK | WESTERN BULK SHIPPING CO LTD |  | WESTERN BULK SHIPPING CO LTD | PANAMA |  |  |  |  |  |  |
-| 148 | O | SINGAPORE ENERGY | 9534846 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
+| 148 | O | SINGAPORE ENERGY | 9534846 | VLCC | SINOKOR GROUP | KOREA | SYNERGY DENMARK | LIBERIA | BV |  |  |  |  |  |
 | 149 | O | SAFEEN PRESTIGE | 9593517 | CONTAINER | TRANSMAR INTERNATIONAL SHPG |  | GFS SHIP MANAGEMENT FZE | MALTA |  |  |  |  |  |  |
 | 150 | O | NV SUNSHINE | 9350288 | LPG | NHAT VIET TRANSPORTATION CORP | VIETNAM | NHAT VIET TRANSPORTATION CORP | VIETNAM | KR |  |  |  |  |  |
 | 151 | O | KUWAIT PROSPERITY | 9722936 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV | 2026-10-20 | IRAN ATTACK |  | Strait of Hormuz | struck by an unidentified flying object, suspected to be a drone.  Subsequently, the vessel was struck on the Main Deck above the Cargo Oil Tank, resulting in a brief fire, which was successfully extinguished by the vessel's crew..  a hole approximately 30 centimeters in diameter on main deck. |
@@ -158,7 +155,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 154 | X | LEONORA KOSAN | 9390953 | LPG | BW Epic Kosan | SINGAPORE | BW EPIC KOSAN | SINGAPORE | BV | 2026-10-22 | IRAN ATTACK | 181-26 | 7NM northeast of Limah, Oman | A tanker has reported being hit by an unknown projectile whilst transiting outbound in the Strait of Hormuz. The tanker was able to continue its voyage to the next port of call. |
 | 155 | O | AL AREESH | 9325697 | LNG Carrier | AL AREESH LLC | UK | Seapeak Maritime Glasgow / Seapeak Maritime | Bahamas | LR |  |  |  |  |  |
 | 156 | O | SEA SOAR | 9177569 | LPG Carrier | Naviboost Global Shipping | China | Everglory Ships Management / Gemini Shipping | Panama | DNV |  |  |  |  |  |
-| 157 | O | FINLAND PROSPERITY | 9376751 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 157 | O | FINLAND PROSPERITY | 9376751 | VLCC | SINOKOR GROUP | KOREA | SYNERGY DENMARK | LIBERIA | BV |  |  |  |  |  |
 | 158 | O | AFRICAN LOON | 9748071 | Bulk Carrier | STK Line |  | Dockendale Ship Management | Bahamas | NK |  |  |  |  |  |
 | 159 | O | ALRAYA | 9320831 | VLCC / Crude Oil Tanker | Jannat Alferdos Oil Products | Iraq | Nouri Alwan Marine | Norway (NIS) | RINA |  |  |  |  |  |
 | 160 | O | AL ADAILIAH | 9856684 | Crude Oil Tanker | Kuwait Oil Tanker Co. | Kuwait | Kuwait Oil Tanker Co. | Kuwait | LR |  |  |  |  |  |
@@ -171,31 +168,31 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 167 | O | AL YAHR | 9470040 | Crude Oil Tanker | ADNOC Logistics & Services | UAE | ADNOC Logistics & Services |  | BV |  |  |  |  |  |
 | 168 | O | AL YARMOUK | 9653422 | Crude Oil Tanker | Kuwait Oil Tanker Co. | Kuwait | Kuwait Oil Tanker Co. | Kuwait | NK |  |  |  |  |  |
 | 169 | O | ANGOLA B | 9623685 | VLCC | ADNOC GROUP | UAE |  |  |  |  |  |  |  |  |
-| 170 | O | ARGENTINA B | 9389021 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 170 | O | ARGENTINA B | 9389021 | VLCC | SINOKOR GROUP | KOREA | ADNOC LOGISTICS & SERVICES | LIBERIA | BV |  |  |  |  |  |
 | 171 | O | ASTRID | 9246475 | MR Chemical / Product Tanker | Astrid Marine Services | UAE | Maritime Trust Management | Panama | BV |  |  |  |  |  |
-| 172 | O | BAHAMAS PROSPERITY | 9327114 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 172 | O | BAHAMAS PROSPERITY | 9327114 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 173 | O | BAHRAIN PROSPERITY | 9596947 | VLCC | ADNOC GROUP | UAE |  |  |  |  |  |  |  |  |
-| 174 | O | BARBADOS PROSPERITY | 9377418 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 174 | O | BARBADOS PROSPERITY | 9377418 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | PANAMA | BV |  |  |  |  |  |
 | 175 | O | BASRAH ENERGY | 9391775 | VLCC | ADNOC GROUP | UAE |  |  |  |  |  |  |  |  |
 | 176 | O | BNEIDER | 9595010 |  |  |  |  |  |  |  |  |  |  |  |
 | 177 | O | BRAVE OCEAN | 9359363 | MR Chemical / Product Tanker | Global Shipping Tianjin | China | Singapore Strait Shipmanager | Liberia | DNV |  |  |  |  |  |
-| 178 | O | BRUNEI PROSPERITY | 9389899 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
-| 179 | O | BULGARIA PROSPERITY | 9387566 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 178 | O | BRUNEI PROSPERITY | 9389899 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
+| 179 | O | BULGARIA PROSPERITY | 9387566 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 180 | O | CAPETAN ANDREAS | 9284374 | Crude Oil Tanker | Wing Maritime | Marshall Islands | Universal Tankers | Liberia | ABS |  |  |  |  |  |
 | 181 | O | CE HAMILTON | 9411238 | Crude Oil Tanker | Bellavista Investments | Greece | Marine Trust | Marshall Islands | DNV |  |  |  |  |  |
-| 182 | O | CHILE PROSPERITY | 9826847 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 182 | O | CHILE PROSPERITY | 9826847 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 183 | O | CYH QUANZHOU | 9743722 | LPG Carrier |  |  |  |  |  |  |  |  |  |  |
 | 184 | O | CYH YONGCHUN | 9689926 | LPG Carrier |  |  |  | Hong Kong |  |  |  |  |  |  |
 | 185 | O | DAR SALWA | 9534779 | VLCC | Kuwait Oil Tanker Co. | Kuwait | Kuwait Oil Tanker Co. | Kuwait |  |  |  |  |  |  |
 | 186 | O | DIYYINAH I | 9487251 | Crude Oil Tanker |  |  |  | Liberia |  |  |  |  |  |  |
-| 187 | O | EGYPT PROSPERITY | 9534004 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 187 | O | EGYPT PROSPERITY | 9534004 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 188 | O | ELINA II | 9508706 |  |  |  |  |  |  |  |  |  |  |  |
 | 189 | O | ELLIE | 9418614 | Suezmax Crude Oil Tanker | Shuri Services | UAE | International Tanker Management | Liberia | DNV |  |  |  |  |  |
 | 190 | O | EMERALD SHINE | 9384227 | VLCC | National Shipping Co. of Saudi Arabia / Bahri | Saudi Arabia |  | Liberia | LR |  |  |  |  |  |
 | 191 | O | ETERNAL STARS | 9290842 | Kamsarmax Bulk Carrier | Taiyao HK | Hong Kong | Andromeda Shiptrade / Fujian Ocean Ship Management | Liberia | NK |  |  |  |  |  |
 | 192 | O | FELICITY | 9267118 | VLCC | Dragon Linkage |  | Neptune Lines Shipping | Vanuatu | NK |  |  |  |  |  |
-| 193 | O | FIJI PROSPERITY | 9740330 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
-| 194 | O | FUJAIRAH ENERGY | 9723071 | VLCC | ADNOC GROUP | UAE |  |  |  |  |  |  |  |  |
+| 193 | O | FIJI PROSPERITY | 9740330 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
+| 194 | O | FUJAIRAH ENERGY | 9723071 | VLCC | ADNOC GROUP | UAE | ADNOC LOGISTICS | LIBERIA | BV | 2026-11-10 | IRAN ATTACK |  | IN AG | Liberia-flagged very large crude carrier (VLCC) MT Fujairah Energy was struck by a projectile while sailing through the Persian Gulf on 10 November 2026. Six Indian seafarers were among the crew members on board. Four crew members sustained injuries, including one Indian national who suffered minor injuries, while the remaining 18 crew members, including five Indians, were reported safe. |
 | 195 | O | GAS AL KUWAIT II | 9329710 | LPG Carrier | Kuwait Oil Tanker Co. | Kuwait | Kuwait Oil Tanker Co. | Kuwait |  |  |  |  |  |  |
 | 196 | O | GAS AL MUBARAKIAH | 9849617 | LPG Carrier | Kuwait Oil Tanker Co. | Kuwait | Kuwait Oil Tanker Co. | Kuwait |  |  |  |  |  |  |
 | 197 | O | GAS AQUA | 9687514 | LPG Carrier | National Shipping Co. of Saudi Arabia | Saudi Arabia | Bahri Ship Management | Liberia | BV |  |  |  |  |  |
@@ -203,14 +200,14 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 199 | O | GAS POLARIS | 9230048 | LNG Carrier |  |  | Seapeak-related history |  |  |  |  |  |  |  |
 | 200 | O | GREECE PROSPERITY | 9723112 | VLCC | ADNOC GROUP | UAE |  |  |  |  |  |  |  |  |
 | 201 | O | GRIT | 9243150 | VLCC |  |  |  |  | CCS |  |  |  |  |  |
-| 202 | O | GUYANA PROSPERITY | 9728693 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 202 | O | GUYANA PROSPERITY | 9728693 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 203 | O | HELGA | 9176993 | VLCC |  |  |  | Comoros | URS |  |  |  |  |  |
 | 204 | O | HESTIA | 9310654 | VLCC | Art Delight Investment | China | Nanjing Penghang Shipping | Hong Kong | CCS |  |  |  |  |  |
 | 205 | O | IMOLA | 1014876 | Suezmax |  |  | Apex Shipping & Energy | Liberia | LR |  |  |  |  |  |
 | 206 | O | IMPERIAL | 9400849 | MR Oil Products Tanker | Naples Trading | Greece | Benetech Shipping | Liberia | BV |  |  |  |  |  |
 | 207 | O | INDONESIA ENERGY | 9359466 | LPG Carrier | Eternity Ocean Maritime | Indonesia | Soechi Group / Vektor Maritim | Marshall Islands | DNV |  |  |  |  |  |
-| 208 | O | INDONESIA PROSPERITY | 9595228 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
-| 209 | O | JAMAICA PROSPERITY | 9529956 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 208 | O | INDONESIA PROSPERITY | 9595228 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
+| 209 | O | JAMAICA PROSPERITY | 9529956 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 210 | O | JIAFA | 9282869 | Bulk Carrier |  |  |  | Panama | NK |  |  |  |  |  |
 | 211 | O | KAI RUI | 9229623 | Bulk Carrier |  |  |  | Panama |  |  |  |  |  |  |
 | 212 | O | KIANA | 9161481 | Bulk Carrier | Sea Pearl Shipping & Trading | Turkey | Sea Pioneer Denizcilik | Panama | KR |  |  |  |  |  |
@@ -224,12 +221,12 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 220 | O | LUCKYRIDE | 9358400 | Crude Oil Tanker |  |  |  | Hong Kong |  |  |  |  |  |  |
 | 221 | O | LUMINA POLARIS | 9264908 | LPG Carrier | Velysis Shipping | China | Velysis Shipping | Hong Kong | DNV |  |  |  |  |  |
 | 222 | O | MEZAIRA'A | 9487275 | Crude Oil Tanker | Mezaira'a Shipping | UAE | ADNOC Logistics & Services | Liberia | LR |  |  |  |  |  |
-| 223 | O | MONACO PROSPERITY | 9597240 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 223 | O | MONACO PROSPERITY | 9597240 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 224 | O | MONARCH | 9370537 | LPG Carrier | OPEC Petrol Transportation | Vietnam | OPEC Petrol Transportation | Vietnam | VR |  |  |  |  |  |
 | 225 | O | MONJASA SHAKER | 9510591 |  |  |  |  |  |  |  |  |  |  |  |
-| 226 | O | MOZAMBIQUE B | 9709075 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 226 | O | MOZAMBIQUE B | 9709075 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 227 | O | MUTRIBA | 9656058 | Oil / Chemical Tanker | Kuwait Oil Tanker Co. | Kuwait | Kuwait Oil Tanker Co. | Kuwait | NK |  |  |  |  |  |
-| 228 | O | MYANMAR PROSPERITY | 9315070 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 228 | O | MYANMAR PROSPERITY | 9315070 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | LR | 2026-11-09 | IRAN ATTACK |  | Strait of Hormuz | Ship was attacked at the stern - suspect damage to funnel/scrubber - people are safe and engine operating now. Vessel and people are safe - drone hit vessel’s EGCS scrubber funnel area. Therefore, there are no damages and vessel continues outbound transit at full speed and machinery area is not impacted. |
 | 229 | O | NAUTILUS | 1030052 | LR1 Chemical / Product Tanker | Burano Shipping | Greece | Apex Shipping & Energy | Liberia | LR |  |  |  |  |  |
 | 230 | O | NAVIG8 PRECISION | 9831294 | Aframax Crude Oil Tanker |  |  |  | Singapore |  |  |  |  |  |  |
 | 231 | O | NAVIG8 WOLF | 9935301 | Aframax Crude Oil Tanker |  |  |  | Singapore |  |  |  |  |  |  |
@@ -237,10 +234,10 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 233 | O | NCC FAJR | 9595644 | LR2 Chemical / Product Tanker | National Chemical Carriers | Saudi Arabia | Bahri Ship Management | Saudi Arabia | DNV |  |  |  |  |  |
 | 234 | O | NISSOS RHENIA | 9845685 | VLCC | Omega Five Marine | Greece | V Ships Asia | Marshall Islands | DNV |  |  |  |  |  |
 | 235 | O | NOBLE | 9389253 | VLCC | Key Melody | China | Wonderful Perfection / Better Gem (ISM) | Hong Kong | ABS |  |  |  |  |  |
-| 236 | O | PANAMA PROSPERITY | 9514561 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 236 | O | PANAMA PROSPERITY | 9514561 | VLCC | SINOKOR GROUP | KOREA | SYNERGY DENMARK | LIBERIA | BV |  |  |  |  |  |
 | 237 | O | PEARL SHINE | 9386952 | VLCC |  |  |  | Liberia |  |  |  |  |  |  |
-| 238 | O | PERU PROSPERITY | 9418066 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
-| 239 | O | PHILIPPINES PROSPERITY | 9377420 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 238 | O | PERU PROSPERITY | 9418066 | VLCC | SINOKOR GROUP | KOREA | SYNERGY DENMARK | LIBERIA | BV |  |  |  |  |  |
+| 239 | O | PHILIPPINES PROSPERITY | 9377420 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 240 | O | PHOTINI | 9753363 | Suezmax Crude Oil Tanker |  |  |  | Marshall Islands | ABS |  |  |  |  |  |
 | 241 | O | PIONEER | 1024950 | Aframax Crude Oil Tanker | Pioneer Shipping | Panama | Anglo-Eastern Tanker Management | Liberia | ABS |  |  |  |  |  |
 | 242 | O | RAIN CUBIC | 9384203 | VLCC |  |  |  | Bahamas |  |  |  |  |  |  |
@@ -254,18 +251,20 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 250 | O | SIFSAFAH | 9856713 | Crude Oil Tanker |  | Kuwait |  | Kuwait |  |  |  |  |  |  |
 | 251 | O | SOGL | 9208227 | LPG Carrier |  |  | TECHFLEES Solutions | Panama |  |  |  |  |  |  |
 | 252 | O | SONANGOL NAMIBE | 9325049 | Suezmax Crude Oil Tanker | Sonangol Shipping Namibe |  | Stena Bulk / Wallem Shipmanagement | Bahamas | ABS |  |  |  |  |  |
-| 253 | O | SPAIN B | 9722924 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 253 | O | SPAIN B | 9722924 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 254 | O | ST3 | 9220964 | VLCC | Safeen Tankers 48 | UAE | Safeen Feeders / Noatum CSM | Marshall Islands | LR |  |  |  |  |  |
 | 255 | O | SUPREME | 9296418 | Suezmax Crude Oil Tanker | Velmora Shipping | Greece | Med & Baltic Shipmanagement | Bahamas | LR |  |  |  |  |  |
-| 256 | O | SURINAME PROSPERITY | 9376749 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 256 | O | SURINAME PROSPERITY | 9376749 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 257 | O | SUVARI REIS | 9084267 | Bulk Carrier | Suvari Shipping |  | Fuluka Denizcilik | Palau |  |  |  |  |  |  |
 | 258 | O | SWEIHAN | 9722223 |  |  |  |  |  |  |  |  |  |  |  |
-| 259 | O | TANZANIA PROSPERITY | 9414931 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
-| 260 | O | THAILAND PROSPERITY | 9575955 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 259 | O | TANZANIA PROSPERITY | 9414931 | VLCC | SINOKOR GROUP | KOREA | SYNERGY DENMARK | LIBERIA | BV |  |  |  |  |  |
+| 260 | O | THAILAND PROSPERITY | 9575955 | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 261 | O | TITANIUM SHINE | 9519482 | VLCC | National Shipping Co. of Saudi Arabia | Saudi Arabia | Bahri Ship Management | Liberia | LR |  |  |  |  |  |
 | 262 | O | TOGO PROSPERITY | 9411032 | VLCC | ADNOC GROUP | UAE |  |  |  |  |  |  |  |  |
 | 263 | O | TORKEL | 9340635 | VLCC | Torkel Energy | China | Plaza Mayor International | Hong Kong | KR |  |  |  |  |  |
-| 264 | O | TUNISIA PROSPERITY | 9568809 | VLCC | SINOKOR GROUP | KOREA |  |  |  |  |  |  |  |  |
+| 264 | O | TUNISIA PROSPERITY | 9568809 | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 265 | O | UQAB | 9830824 | VLCC |  | Saudi Arabia |  |  |  |  |  |  |  |  |
 | 266 | O | VAUGHAN | 9256901 |  |  |  |  |  |  |  |  |  |  |  |
 | 267 | O | VELOS AMBER | 9571038 | LR1 Oil Products Tanker | Movena Shipping | Greece | Velos Tankers | Marshall Islands | RINA |  |  |  |  |  |
+| 268 | X | MADAGASCAR PROSPERITY | 9610250 | VLCC | SINOKOR GROUP | KOREA | SYNERGY DENMARK | LIBERIA | ABS | 2026-10-29 | IRAN ATTACK |  | Strait of Hormuz | During the vessel's transit, damage caused by an unknown projectile was identified on the Port Wing Bridge, near the bridge door.  A hole was found in the Port Wing Bridge structure, and the Port-side bridge window was shattered. Furniture and internal equipment inside the Bridge were also damaged. However, all crew members are safe and unharmed, and all navigational and communication equipment remains intact with no damage reported. |
+| 269 | X | DOMINICA PROSPERITY | 9395496 | VLCC | SINOKOR GROUP | KOREA | ANGLO EASTERN | LIBERIA | BV | 2026-11-11 | IRAN ATTACK |  | 15 Nm from CP A (IN AG) | Vessel got hit by unknown projectiles during drfiting. Fire in E/R Stb'd side, all crews were safe and abandoned vessel by local authority tug boat |
