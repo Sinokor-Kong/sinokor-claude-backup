@@ -2,7 +2,7 @@
 
 Sanctions compliance register of vessels flagged for IRGC-linked ownership, management, or trading exposure, with recorded Iran-area attack incidents.
 
-**275 vessels on record — 102 attacked**
+**278 vessels on record — 106 attacked**
 
 | NO | IRGC 공식 LIST | VESSEL NAME | IMO | KINDS | SIZE | Owner | Owner Location | Manager | Flag | Class | ATTACKED DATE | INCIDENT TYPE | UKMTO | Location | Description |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -260,7 +260,7 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 260 | O | THAILAND PROSPERITY | 9575955 | CRUDE OIL TANKER | VLCC | SINOKOR GROUP | KOREA | FLEET SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 261 | O | TITANIUM SHINE | 9519482 | CRUDE OIL TANKER | VLCC | NATIONAL SHIPPING CO. OF SAUDI ARABIA | SAUDI ARABIA | BAHRI SHIP MANAGEMENT | LIBERIA | LR |  |  |  |  |  |
 | 262 | O | TOGO PROSPERITY | 9411032 | CRUDE OIL TANKER | VLCC | ADNOC GROUP | UAE |  |  |  |  |  |  |  |  |
-| 263 | O | TORKEL | 9340635 | CRUDE OIL TANKER | VLCC | TORKEL ENERGY | CHINA | PLAZA MAYOR INTERNATIONAL | HONG KONG | KR |  |  |  |  |  |
+| 263 | O | TORKEL | 9340635 | CRUDE OIL TANKER | VLCC | TORKEL ENERGY | CHINA | PLAZA MAYOR INTERNATIONAL | HONG KONG | KR | 2026-11-21 | IRAN ATTACK | 215-26 | Strait of Hormuz | On 21 Nov a tanker, identified by NAVAREA IX as the TORKEL, was struck on the stern by an unknown projectile approx. 11 NM north of Khasab, Oman, while transiting the Strait of<br>Hormuz outbound, causing a fire on board. The vessel was later reported at anchor. No crew casualties were  eported. Environmental impact is unknown. |
 | 264 | O | TUNISIA PROSPERITY | 9568809 | CRUDE OIL TANKER | VLCC | SINOKOR GROUP | KOREA | COLUMBIA SHIP MANAGEMENT | LIBERIA | BV |  |  |  |  |  |
 | 265 | O | UQAB | 9830824 | CRUDE OIL TANKER | VLCC |  | SAUDI ARABIA |  |  |  |  |  |  |  |  |
 | 266 | O | VAUGHAN | 9256901 |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -281,3 +281,6 @@ Sanctions compliance register of vessels flagged for IRGC-linked ownership, mana
 | 281 | X | SOYIA | 9263916 | OIL PRODUCTS TANKER | MR | PEPOSO MARITIME SA | GREECE | HOLGER NAVIGATION CORP | LIBERIA | ABS | 2026-10-20 | IRAN ATTACK | 180-26 | 30 NM SE of Al Faw, Iraq | ATTACK Incident Date:20 Oct 2026 Incident Time:1830UTC Source: Master UKMTO has received a time late report of an incident 30NM southeast of Al Faw, Iraq. The Master of a tanker reports being struck by an unknown projectile, the crew are reported as safe and there is no reported damage or environmental impact. |
 | 283 | O | ON PHOENIX | 9893228 | CRUDE OIL TANKER | AFRAMAX | VITOL INTERNATIONAL SHIPPING | SINGAPORE | ANGLO-EASTERN TANKER MGMT-HKG | PANAMA | DNV | 2026-11-16 | IRAN ATTACK | 207-26 | Strait of Hormuz | UKMTO has received a report of an incident in the Strait of Hormuz. The Company Security Officer of a Tanker has reported the vessel being struck by an unknown projectile whilst transiting outbound. This resulted in a fire in the engine room. No casualties have been reported and all crew have been accounted for. Damage assessment and environmental impact unknown at present. |
 | 284 | X | TARA GAS | 9290270 | LPG | PANAMAX | GLOBAL GAS INC | UAE | MATRIX MARITIME SOLUTIONS FZE | PANAMA | BV | 2026-11-16 | IRAN ATTACK | 208-26 | Strait of Hormuz | At 16 1900 UTC an LPG tanker, identified by NAVAREA IX as the TARA GAS, was attacked while transiting the Strait of Hormuz 7NM north of Khasab, Oman, disabling the vessel and resulting in an engine room fire. On 17 Nov the vessel was reported struck a second time, causing a further fire, and crew abandonment. The Indian Ministry of External Affairs<br>reported one crew member missing and two injured. Extensive damage, environmental impact is unknown. |
+| 285 |  | UNKNOWN |  |  |  |  |  |  |  |  | 2026-11-20 | IRAN ATTACK | 214-26 | Strait of Hormuz | On 20 Nov a tanker transiting the Strait of Hormuz outbound was struck on the port bow by an unknown projectile approx. 8NM north of Khasab, Oman, causing a fire on board. No crew casualties or environmental impact were reported. |
+| 286 | X | ARINA | 9248813 | CRUDE OIL TANKER | SUEZMAX | VITAL TREND LTD | CHINA | HIGO SHIPPING HK CO LTD | HONG KONG | NK | 2026-11-21 | IRAN ATTACK | 216-26 | Strait of Hormuz | On 21 Nov the tanker ARINA, transiting the Strait of Hormuz<br>outbound, was struck in the engine room by an unknown<br>projectile approx. 17 NM east of Khasab, Oman. No crew<br>casualties were reported. Environmental impact is unknown. |
+| 287 |  | UNKNOWN |  | BULK |  |  |  |  |  |  | 2026-11-22 | IRAN ATTACK | 218-26 | 23NM northeast of Khor Fakkan | an incident 23NM northeast of Khor Fakkan,<br>UAE. A Bulk Carrier was struck on the Port side by an unknown projectile whilst anchored at Dibba OPL. A fire was reported onboard the vessel but no casualties have been reported at this time. |
