@@ -1,0 +1,582 @@
+<meta name="dash-one-writer">
+<meta name="dash-form" content="dashboard">
+<style>
+  .ia { display: grid; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+  .ia h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+  .ia h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; text-wrap: balance; }
+  .ia h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin: 0; }
+  .ia p { margin: 0; max-width: 72ch; line-height: 1.6; }
+  .ia b { font-weight: var(--cds-font-weight-medium); font-variant-numeric: tabular-nums; }
+  .ia .head { display: grid; gap: var(--cds-gap-sm); }
+  .ia .muted { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .ia .part { display: grid; gap: var(--cds-gap-lg); }
+  .ia .part + .part { border-top: 1px solid var(--color-border-line); padding-top: var(--cds-pad-xl); }
+  .ia .eyebrow { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); letter-spacing: 0.06em; text-transform: uppercase; }
+  .ia .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--cds-gap-md); }
+  .ia .card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; display: grid; gap: var(--cds-gap-sm); align-content: start; }
+  .ia .tile .v { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 2rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .ia .tile .l { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .ia .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cds-gap-md); }
+  .ia .chart { position: relative; min-height: 200px; min-width: 0; }
+  .ia .chart.tall { min-height: 250px; }
+  .ia .chart svg { display: block; overflow: visible; }
+  .ia .chart svg text { fill: var(--cds-text-secondary); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); }
+  .ia .chart svg text.ia-val { fill: var(--color-fg); font-variant-numeric: tabular-nums; }
+  .ia .chart svg text.ia-lab { fill: var(--color-fg); }
+  .ia .ia-tip { position: absolute; z-index: 2; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: var(--cds-pad-sm) var(--cds-pad-md); font-size: var(--cds-font-size-caption); color: var(--cds-text-secondary); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .ia .ia-tip .ia-tip-h { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+  .ia .legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .ia .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .ia .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .ia .ia-fail { color: var(--color-bad); font-size: var(--cds-font-size-caption); }
+  .ia .note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); max-width: 72ch; }
+  .ia .tablewrap { overflow-x: auto; min-width: 0; }
+  .ia table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .ia th, .ia td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  .ia th { color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); }
+  .ia td.num, .ia th.num { text-align: right; }
+  .ia .chip { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: var(--cds-font-size-caption); border: 1px solid var(--color-border-line); color: var(--color-fg-muted); }
+  .ia .chip.bad { color: var(--color-bad); border-color: var(--color-bad); }
+  .ia .chip.warn { color: var(--color-warn); border-color: var(--color-warn); }
+  .ia details summary { cursor: pointer; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .ia details ul { margin: var(--cds-gap-sm) 0 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); max-width: 80ch; line-height: 1.5; }
+</style>
+
+<div class="ia">
+  <header class="head" id="overview">
+    <div class="eyebrow">IRGC Vessel Watchlist 분석</div>
+    <h1>IRGC 위협 분석</h1>
+    <p data-read lang="ko">기록 기간 <b data-draw="num" data-source="kpi" data-field="first_date" data-row="0" data-fmt="text" class="dash-skeleton">—</b> ~ <b data-draw="num" data-source="kpi" data-field="last_date" data-row="0" data-fmt="text" class="dash-skeleton">—</b> 동안 등록 선박 <b data-draw="num" data-source="kpi" data-field="vessels" data-row="0" class="dash-skeleton">—</b>척 중 <b data-draw="num" data-source="kpi" data-field="attacked" data-row="0" class="dash-skeleton">—</b>척이 피격됐고, 피격은 모두 <b data-draw="num" data-source="kpi" data-field="incidents" data-row="0" class="dash-skeleton">—</b>건입니다. 최근 30일 피격은 <b data-draw="num" data-source="kpi" data-field="last30" data-row="0" class="dash-skeleton">—</b>건으로, 그 전 30일(<b data-draw="num" data-source="kpi" data-field="prev30" data-row="0" class="dash-skeleton">—</b>건)보다 <b data-draw="trend" class="dash-skeleton">—</b>.</p>
+  </header>
+
+  <section class="part" id="trend">
+    <div class="tiles">
+      <div class="card tile"><div class="l">등록 선박</div><div class="v dash-skeleton" data-draw="num" data-source="kpi" data-field="vessels" data-row="0">—</div><div class="l">워치리스트 전체</div></div>
+      <div class="card tile"><div class="l">피격 선박</div><div class="v" data-draw="num" data-source="kpi" data-field="attacked" data-row="0">—</div><div class="l">등록 선박의 <span data-draw="num" data-source="kpi" data-field="attacked_rate" data-row="0" data-fmt="pct">—</span></div></div>
+      <div class="card tile"><div class="l">피격 건수</div><div class="v" data-draw="num" data-source="kpi" data-field="incidents" data-row="0">—</div><div class="l">IRAN ATTACK <span data-draw="num" data-source="kpi" data-field="iran_attack" data-row="0">—</span> · US DISABLING <span data-draw="num" data-source="kpi" data-field="us_disabling" data-row="0">—</span></div></div>
+      <div class="card tile"><div class="l">최근 30일 피격</div><div class="v" data-draw="num" data-source="kpi" data-field="last30" data-row="0">—</div><div class="l">그 전 30일 <span data-draw="num" data-source="kpi" data-field="prev30" data-row="0">—</span>건 · 마지막 기록일 기준</div></div>
+    </div>
+
+    <div class="card" id="monthly-card">
+      <h2>월별 피격 건수</h2>
+      <p class="muted">한 선박이 여러 번 피격되면 각각 1건으로 셉니다. 마지막 달은 마지막 기록일까지만 집계됩니다.</p>
+      <div class="chart tall dash-skeleton" data-draw="monthly" data-source="monthly"></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card" id="region-card">
+        <h2>해역별 피격 건수</h2>
+        <p class="muted">피격 장소 기록을 해역으로 나눈 결과입니다.</p>
+        <div class="chart dash-skeleton" data-draw="region" data-source="by_region"></div>
+      </div>
+      <div class="card" id="kind-card">
+        <h2>선종별 피격률</h2>
+        <p class="muted">선종 그룹별 등록 선박 중 한 번 이상 피격된 비율입니다.</p>
+        <div class="chart dash-skeleton" data-draw="kind" data-source="by_kind"></div>
+      </div>
+    </div>
+
+    <div class="card" id="irgc-card">
+      <h2>IRGC 공식 리스트 등재 여부별 피격률</h2>
+      <div class="chart dash-skeleton" data-draw="irgc" data-source="by_irgc" style="min-height: 90px"></div>
+      <p class="note">미등재(X) 선박은 대부분 피격된 뒤 워치리스트에 추가된 선박이라 피격률이 높게 나옵니다. 등재 여부가 피격 위험을 바꾼다는 뜻으로 읽으면 안 됩니다.</p>
+    </div>
+  </section>
+
+  <section class="part" id="sinokor">
+    <div class="head">
+      <div class="eyebrow">당사 선단</div>
+      <h2>SINOKOR 선단 피격 현황</h2>
+      <p data-read lang="ko">당사 선단 <b data-draw="num" data-source="sk_kpi" data-field="fleet" data-row="0">—</b>척 중 <b data-draw="num" data-source="sk_kpi" data-field="attacked" data-row="0">—</b>척(<b data-draw="num" data-source="sk_kpi" data-field="rate" data-row="0" data-fmt="pct">—</b>)이 피격됐습니다. 같은 VLCC인 타사 선박의 피격률 <b data-draw="num" data-source="sk_kpi" data-field="peer_rate" data-row="0" data-fmt="pct">—</b>보다 <b data-draw="skvs">—</b>. 당사 선박 피격은 <b data-draw="num" data-source="sk_kpi" data-field="incidents" data-row="0">—</b>건으로 전체 피격 건수의 <b data-draw="num" data-source="sk_kpi" data-field="share_of_all" data-row="0" data-fmt="pct">—</b>입니다.</p>
+    </div>
+
+    <div class="tiles">
+      <div class="card tile"><div class="l">당사 선단</div><div class="v" data-draw="num" data-source="sk_kpi" data-field="fleet" data-row="0">—</div><div class="l">워치리스트 등록 VLCC</div></div>
+      <div class="card tile"><div class="l">피격 선박</div><div class="v" data-draw="num" data-source="sk_kpi" data-field="attacked" data-row="0">—</div><div class="l">선단의 <span data-draw="num" data-source="sk_kpi" data-field="rate" data-row="0" data-fmt="pct">—</span></div></div>
+      <div class="card tile"><div class="l">피격 건수</div><div class="v" data-draw="num" data-source="sk_kpi" data-field="incidents" data-row="0">—</div><div class="l">2회 피격 선박 <span data-draw="num" data-source="sk_kpi" data-field="repeat" data-row="0">—</span>척</div></div>
+      <div class="card tile"><div class="l">최근 30일 피격</div><div class="v" data-draw="num" data-source="sk_kpi" data-field="last30" data-row="0">—</div><div class="l">마지막 기록일 기준</div></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card" id="sk-compare-card">
+        <h2>당사 선단과 타사 VLCC 피격률</h2>
+        <p class="muted">같은 선형끼리 비교하려고 타사는 VLCC만 묶었습니다.</p>
+        <div class="chart dash-skeleton" data-draw="skcompare" data-source="sk_compare" style="min-height: 120px"></div>
+      </div>
+      <div class="card" id="sk-monthly-card">
+        <h2>월별 피격 건수: 당사와 타사 VLCC</h2>
+        <div class="chart dash-skeleton" data-draw="skmonthly" data-source="sk_monthly"></div>
+      </div>
+    </div>
+
+    <div class="card" id="sk-managers-card">
+      <h2>관리사별 피격 현황</h2>
+      <p class="muted">당사 선박을 관리하는 회사별로, 당사 선박과 그 관리사가 맡은 워치리스트 전체 선박의 피격을 나란히 봅니다.</p>
+      <div class="tablewrap">
+        <table data-source="sk_managers" data-row-key="manager">
+          <thead><tr>
+            <th data-field="manager">관리사</th>
+            <th class="num" data-field="ships">당사 선박</th>
+            <th class="num" data-field="attacked">당사 피격 선박</th>
+            <th class="num" data-field="rate">당사 피격률</th>
+            <th class="num" data-field="total_ships">관리 선박 전체</th>
+            <th class="num" data-field="total_attacked">전체 피격 선박</th>
+            <th class="num" data-field="total_rate">전체 피격률</th>
+          </tr></thead>
+          <tbody data-draw="skmanagers"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" id="sk-fleet-card">
+      <h2>당사 선박별 피격 이력</h2>
+      <p class="muted">피격 횟수가 많고 최근에 피격된 선박이 위에 옵니다. 위치 정보가 없어 현재 위험이 아니라 지난 피격 이력을 보여줍니다.</p>
+      <div class="tablewrap">
+        <table data-source="sk_fleet" data-row-key="no">
+          <thead><tr>
+            <th data-field="no">NO</th>
+            <th data-field="vessel">선명</th>
+            <th data-field="status">상태</th>
+            <th class="num" data-field="attack_count">피격 횟수</th>
+            <th data-field="last_attack">최근 피격일</th>
+            <th data-field="last_region">최근 피격 해역</th>
+            <th data-field="manager">관리사</th>
+            <th data-field="irgc_list">IRGC 리스트</th>
+          </tr></thead>
+          <tbody data-draw="skfleet"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <details id="notes">
+    <summary>집계 기준과 정의</summary>
+    <ul>
+      <li>피격: 워치리스트의 ATTACKED DATE에 날짜가 있는 기록입니다. 한 선박에 날짜가 여러 개면 날짜마다 1건입니다.</li>
+      <li>피격률: 해당 그룹의 등록 선박 중 한 번 이상 피격된 선박의 비율입니다.</li>
+      <li>최근 30일: 기록된 마지막 피격일로부터 30일입니다. 그 전 30일은 31~60일 전입니다.</li>
+      <li>해역: 호르무즈 해협(Hormuz, Khasab, Limah, Kumzar, Musandam, CP 등), 오만만(Gulf of Oman, Khor Fakkan, Sohar, Jask, Dibba), 아라비아만(Arabian Gulf, AG, Al Faw, Qatar, Jubail, Port Rashid, Kharg, 해협 진입 전), 오만 연안(지점 미상, "off Oman"처럼 해역을 특정할 수 없는 기록)으로 나눴습니다.</li>
+      <li>선종 그룹: 원유선(CRUDE OIL TANKER), 가스선(LPG·LNG), 제품·케미컬선(제품·케미컬·아스팔트·벙커 탱커), 벌크선, 컨테이너선, 기타(TUG·DHOW·여객선 등)입니다.</li>
+      <li>당사 선단: Owner가 SINOKOR GROUP인 선박입니다.</li>
+      <li>사건 유형이 날짜보다 적게 적힌 기록은 첫 유형을 모든 날짜에 적용했습니다.</li>
+      <li>데이터는 워치리스트 라이브 DB에서 만든 파일이며, 요청하면 최신 데이터로 다시 만듭니다.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+  // ---------- calculations ----------
+  dash.calc('kpi', {
+    title: '핵심 지표',
+    description: '등록 선박, 피격 선박, 피격 건수, 최근 30일과 그 전 30일 피격 건수입니다. 30일은 마지막 피격 기록일을 기준으로 셉니다.',
+    inputs: ['vessels', 'incidents'],
+    fn: (vessels, incidents) => {
+      const DAY = 86400000;
+      const attacked = vessels.filter((v) => +v.attacked === 1).length;
+      const dates = incidents.map((i) => i.date).filter(Boolean).sort();
+      const last = dates[dates.length - 1] || '';
+      const ref = last ? Date.parse(last) : 0;
+      const between = (a, b) => incidents.filter((i) => { const t = Date.parse(i.date); return t > ref - b * DAY && t <= ref - a * DAY; }).length;
+      return [{
+        vessels: vessels.length,
+        attacked,
+        attacked_rate: vessels.length ? attacked / vessels.length : 0,
+        incidents: incidents.length,
+        iran_attack: incidents.filter((i) => i.type === 'IRAN ATTACK').length,
+        us_disabling: incidents.filter((i) => i.type === 'US DISABLING').length,
+        first_date: dates[0] || '',
+        last_date: last,
+        last30: between(0, 30),
+        prev30: between(30, 60),
+      }];
+    },
+  });
+
+  dash.calc('monthly', {
+    title: '월별 피격 건수',
+    description: '피격 건수를 달마다, 사건 유형별로 셉니다.',
+    inputs: ['incidents'],
+    fn: (incidents) => {
+      const m = {};
+      for (const i of incidents) {
+        const r = m[i.month] || (m[i.month] = { month: i.month, iran_attack: 0, us_disabling: 0, total: 0 });
+        if (i.type === 'US DISABLING') r.us_disabling++; else r.iran_attack++;
+        r.total++;
+      }
+      return Object.values(m).sort((a, b) => a.month.localeCompare(b.month));
+    },
+  });
+
+  dash.calc('by_region', {
+    title: '해역별 피격 건수',
+    description: '피격 건수를 해역별로 셉니다.',
+    inputs: ['incidents'],
+    fn: (incidents) => {
+      const m = {};
+      for (const i of incidents) m[i.region] = (m[i.region] || 0) + 1;
+      return Object.entries(m).map(([region, n]) => ({ region, incidents: n, share: incidents.length ? n / incidents.length : 0 })).sort((a, b) => b.incidents - a.incidents);
+    },
+  });
+
+  dash.calc('by_kind', {
+    title: '선종별 피격률',
+    description: '선종 그룹별 등록 선박 수, 피격 선박 수, 피격률입니다.',
+    inputs: ['vessels'],
+    fn: (vessels) => {
+      const m = {};
+      for (const v of vessels) {
+        const r = m[v.kind_group] || (m[v.kind_group] = { kind_group: v.kind_group, vessels: 0, attacked: 0 });
+        r.vessels++; if (+v.attacked === 1) r.attacked++;
+      }
+      return Object.values(m).map((r) => ({ ...r, rate: r.vessels ? r.attacked / r.vessels : 0 })).sort((a, b) => b.vessels - a.vessels);
+    },
+  });
+
+  dash.calc('by_irgc', {
+    title: 'IRGC 리스트 등재 여부별 피격률',
+    description: 'IRGC 공식 리스트 등재(O)와 미등재(X) 선박의 피격률입니다.',
+    inputs: ['vessels'],
+    fn: (vessels) => [['O', '등재 (O)'], ['X', '미등재 (X)']].map(([key, group]) => {
+      const vs = vessels.filter((v) => v.irgc_list === key);
+      const attacked = vs.filter((v) => +v.attacked === 1).length;
+      return { irgc_list: key, group, vessels: vs.length, attacked, rate: vs.length ? attacked / vs.length : 0 };
+    }),
+  });
+
+  dash.calc('sk_kpi', {
+    title: '당사 선단 핵심 지표',
+    description: '당사 선단(Owner가 SINOKOR GROUP) 선박 수, 피격 선박, 피격 건수, 피격률과 타사 VLCC 피격률입니다.',
+    inputs: ['vessels', 'incidents'],
+    fn: (vessels, incidents) => {
+      const DAY = 86400000;
+      const sk = vessels.filter((v) => +v.sinokor === 1);
+      const peers = vessels.filter((v) => +v.sinokor !== 1 && v.size === 'VLCC');
+      const skInc = incidents.filter((i) => +i.sinokor === 1);
+      const dates = incidents.map((i) => i.date).filter(Boolean).sort();
+      const ref = dates.length ? Date.parse(dates[dates.length - 1]) : 0;
+      const attacked = sk.filter((v) => +v.attacked === 1).length;
+      const peerAttacked = peers.filter((v) => +v.attacked === 1).length;
+      return [{
+        fleet: sk.length,
+        attacked,
+        rate: sk.length ? attacked / sk.length : 0,
+        incidents: skInc.length,
+        repeat: sk.filter((v) => +v.attack_count > 1).length,
+        share_of_all: incidents.length ? skInc.length / incidents.length : 0,
+        last30: skInc.filter((i) => Date.parse(i.date) > ref - 30 * DAY).length,
+        peer_vessels: peers.length,
+        peer_rate: peers.length ? peerAttacked / peers.length : 0,
+      }];
+    },
+  });
+
+  dash.calc('sk_compare', {
+    title: '당사 선단과 타사 VLCC 피격률',
+    description: '당사 선단, 타사 VLCC, 워치리스트 전체의 피격률입니다.',
+    inputs: ['vessels'],
+    fn: (vessels) => {
+      const row = (group, vs) => { const a = vs.filter((v) => +v.attacked === 1).length; return { group, vessels: vs.length, attacked: a, rate: vs.length ? a / vs.length : 0 }; };
+      return [
+        row('당사 선단', vessels.filter((v) => +v.sinokor === 1)),
+        row('타사 VLCC', vessels.filter((v) => +v.sinokor !== 1 && v.size === 'VLCC')),
+        row('워치리스트 전체', vessels),
+      ];
+    },
+  });
+
+  dash.calc('sk_monthly', {
+    title: '월별 피격 건수: 당사와 타사 VLCC',
+    description: '달마다 당사 선단과 타사 VLCC의 피격 건수입니다.',
+    inputs: ['incidents'],
+    fn: (incidents) => {
+      const m = {};
+      for (const i of incidents) {
+        const r = m[i.month] || (m[i.month] = { month: i.month, sinokor: 0, other_vlcc: 0 });
+        if (+i.sinokor === 1) r.sinokor++; else if (i.size === 'VLCC') r.other_vlcc++;
+      }
+      return Object.values(m).sort((a, b) => a.month.localeCompare(b.month));
+    },
+  });
+
+  dash.calc('sk_managers', {
+    title: '관리사별 피격 현황',
+    description: '당사 선박을 관리하는 회사별 당사 선박 피격과, 그 관리사가 맡은 워치리스트 전체 선박의 피격입니다.',
+    inputs: ['vessels'],
+    fn: (vessels) => {
+      const names = [...new Set(vessels.filter((v) => +v.sinokor === 1).map((v) => v.manager))];
+      return names.map((manager) => {
+        const all = vessels.filter((v) => v.manager === manager);
+        const sk = all.filter((v) => +v.sinokor === 1);
+        const a = sk.filter((v) => +v.attacked === 1).length;
+        const ta = all.filter((v) => +v.attacked === 1).length;
+        return { manager, ships: sk.length, attacked: a, rate: sk.length ? a / sk.length : 0, total_ships: all.length, total_attacked: ta, total_rate: all.length ? ta / all.length : 0 };
+      }).sort((x, y) => y.ships - x.ships || y.attacked - x.attacked);
+    },
+  });
+
+  dash.calc('sk_fleet', {
+    title: '당사 선박별 피격 이력',
+    description: '당사 선박마다 피격 횟수, 최근 피격일과 해역, 관리사, IRGC 리스트 등재 여부입니다.',
+    inputs: ['vessels', 'incidents'],
+    fn: (vessels, incidents) => vessels.filter((v) => +v.sinokor === 1).map((v) => {
+      const inc = incidents.filter((i) => +i.no === +v.no).sort((a, b) => a.date.localeCompare(b.date));
+      const last = inc[inc.length - 1];
+      const n = +v.attack_count;
+      return { no: String(v.no), vessel: v.vessel, status: n > 1 ? n + '회 피격' : n === 1 ? '피격' : '피격 없음', attack_count: n, last_attack: v.last_attack || '', last_region: last ? last.region : '', manager: v.manager, irgc_list: v.irgc_list };
+    }).sort((a, b) => b.attack_count - a.attack_count || b.last_attack.localeCompare(a.last_attack) || +a.no - +b.no),
+  });
+
+  // ---------- drawing helpers ----------
+  window.IA = (() => {
+    const fmt = { int: d3.format(','), pct: d3.format('.0%'), text: (v) => String(v ?? '') };
+    const monthLabel = (m) => +String(m).slice(5, 7) + '월';
+
+    function ready(el, id) {
+      const d = dash.data(id);
+      if (d.status === 'ok') { el.classList.remove('dash-skeleton'); return d; }
+      if (d.status === 'loading') return null;
+      el.classList.remove('dash-skeleton');
+      el.replaceChildren();
+      if (d.status === 'error') {
+        const p = document.createElement('p');
+        p.className = 'ia-fail';
+        p.textContent = '이 항목의 데이터를 불러오지 못했습니다.';
+        el.append(p);
+      } else {
+        el.textContent = '—';
+      }
+      return null;
+    }
+
+    function tooltip(el) {
+      const t = document.createElement('div');
+      t.className = 'ia-tip';
+      t.hidden = true;
+      el.append(t);
+      return {
+        show(ev, lines) {
+          t.replaceChildren(...lines.map((s, i) => { const d = document.createElement('div'); d.textContent = s; if (i === 0) d.className = 'ia-tip-h'; return d; }));
+          t.hidden = false;
+          const r = el.getBoundingClientRect();
+          let x = ev.clientX - r.left + 12;
+          const y = ev.clientY - r.top + 12;
+          if (x + t.offsetWidth > el.clientWidth) x = Math.max(0, ev.clientX - r.left - t.offsetWidth - 12);
+          t.style.left = x + 'px';
+          t.style.top = y + 'px';
+        },
+        hide() { t.hidden = true; },
+      };
+    }
+
+    function legend(el, items) {
+      const box = document.createElement('div');
+      box.className = 'legend';
+      for (const [label, color] of items) {
+        const s = document.createElement('span');
+        const i = document.createElement('i');
+        i.style.background = color;
+        s.append(i, document.createTextNode(label));
+        box.append(s);
+      }
+      el.append(box);
+    }
+
+    // horizontal bars
+    function hbar(el, rows, o) {
+      el.replaceChildren();
+      const W = Math.max(240, el.clientWidth || 320);
+      const rowH = 30;
+      const svg = d3.select(el).append('svg').attr('width', W).attr('height', rows.length * rowH + 4).attr('role', 'img').attr('aria-label', o.aria);
+      const probe = svg.append('text').attr('class', 'ia-lab');
+      let labelW = 0;
+      for (const r of rows) { probe.text(o.label(r)); labelW = Math.max(labelW, probe.node().getComputedTextLength()); }
+      probe.remove();
+      labelW = Math.min(labelW + 10, W * 0.45);
+      const valW = 96;
+      const x = d3.scaleLinear().domain([0, o.max ?? (d3.max(rows, o.value) || 1)]).range([0, Math.max(20, W - labelW - valW)]);
+      const g = svg.selectAll('g.row').data(rows).join('g').attr('class', 'row').attr('transform', (d, i) => `translate(0,${i * rowH + 2})`);
+      g.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', rowH).style('fill', 'transparent');
+      g.append('text').attr('class', 'ia-lab').attr('x', labelW - 10).attr('y', rowH / 2).attr('dy', '0.32em').attr('text-anchor', 'end').text(o.label);
+      g.append('rect').attr('x', labelW).attr('y', 6).attr('height', rowH - 12).attr('rx', 2).attr('width', (d) => Math.max(1, x(o.value(d)))).style('fill', (d) => (o.color ? o.color(d) : dash.colors[0]));
+      g.append('text').attr('class', 'ia-val').attr('x', (d) => labelW + x(o.value(d)) + 6).attr('y', rowH / 2).attr('dy', '0.32em').text(o.text);
+      const tt = tooltip(el);
+      g.on('pointermove', (ev, d) => tt.show(ev, o.tip(d))).on('pointerleave', () => tt.hide());
+    }
+
+    // vertical bars, stacked or grouped
+    function vbars(el, rows, o) {
+      el.replaceChildren();
+      const W = Math.max(260, el.clientWidth || 320);
+      const H = o.height || 220;
+      const m = { t: 20, r: 6, b: 26, l: 30 };
+      const x = d3.scaleBand().domain(rows.map((r) => r.month)).range([m.l, W - m.r]).padding(0.28);
+      const top = o.stack ? d3.max(rows, (r) => d3.sum(o.series, (s) => +r[s.key])) : d3.max(rows, (r) => d3.max(o.series, (s) => +r[s.key]));
+      const y = d3.scaleLinear().domain([0, top || 1]).nice().range([H - m.b, m.t]);
+      const svg = d3.select(el).append('svg').attr('width', W).attr('height', H).attr('role', 'img').attr('aria-label', o.aria);
+      svg.append('g').selectAll('line').data(y.ticks(4)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => y(v)).attr('y2', (v) => y(v)).style('stroke', 'var(--cds-chart-grid)');
+      svg.append('g').selectAll('text').data(y.ticks(4)).join('text').attr('x', m.l - 6).attr('y', (v) => y(v)).attr('dy', '0.32em').attr('text-anchor', 'end').text((v) => v);
+      svg.append('g').selectAll('text').data(rows).join('text').attr('x', (r) => x(r.month) + x.bandwidth() / 2).attr('y', H - 8).attr('text-anchor', 'middle').text((r) => monthLabel(r.month));
+      const tt = tooltip(el);
+      const inner = d3.scaleBand().domain(o.series.map((s) => s.key)).range([0, x.bandwidth()]).padding(0.1);
+      const groups = svg.append('g').selectAll('g').data(rows).join('g');
+      groups.each(function (r) {
+        const g = d3.select(this);
+        let acc = 0;
+        for (const s of o.series) {
+          const v = +r[s.key];
+          const rect = g.append('rect').attr('rx', 2).style('fill', s.color);
+          if (o.stack) {
+            rect.attr('x', x(r.month)).attr('width', x.bandwidth()).attr('y', y(acc + v)).attr('height', y(acc) - y(acc + v));
+            acc += v;
+          } else {
+            rect.attr('x', x(r.month) + inner(s.key)).attr('width', inner.bandwidth()).attr('y', y(v)).attr('height', y(0) - y(v));
+            if (v > 0) g.append('text').attr('class', 'ia-val').attr('x', x(r.month) + inner(s.key) + inner.bandwidth() / 2).attr('y', y(v) - 5).attr('text-anchor', 'middle').text(v);
+          }
+        }
+        if (o.stack) g.append('text').attr('class', 'ia-val').attr('x', x(r.month) + x.bandwidth() / 2).attr('y', y(acc) - 5).attr('text-anchor', 'middle').text(acc);
+        g.append('rect').attr('x', x(r.month)).attr('width', x.bandwidth()).attr('y', m.t).attr('height', H - m.b - m.t).style('fill', 'transparent')
+          .on('pointermove', (ev) => tt.show(ev, [r.month, ...o.series.map((s) => `${s.label} ${r[s.key]}건`)]))
+          .on('pointerleave', () => tt.hide());
+      });
+      legend(el, o.series.map((s) => [s.label, s.color]));
+    }
+
+    function cell(tr, text, cls) {
+      const td = document.createElement('td');
+      if (cls) td.className = cls;
+      td.textContent = text;
+      tr.append(td);
+      return td;
+    }
+
+    return { fmt, ready, hbar, vbars, cell };
+  })();
+
+  // ---------- drawings ----------
+  dash.draw('num', (el) => {
+    const d = dash.data(el.dataset.source);
+    if (d.status !== 'ok') { if (d.status !== 'loading') { el.classList.remove('dash-skeleton'); el.textContent = '—'; } return; }
+    el.classList.remove('dash-skeleton');
+    const row = d.data[+(el.dataset.row || 0)] || {};
+    el.textContent = (IA.fmt[el.dataset.fmt || 'int'])(row[el.dataset.field]);
+  });
+
+  dash.draw('trend', (el) => {
+    const d = dash.data('kpi');
+    if (d.status !== 'ok') { if (d.status !== 'loading') { el.classList.remove('dash-skeleton'); el.textContent = '—'; } return; }
+    el.classList.remove('dash-skeleton');
+    const r = d.data[0];
+    el.textContent = r.last30 > r.prev30 ? '늘었습니다' : r.last30 < r.prev30 ? '줄었습니다' : '같습니다';
+  });
+
+  dash.draw('skvs', (el) => {
+    const d = dash.data('sk_kpi');
+    if (d.status !== 'ok') { el.textContent = '—'; return; }
+    const r = d.data[0];
+    const diff = Math.round(r.rate * 100) - Math.round(r.peer_rate * 100);
+    el.textContent = diff < 0 ? '낮습니다' : diff > 0 ? '높습니다' : '같은 수준입니다';
+  });
+
+  dash.draw('monthly', (el) => {
+    const d = IA.ready(el, 'monthly');
+    if (!d) return;
+    IA.vbars(el, d.data, {
+      stack: true, height: 240, aria: '월별 피격 건수 막대 그래프. 사건 유형별로 쌓아 표시',
+      series: [{ key: 'iran_attack', label: 'IRAN ATTACK', color: dash.colors[0] }, { key: 'us_disabling', label: 'US DISABLING', color: dash.colors[1] }],
+    });
+  });
+
+  dash.draw('region', (el) => {
+    const d = IA.ready(el, 'by_region');
+    if (!d) return;
+    IA.hbar(el, d.data, {
+      aria: '해역별 피격 건수 가로 막대 그래프',
+      label: (r) => r.region, value: (r) => r.incidents,
+      text: (r) => `${r.incidents}건 · ${IA.fmt.pct(r.share)}`,
+      tip: (r) => [r.region, `피격 ${r.incidents}건`, `전체의 ${IA.fmt.pct(r.share)}`],
+    });
+  });
+
+  dash.draw('kind', (el) => {
+    const d = IA.ready(el, 'by_kind');
+    if (!d) return;
+    IA.hbar(el, d.data, {
+      aria: '선종 그룹별 피격률 가로 막대 그래프', max: 1,
+      label: (r) => r.kind_group, value: (r) => r.rate,
+      text: (r) => `${IA.fmt.pct(r.rate)} (${r.attacked}/${r.vessels})`,
+      tip: (r) => [r.kind_group, `등록 ${r.vessels}척`, `피격 ${r.attacked}척`, `피격률 ${IA.fmt.pct(r.rate)}`],
+    });
+  });
+
+  dash.draw('irgc', (el) => {
+    const d = IA.ready(el, 'by_irgc');
+    if (!d) return;
+    IA.hbar(el, d.data, {
+      aria: 'IRGC 리스트 등재 여부별 피격률 가로 막대 그래프', max: 1,
+      label: (r) => r.group, value: (r) => r.rate,
+      text: (r) => `${IA.fmt.pct(r.rate)} (${r.attacked}/${r.vessels})`,
+      tip: (r) => [r.group, `등록 ${r.vessels}척`, `피격 ${r.attacked}척`, `피격률 ${IA.fmt.pct(r.rate)}`],
+    });
+  });
+
+  dash.draw('skcompare', (el) => {
+    const d = IA.ready(el, 'sk_compare');
+    if (!d) return;
+    IA.hbar(el, d.data, {
+      aria: '당사 선단, 타사 VLCC, 워치리스트 전체의 피격률 가로 막대 그래프', max: 1,
+      label: (r) => r.group, value: (r) => r.rate,
+      color: (r) => (r.group === '당사 선단' ? dash.colors[0] : 'var(--cds-chart-muted)'),
+      text: (r) => `${IA.fmt.pct(r.rate)} (${r.attacked}/${r.vessels})`,
+      tip: (r) => [r.group, `${r.vessels}척 중 ${r.attacked}척 피격`, `피격률 ${IA.fmt.pct(r.rate)}`],
+    });
+  });
+
+  dash.draw('skmonthly', (el) => {
+    const d = IA.ready(el, 'sk_monthly');
+    if (!d) return;
+    IA.vbars(el, d.data, {
+      stack: false, height: 220, aria: '월별 당사 선단과 타사 VLCC 피격 건수 막대 그래프',
+      series: [{ key: 'sinokor', label: '당사 선단', color: dash.colors[0] }, { key: 'other_vlcc', label: '타사 VLCC', color: 'var(--cds-chart-muted)' }],
+    });
+  });
+
+  dash.draw('skmanagers', (tb) => {
+    const d = dash.data('sk_managers');
+    tb.replaceChildren();
+    if (d.status !== 'ok') return;
+    for (const r of d.data) {
+      const tr = document.createElement('tr');
+      tr.dataset.key = encodeURIComponent(r.manager);
+      IA.cell(tr, r.manager);
+      IA.cell(tr, IA.fmt.int(r.ships), 'num');
+      IA.cell(tr, IA.fmt.int(r.attacked), 'num');
+      IA.cell(tr, IA.fmt.pct(r.rate), 'num');
+      IA.cell(tr, IA.fmt.int(r.total_ships), 'num');
+      IA.cell(tr, IA.fmt.int(r.total_attacked), 'num');
+      IA.cell(tr, IA.fmt.pct(r.total_rate), 'num');
+      tb.append(tr);
+    }
+  });
+
+  dash.draw('skfleet', (tb) => {
+    const d = dash.data('sk_fleet');
+    tb.replaceChildren();
+    if (d.status !== 'ok') return;
+    for (const r of d.data) {
+      const tr = document.createElement('tr');
+      IA.cell(tr, r.no);
+      IA.cell(tr, r.vessel);
+      const td = IA.cell(tr, '');
+      const chip = document.createElement('span');
+      chip.className = 'chip' + (r.attack_count > 1 ? ' bad' : r.attack_count === 1 ? ' warn' : '');
+      chip.textContent = r.status;
+      td.append(chip);
+      IA.cell(tr, String(r.attack_count), 'num');
+      IA.cell(tr, r.last_attack || '—');
+      IA.cell(tr, r.last_region || '—');
+      IA.cell(tr, r.manager);
+      IA.cell(tr, r.irgc_list);
+      tb.append(tr);
+    }
+  });
+</script>
