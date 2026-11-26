@@ -1,7 +1,7 @@
 // Adds "UKMTO REPORT" (one line per UKMTO line; space-separated GitHub URLs, original first then updates)
 const fs=require('fs'),p=require('path');
 const [, , DB, PDFDIR] = process.argv;
-const BASE='https://github.com/Sinokor-Kong/sinokor-claude-backup/blob/master/IRGC_Vessel_Watchlist/ukmto/';
+const BASE='https://sinokor-kong.github.io/sinokor-claude-backup/ukmto/';
 const files=fs.readdirSync(PDFDIR).sort();
 const byNum={};for(const f of files){const n=f.match(/_(\d{3})-26/)[1];(byNum[n]=byNum[n]||[]).push(f);}
 for(const n in byNum) byNum[n].sort((a,b)=>(/UPDATE/.test(a)-/UPDATE/.test(b))||a.localeCompare(b));
