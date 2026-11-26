@@ -506,6 +506,15 @@
   .chip-danger { color: var(--danger); background: var(--danger-soft); }
   .chip-info { color: var(--info); background: var(--info-soft); }
 
+  a.report-link {
+    color: var(--info);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    white-space: nowrap;
+  }
+  a.report-link:hover { color: var(--accent); }
+
   td.actions-cell {
     white-space: nowrap;
     text-align: right;
@@ -788,14 +797,30 @@
     { key: 'INCIDENT TYPE', label: 'Incident Type', chips: INCIDENT_CHIPS, width: '6%' },
     { key: 'UKMTO', label: 'UKMTO', mono: true, width: '5%' },
     { key: 'Location', label: 'Location', wrap: true, width: '9%' },
-    { key: 'Description', label: 'Description', wrap: true, desc: true, width: '11%' }
+    { key: 'Description', label: 'Description', wrap: true, desc: true, width: '8%' },
+    { key: 'UKMTO REPORT', label: 'UKMTO Report', link: true, width: '6%' }
   ];
 
   const ACTIONS_WIDTH = '6%';
 
   // Fields that may hold more than one incident, newline-separated, with each
   // line manually prefixed "①", "②", … to mark which attack it belongs to.
-  const MULTILINE_KEYS = new Set(['Iran Attack', 'INCIDENT TYPE', 'UKMTO', 'Location', 'Description']);
+  const MULTILINE_KEYS = new Set(['Iran Attack', 'INCIDENT TYPE', 'UKMTO', 'Location', 'Description', 'UKMTO REPORT']);
+
+  // "UKMTO REPORT": one line per incident, space-separated PDF URLs (original first, then updates).
+  function reportLabel(url) {
+    const file = decodeURIComponent(String(url).split('/').pop());
+    const m = file.match(/(\d{3}-\d{2})(?:_UPDATE_0*(\d+))?/);
+    return m ? (m[2] ? 'U' + m[2] : m[1]) : 'PDF';
+  }
+  function reportLinksHtml(val) {
+    const lines = String(val).split('\n').map(line => {
+      const urls = line.split(/\s+/).filter(u => /^https:\/\//.test(u));
+      if (!urls.length) return '<div class="empty-val">—</div>';
+      return '<div>' + urls.map(u => `<a class="report-link" href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(reportLabel(u))}</a>`).join(' ') + '</div>';
+    });
+    return `<div style="display:flex;flex-direction:column;gap:4px;">${lines.join('')}</div>`;
+  }
   const CIRCLED_NUM_RE = /^[①-⑳]\s*/;
 
   let state = {
@@ -1019,6 +1044,11 @@
         const chip = c.chips[val];
         if (!chip) return `<td class="empty-val">${empty ? '—' : escapeHtml(val)}</td>`;
         return `<td><span class="chip ${chip.cls}">${escapeHtml(chip.label)}</span></td>`;
+      }
+
+      if (c.link) {
+        if (empty) return `<td class="empty-val">—</td>`;
+        return `<td class="mono">${reportLinksHtml(val)}</td>`;
       }
 
       if (c.desc) {

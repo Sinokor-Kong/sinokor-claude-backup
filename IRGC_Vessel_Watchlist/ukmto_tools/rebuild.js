@@ -1,0 +1,20 @@
+// Rebuild iranlist.md + docs mirror VESSELS from a DB dump (+ optional overlay json {docId: {field: value}})
+const fs=require('fs'),p=require('path');
+const [, , DB, MD_IN, MIR_IN, MD_OUT, MIR_OUT, OVERLAY] = process.argv;
+const ov = OVERLAY ? JSON.parse(fs.readFileSync(OVERLAY)) : {};
+const KEYS=['NO','IRGC_LIST','VESSEL NAME','IMO','KINDS','SIZE','Owner','Owner Location','Manager','Flag','Class','Iran Attack','INCIDENT TYPE','UKMTO','Location','Description','UKMTO REPORT'];
+const docs=fs.readdirSync(DB).map(f=>{const id=f.replace('.json','');const d=JSON.parse(fs.readFileSync(p.join(DB,f)));if(ov[id]!==undefined)d['UKMTO REPORT']=ov[id];return d;}).sort((a,b)=>a.NO-b.NO);
+const label=u=>{const m=decodeURIComponent(u.split('/').pop()).match(/(\d{3}-\d{2})(?:_UPDATE_0*(\d+))?/);return m?(m[2]?'U'+m[2]:m[1]):'PDF';};
+const mdCell=(k,v)=>{v=String(v??'');if(k==='UKMTO REPORT')v=v.split('\n').map(l=>l.split(/\s+/).filter(Boolean).map(u=>`[${label(u)}](${u})`).join(' ')).join('\n');return v.replace(/\|/g,'\|').replace(/\r?\n/g,'<br>');};
+const md=fs.readFileSync(MD_IN,'utf8').replace(/\r\n/g,'\n');
+const lines=md.split('\n');const hi=lines.findIndex(l=>l.startsWith('| NO |'));
+const pre=lines.slice(0,hi).join('\n').replace(/\*\*\d+ vessels on record — \d+ attacked\*\*/,`**${docs.length} vessels on record — ${docs.filter(d=>d['Iran Attack']).length} attacked**`);
+let head=lines[hi];if(!head.includes('UKMTO REPORT'))head=head+' UKMTO REPORT |';
+const sep='|'+KEYS.map(()=>'---').join('|')+'|';
+const body=docs.map(d=>'| '+KEYS.map(k=>mdCell(k,d[k])).join(' | ')+' |');
+fs.writeFileSync(MD_OUT,[pre,head,sep,...body].join('\n')+'\n');
+const arr=docs.map(d=>{const o={};for(const k of KEYS)o[k]=k==='NO'?d.NO:String(d[k]??'');return o;});
+let mir=fs.readFileSync(MIR_IN,'utf8').replace(/\r\n/g,'\n');
+mir=mir.replace(/const VESSELS = \[.*\];/, ()=>'const VESSELS = '+JSON.stringify(arr)+';');
+fs.writeFileSync(MIR_OUT,mir);
+console.log('docs',docs.length,'attacked',docs.filter(d=>d['Iran Attack']).length,'with report',docs.filter(d=>d['UKMTO REPORT']).length,'cols',head.split('|').length-2);
